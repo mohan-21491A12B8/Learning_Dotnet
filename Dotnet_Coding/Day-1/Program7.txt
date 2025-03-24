@@ -1,0 +1,67 @@
+C# Program Explanation
+
+"Hello, World!" using a MessageBox
+
+This document explains a simple C# program that displays a message box with the text "Hello, World!" using Windows Forms.
+
+Code:
+
+using System;
+using System.Windows.Forms;
+
+namespace MessageBoxExample
+{
+    class Program7
+    {
+        static void Main(string[] args)
+        {
+            // Display a message box
+            MessageBox.Show("Hello, World!");
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `using System.Windows.Forms;`
+   - This line is a directive that tells the compiler to include the Windows Forms namespace. The Windows Forms namespace provides classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Windows operating system.
+
+3. `namespace MessageBoxExample`
+   - This line defines a namespace called `MessageBoxExample`. Namespaces are used to organize code and prevent naming conflicts. They allow you to group related classes and other types together.
+
+4. `{`
+   - This curly brace indicates the beginning of the namespace body. All the code that belongs to the `MessageBoxExample` namespace will be enclosed within these braces.
+
+5. `class Program7`
+   - This line defines a new class named `Program7`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+6. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `Program7` class will be enclosed within these braces.
+
+7. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+8. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+9. `MessageBox.Show("Hello, World!");`
+   - This line calls the `Show` method of the `MessageBox` class, which is part of the System.Windows.Forms namespace. It displays a message box with the text "Hello, World!".
+   - The message box will have an OK button that the user can click to close it.
+
+10. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+11. `}`
+    - This curly brace indicates the end of the `Program7` class.
+
+12. `}`
+    - This curly brace indicates the end of the `MessageBoxExample` namespace.
+
+Summary:
+This simple C# program demonstrates how to create a Windows Forms application that displays a message box. When executed, it shows a message box with the text "Hello, World!" and an OK button. This example illustrates the use of the `MessageBox` class from the `System.Windows.Forms` namespace, which is commonly used in Windows applications to provide information or prompt the user for input.

@@ -1,0 +1,49 @@
+C# Program Explanation
+
+"Hello, World!" without namespace and string[] args
+
+This document explains a simple C# program that prints "Hello, World!" to the console.
+
+Code:
+
+using System;
+
+class Program1
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Program1`
+   - This line defines a new class named `Program1`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `Program1` class will be enclosed within these braces.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+
+5. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+6. `Console.WriteLine("Hello, World!");`
+   - This line of code calls the `WriteLine` method of the `Console` class, which is part of the System namespace. It outputs the string "Hello, World!" to the console.
+   - The `WriteLine` method automatically adds a new line after printing the message.
+
+7. `}`
+   - This curly brace indicates the end of the `Main` method.
+
+8. `}`
+   - This curly brace indicates the end of the `Program1` class.
+
+Summary:
+This simple C# program demonstrates the basic structure of a C# application. It includes a class definition and a `Main` method, which is the entry point of the program. When executed, it prints "Hello, World!" to the console, which is a common first program for beginners learning a new programming language.

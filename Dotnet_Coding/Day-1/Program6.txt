@@ -1,0 +1,69 @@
+C# Program Explanation
+
+"Hello, World!" with user input
+
+This document explains a simple C# program that prompts the user to enter their name and then prints that name to the console.
+
+Code:
+
+using System;
+
+namespace HelloWorldApp
+{
+    class Program6
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the name:");
+            string s1 = Console.ReadLine();
+            Console.Write(s1);
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `namespace HelloWorldApp`
+   - This line defines a namespace called `HelloWorldApp`. Namespaces are used to organize code and prevent naming conflicts. They allow you to group related classes and other types together.
+
+3. `{`
+   - This curly brace indicates the beginning of the namespace body. All the code that belongs to the `HelloWorldApp` namespace will be enclosed within these braces.
+
+4. `class Program6`
+   - This line defines a new class named `Program6`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+5. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `Program6` class will be enclosed within these braces.
+
+6. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+7. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+8. `Console.WriteLine("Enter the name:");`
+   - This line of code calls the `WriteLine` method of the `Console` class, which is part of the System namespace. It outputs the string "Enter the name:" to the console, prompting the user to input their name.
+
+9. `string s1 = Console.ReadLine();`
+   - This line declares a string variable `s1` and assigns it the value returned by the `ReadLine` method of the `Console` class. The `ReadLine` method waits for the user to input text and press Enter, capturing that input as a string.
+
+10. `Console.Write(s1);`
+    - This line calls the `Write` method of the `Console` class to output the value of `s1` to the console. Unlike `WriteLine`, the `Write` method does not add a new line after printing the message.
+
+11. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+12. `}`
+    - This curly brace indicates the end of the `Program6` class.
+
+13. `}`
+    - This curly brace indicates the end of the `HelloWorldApp` namespace.
+
+Summary:
+This simple C# program demonstrates how to take user input from the console and display it back to the user. It prompts the user to enter their name, reads the input using `Console.ReadLine()`, and then prints that name using `Console.Write()`. This program is a basic example of handling user input in C# and can be a stepping stone for more complex applications that require user interaction.

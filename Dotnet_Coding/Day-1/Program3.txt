@@ -1,0 +1,66 @@
+C# Program Explanation
+
+"Hello, World!" with namespace,string[] args and integer return type
+
+This document explains a simple C# program that prints "Hello, World!" to the console, using a namespace and an integer return type for the `Main` method.
+
+Code:
+
+using System;
+
+namespace HelloWorldApp
+{
+    class Program
+    {
+        static int Main(string[] args) // Change void to int
+        {
+            Console.WriteLine("Hello, World!");
+            return 0; // Return an integer value (0 indicates success)
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `namespace HelloWorldApp`
+   - This line defines a namespace called `HelloWorldApp`. Namespaces are used to organize code and prevent naming conflicts. They allow you to group related classes and other types together.
+
+3. `{`
+   - This curly brace indicates the beginning of the namespace body. All the code that belongs to the `HelloWorldApp` namespace will be enclosed within these braces.
+
+4. `class Program`
+   - This line defines a new class named `Program`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+5. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `Program` class will be enclosed within these braces.
+
+6. `static int Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `int` indicates that this method returns an integer value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed. This allows users to provide input to the program from the command line.
+
+7. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+8. `Console.WriteLine("Hello, World!");`
+   - This line of code calls the `WriteLine` method of the `Console` class, which is part of the System namespace. It outputs the string "Hello, World!" to the console.
+   - The `WriteLine` method automatically adds a new line after printing the message.
+
+9. `return 0;`
+   - This line returns the integer value `0` from the `Main` method. In C#, returning `0` typically indicates that the program has executed successfully.
+
+10. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+11. `}`
+    - This curly brace indicates the end of the `Program` class.
+
+12. `}`
+    - This curly brace indicates the end of the `HelloWorldApp` namespace.
+
+Summary:
+This simple C# program demonstrates the basic structure of a C# application that includes a namespace and an integer return type for the `Main` method. It defines a class and a `Main` method, which is the entry point of the program. When executed, it prints "Hello, World!" to the console, which is a common first program for beginners learning a new programming language. The use of an integer return type allows the program to indicate success or failure through the return value, with `0` typically signifying successful execution.

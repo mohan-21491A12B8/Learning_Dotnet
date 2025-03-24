@@ -1,0 +1,62 @@
+C# Program 
+
+"Hello, World!" with namespace and string[] args
+
+This document explains a simple C# program that prints "Hello, World!" to the console within a namespace.
+
+Code:
+
+using System;
+
+namespace HelloWorldApp
+{
+    class Program2
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `namespace HelloWorldApp`
+   - This line defines a namespace called `HelloWorldApp`. Namespaces are used to organize code and prevent naming conflicts. They allow you to group related classes and other types together.
+
+3. `{`
+   - This curly brace indicates the beginning of the namespace body. All the code that belongs to the `HelloWorldApp` namespace will be enclosed within these braces.
+
+4. `class Program2`
+   - This line defines a new class named `Program2`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+5. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `Program2` class will be enclosed within these braces.
+
+6. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed. This allows users to provide input to the program from the command line.
+
+7. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+8. `Console.WriteLine("Hello, World!");`
+   - This line of code calls the `WriteLine` method of the `Console` class, which is part of the System namespace. It outputs the string "Hello, World!" to the console.
+   - The `WriteLine` method automatically adds a new line after printing the message.
+
+9. `}`
+   - This curly brace indicates the end of the `Main` method.
+
+10. `}`
+    - This curly brace indicates the end of the `Program2` class.
+
+11. `}`
+    - This curly brace indicates the end of the `HelloWorldApp` namespace.
+
+Summary:
+This simple C# program demonstrates the basic structure of a C# application that includes a namespace. It defines a class and a `Main` method, which is the entry point of the program. When executed, it prints "Hello, World!" to the console, which is a common first program for beginners learning a new programming language. The use of a namespace helps organize the code and avoid naming conflicts with other classes or libraries.
