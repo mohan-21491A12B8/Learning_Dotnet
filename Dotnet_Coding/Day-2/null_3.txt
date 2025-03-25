@@ -1,0 +1,70 @@
+C# Program Explanation
+
+"Nullable Type with Null-Coalescing Operator and Output Methods"
+
+This document explains a simple C# program that demonstrates the use of a nullable type, the null-coalescing operator (`??`), and different methods of outputting results to the console.
+
+Code:
+
+using System;
+
+class null_3
+{
+    public static void Main(string[] args)
+    {
+        int? a = null; // Nullable integer
+        int c = 7;     // Regular integer
+        int b = 5;     // Regular integer
+        int result = a ?? c; // Use null-coalescing operator
+        Console.WriteLine("Result:" + result); // Output the result using concatenation
+        Console.WriteLine("Result:", result); // Incorrect usage, will not display the value
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class null_3`
+   - This line defines a new class named `null_3`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `null_3` class will be enclosed within these braces.
+
+4. `public static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `public` means that this method can be accessed from other classes.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+5. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+6. `int? a = null; // Nullable integer`
+   - This line declares a nullable integer variable `a` and initializes it to `null`. The `int?` syntax indicates that `a` can hold either an integer value or `null`.
+
+7. `int c = 7; // Regular integer`
+   - This line declares a regular integer variable `c` and initializes it to `7`.
+
+8. `int b = 5; // Regular integer`
+   - This line declares another regular integer variable `b` and initializes it to `5`.
+
+9. `int result = a ?? c; // Use null-coalescing operator`
+   - This line uses the null-coalescing operator (`??`) to assign the value of `result`. If `a` is not `null`, `result` will take the value of `a`; otherwise, it will take the value of `c`. Since `a` is `null`, `result` will be assigned the value of `c`, which is `7`.
+
+10. `Console.WriteLine("Result:" + result); // Output the result using concatenation`
+    - This line outputs the value of `result` to the console using string concatenation. The output will be: `Result:7`.
+
+11. `Console.WriteLine("Result:", result); // Incorrect usage, will not display the value`
+    - This line attempts to output the value of `result` using a comma. However, this is incorrect syntax for `Console.WriteLine`. The correct usage should be `Console.WriteLine("Result: " + result);` to concatenate the string with the value of `result`. As written, this line will not display the value of `result` correctly.
+
+12. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+13. `}`
+    - This curly brace indicates the end of the `null_3` class.
+
+Summary:
+This simple C# program demonstrates the use of nullable types and the null-coalescing operator. It shows how to declare a nullable variable using the `int?` syntax and how to use the `??` operator to provide a default value when the nullable variable is `null`. In this case, since `a` is `null`, the program assigns the value of `c` to `result`, which is then printed to the console. The program also illustrates the correct and incorrect ways to output values to

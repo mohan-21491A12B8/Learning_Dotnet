@@ -1,0 +1,54 @@
+1. Take a file and provide multiple classes and multiple main methods and print a statement in every method. Check in which order the print statements are printed.
+2. perform the operations on the 3 different variables 1. Normal 2. _underscore 3. @ and using these 3 variables perform arithmetic operations with methods and call the methods. 
+3. You are developing a simple application to manage a book store. Each book has an ID, a title, an author, a price, and the number of copies available in the store. You need to create a program that will display the details of a book and calculate the total value of the books in stock.
+Requirements:
+Create a class Book with the following properties:
+int BookID: The unique identifier for the book.
+string Title: The title of the book.
+string Author: The author of the book.
+decimal Price: The price of the book.
+int CopiesAvailable: The number of copies available in the store
+ Create a method DisplayDetails() in the Book class to display the book's details.
+Create  a method  CalculatetotalValue()  in the book class to calculate the total value of the books in stock.
+
+4. perform program on stack and heap memory
+5. take 2 instance variables to perform addition, static variable for subtraction and 1 instance and 1 method for multiplication and try to reassign the instance variable with other value and perform the division with the new value
+6. take the 2 instace and 2 static variables and take 1 display method and perform the addition and subtractions using above variales and take 1 more display2 method and try to reassign the instance variables and static variables and perform same operations
+7. take 1 static ,const,instance variable and try to call it in main method and perform any operation
+8. Write a program for the below requirements
+
+* calculate sum and product of the given number
+
+* if sum equals to product print it is a spy number and print the given number in reverse order
+
+* if sum and product not equal, print it is not a spy number.
+
+
+
+Note : use only while loop
+
+
+
+Sample Test Case : 1
+
+123
+sum of the given number is: 6
+product of the given number is: 6
+it is a spy number
+Given number in reverse order: 321
+Sample Test Case : 2
+
+456
+sum of the given number is: 15
+product of the given number is: 120
+it is not a spy number
+
+9. Rani needs to create a Java program that operates a printing machine to produce a pyramid-shaped pattern using alphabetic characters. This program should take a parameter 'n' to determine the number of rows in the pyramid and then navigate the printing machine accordingly to achieve the desired pyramid pattern.
+
+Sample Test Case:
+
+4
+    A 
+   A B 
+  A B C 
+ A B C D

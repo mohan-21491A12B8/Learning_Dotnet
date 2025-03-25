@@ -1,0 +1,59 @@
+C# Program Explanation
+
+"Hello World Example with String Interpolation"
+
+This document explains a simple C# program that demonstrates the use of string interpolation to print a message containing a name and a roll number.
+
+Code:
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {   
+        string name = "mohan"; // Declare and initialize a string variable for the name
+        int RollNo = 21; // Declare and initialize an integer variable for the roll number
+        Console.WriteLine($"my name is: {name} and my age is: {RollNo}"); // Output the message using string interpolation
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `public class HelloWorld`
+   - This line defines a new public class named `HelloWorld`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `HelloWorld` class will be enclosed within these braces.
+
+4. `public static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `public` means that this method can be accessed from other classes.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+5. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+6. `string name = "mohan"; // Declare and initialize a string variable for the name`
+   - This line declares a string variable named `name` and initializes it with the value `"mohan"`.
+
+7. `int RollNo = 21; // Declare and initialize an integer variable for the roll number`
+   - This line declares an integer variable named `RollNo` and initializes it with the value `21`.
+
+8. `Console.WriteLine($"my name is: {name} and my age is: {RollNo}");`
+   - This line outputs a formatted string to the console using string interpolation. The `$` symbol before the string allows for the inclusion of variable values directly within the string.
+   - The output will be: `my name is: mohan and my age is: 21`.
+
+9. `}`
+   - This curly brace indicates the end of the `Main` method.
+
+10. `}`
+    - This curly brace indicates the end of the `HelloWorld` class.
+
+Summary:
+This simple C# program demonstrates the use of string interpolation to create a formatted output message. It declares a string variable for the name and an integer variable for the roll number, then prints a message to the console that includes both values. When executed, the program will output `my name is: mohan and my age is: 21`. This example illustrates how to effectively use string interpolation for cleaner and more readable string formatting in C#.

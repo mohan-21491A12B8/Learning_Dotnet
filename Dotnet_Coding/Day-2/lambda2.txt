@@ -1,0 +1,55 @@
+C# Program Explanation
+
+"Lambda Expression for Greeting"
+
+This document explains a simple C# program that demonstrates the use of a lambda expression to greet a person by their name.
+
+Code:
+
+using System;
+
+public class Greeting
+{
+    public static void Main(string[] args)
+    {
+        Action<string> greet = name => Console.WriteLine($"Hello, {name}!"); // Lambda expression for greeting
+        greet("Alice"); // Call the lambda expression with the argument "Alice"
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `public class Greeting`
+   - This line defines a new public class named `Greeting`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `Greeting` class will be enclosed within these braces.
+
+4. `public static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `public` means that this method can be accessed from other classes.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+5. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+6. `Action<string> greet = name => Console.WriteLine($"Hello, {name}!");`
+   - This line declares a lambda expression named `greet` using the `Action<string>` delegate. The `Action` delegate represents a method that takes one parameter of type `string` and does not return a value.
+   - The lambda expression `name => Console.WriteLine($"Hello, {name}!")` defines the logic for the delegate, which prints a greeting message that includes the provided name.
+
+7. `greet("Alice"); // Call the lambda expression with the argument "Alice"`
+   - This line calls the `greet` lambda expression with the argument `"Alice"`. The lambda executes, printing the message `Hello, Alice!` to the console.
+
+8. `}`
+   - This curly brace indicates the end of the `Main` method.
+
+9. `}`
+   - This curly brace indicates the end of the `Greeting` class.
+
+Summary:
+This simple C# program demonstrates the use of a lambda expression with the `Action` delegate to create a greeting function. The program defines a lambda expression that takes a string parameter (the name) and prints a greeting message to the console. When executed, the program calls this lambda expression with the value `"Alice"`, resulting in the output `Hello, Alice!`. This example illustrates the power and simplicity of using lambda expressions for concise function definitions in C#.

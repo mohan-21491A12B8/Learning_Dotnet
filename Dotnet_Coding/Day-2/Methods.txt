@@ -1,0 +1,97 @@
+C# Program Explanation
+
+"Instance and Static Methods Example"
+
+This document explains a simple C# program that demonstrates the use of instance methods and static methods, along with instance and static variable access.
+
+Code:
+
+using System;
+
+namespace System
+{
+    class Methods
+    {
+        int a = 1, b = 2; // Instance variables
+        static int c = 3, d = 4; // Static variables
+
+        void add()
+        {
+            Console.WriteLine(a + b); // Access instance variables
+            Console.WriteLine(c + d); // Access static variables
+        }
+
+        static void display()
+        {
+            // Console.WriteLine(a + b); // This line is commented out because it cannot access instance variables
+            Console.WriteLine(c + d); // Access static variables
+        }
+        
+        static void Main(string[] args)
+        {
+            Console.WriteLine("testing instance and static methods");
+            Methods m = new Methods(); // Create an instance of Methods
+            m.add(); // Call the instance method
+            display(); // Call the static method
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `namespace System`
+   - This line defines a namespace called `System`. However, it is not recommended to create a namespace with the same name as an existing namespace in the .NET framework, as it can lead to confusion and conflicts.
+
+3. `class Methods`
+   - This line defines a new class named `Methods`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+4. `int a = 1, b = 2; // Instance variables`
+   - These are instance variables, which are specific to an instance of the class. Each object of the `Methods` class will have its own copy of `a` and `b`.
+
+5. `static int c = 3, d = 4; // Static variables`
+   - These are static variables, which belong to the class itself rather than any specific instance. There is only one copy of `c` and `d`, shared among all instances of the class.
+
+6. `void add()`
+   - This line defines an instance method named `add`. This method can access both instance and static variables.
+
+7. `Console.WriteLine(a + b); // Access instance variables`
+   - This line outputs the sum of the instance variables `a` and `b` to the console.
+
+8. `Console.WriteLine(c + d); // Access static variables`
+   - This line outputs the sum of the static variables `c` and `d` to the console.
+
+9. `static void display()`
+   - This line defines a static method named `display`. This method can only access static variables and cannot access instance variables directly.
+
+10. `Console.WriteLine(c + d); // Access static variables`
+    - This line outputs the sum of the static variables `c` and `d` to the console.
+
+11. `static void Main(string[] args)`
+    - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+12. `Console.WriteLine("testing instance and static methods");`
+    - This line outputs a message to the console indicating that the program is testing instance and static methods.
+
+13. `Methods m = new Methods(); // Create an instance of Methods`
+    - This line creates an instance of the `Methods` class, allowing access to its instance methods.
+
+14. `m.add(); // Call the instance method`
+    - This line calls the instance method `add` on the instance `m`, which outputs the sums of the instance and static variables.
+
+15. `display(); // Call the static method`
+    - This line calls the static method `display`, which outputs the sum of the static variables.
+
+16. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+17. `}`
+    - This curly brace indicates the end of the `Methods` class.
+
+18. `}`
+    - This curly brace indicates the end of the `System` namespace.
+
+Summary:
+This C# program demonstrates the use of instance methods and static methods, along with the access of instance and static variables. The instance method `add` can access both instance variables and static variables, while the static method `display` can only access static variables. The program outputs the results of these operations to the console, illustrating the differences between instance and static members in C#.

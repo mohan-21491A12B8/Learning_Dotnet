@@ -1,0 +1,67 @@
+C# Program Explanation
+
+"Local Method Example"
+
+This document explains a simple C# program that demonstrates the use of a local method defined within the `Main` method.
+
+Code:
+
+using System;
+
+class Localmethod
+{
+    public static void Main(string[] args)
+    {
+        void AddValue(int a, int b) {
+            Console.WriteLine(a + b); // Output the sum of a and b
+        }
+        
+        AddValue(20, 40); // Call the local method with arguments
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Localmethod`
+   - This line defines a new class named `Localmethod`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `Localmethod` class will be enclosed within these braces.
+
+4. `public static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `public` means that this method can be accessed from other classes.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+5. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+6. `void AddValue(int a, int b)`
+   - This line defines a local method named `AddValue` within the `Main` method. Local methods can only be called from within the method in which they are defined.
+   - The method takes two integer parameters, `a` and `b`.
+
+7. `{`
+   - This curly brace indicates the beginning of the `AddValue` method body. All the code that belongs to the `AddValue` method will be enclosed within these braces.
+
+8. `Console.WriteLine(a + b); // Output the sum of a and b`
+   - This line outputs the sum of the parameters `a` and `b` to the console.
+
+9. `}`
+   - This curly brace indicates the end of the `AddValue` method.
+
+10. `AddValue(20, 40); // Call the local method with arguments`
+    - This line calls the local method `AddValue`, passing `20` and `40` as arguments. The method will execute and print the sum, which is `60`, to the console.
+
+11. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+12. `}`
+    - This curly brace indicates the end of the `Localmethod` class.
+
+Summary:
+This simple C# program demonstrates the use of a local method defined within the `Main` method. The local method `AddValue` takes two integer parameters, calculates their sum, and prints the result to the console. This example illustrates how local methods can be used to encapsulate functionality within a specific method, making the code more organized and easier to read. When executed, the program will output `60`, which is the sum of `20` and `40`.

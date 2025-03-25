@@ -1,0 +1,79 @@
+C# Program Explanation
+
+"Call by Value Example"
+
+This document explains a simple C# program that demonstrates the concept of call by value, where a copy of the variable is passed to a method.
+
+Code:
+
+using System;
+
+class Call_by_value
+{
+    static void add(int a)
+    {
+        a = 10; // Change the value of the local copy
+        Console.WriteLine("Inside change value method: a = " + a); // Output the modified value
+    }
+
+    static void Main()
+    {
+        int x = 5; // Declare and initialize an integer variable
+        Console.WriteLine("Before calling the change value: x = " + x); // Output the value of x before method call
+        add(x); // Call the add method, passing x by value
+        Console.WriteLine("After calling the change value: x = " + x); // Output the value of x after method call
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Call_by_value`
+   - This line defines a new class named `Call_by_value`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `Call_by_value` class will be enclosed within these braces.
+
+4. `static void add(int a)`
+   - This line defines a static method named `add` that takes an integer parameter `a`. This method is intended to modify the value of `a`.
+
+5. `{`
+   - This curly brace indicates the beginning of the `add` method body. All the code that belongs to the `add` method will be enclosed within these braces.
+
+6. `a = 10; // Change the value of the local copy`
+   - This line assigns the value `10` to the parameter `a`. However, this change only affects the local copy of `a` within the `add` method.
+
+7. `Console.WriteLine("Inside change value method: a = " + a);`
+   - This line outputs the modified value of `a` to the console. The output will be: `Inside change value method: a = 10`.
+
+8. `}`
+   - This curly brace indicates the end of the `add` method.
+
+9. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+10. `{`
+    - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+11. `int x = 5; // Declare and initialize an integer variable`
+    - This line declares an integer variable `x` and initializes it with the value `5`.
+
+12. `Console.WriteLine("Before calling the change value: x = " + x);`
+    - This line outputs the value of `x` before the method call. The output will be: `Before calling the change value: x = 5`.
+
+13. `add(x); // Call the add method, passing x by value`
+    - This line calls the `add` method, passing `x` as an argument. Since C# uses call by value, a copy of `x` is passed to the method.
+
+14. `Console.WriteLine("After calling the change value: x = " + x);`
+    - This line outputs the value of `x` after the method call. Since the original variable `x` was not modified by the `add` method, the output will still be: `After calling the change value: x = 5`.
+
+15. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+16. `}`
+    - This curly brace indicates the end of the `Call_by_value` class.
+
+Summary:
+This simple C# program demonstrates the concept of call by value. When the `add` method is called with the variable `x`, a copy of `x` is passed to the method. Changes made to the parameter `a` within the method do not affect the original variable `x`. The program outputs the value of `x` before and after the method call, illustrating that the original value remains unchanged. When executed, the program will output:

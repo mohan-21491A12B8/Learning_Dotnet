@@ -1,0 +1,81 @@
+C# Program Explanation
+
+"Hello, World!" with multiple Main methods,as C# does not allow multiple entry points in a single class
+
+two `Main` methods in the same class will result in a compilation error,
+
+This document explains a testing the C# program that prints "Hello, World!" to the console, using a namespace and containing two `Main` methods.
+
+Code:
+
+using System;
+
+namespace HelloWorldApp
+{
+    class Program5
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    
+        static void Main()
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `namespace HelloWorldApp`
+   - This line defines a namespace called `HelloWorldApp`. Namespaces are used to organize code and prevent naming conflicts. They allow you to group related classes and other types together.
+
+3. `{`
+   - This curly brace indicates the beginning of the namespace body. All the code that belongs to the `HelloWorldApp` namespace will be enclosed within these braces.
+
+4. `class Program5`
+   - This line defines a new class named `Program5`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+5. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `Program5` class will be enclosed within these braces.
+
+6. `static void Main(string[] args)`
+   - This line defines the first `Main` method, which is the entry point of the program when executed with command-line arguments.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+7. `{`
+   - This curly brace indicates the beginning of the first `Main` method body. All the code that belongs to this `Main` method will be enclosed within these braces.
+
+8. `Console.WriteLine("Hello, World!");`
+   - This line of code calls the `WriteLine` method of the `Console` class, which is part of the System namespace. It outputs the string "Hello, World!" to the console.
+   - The `WriteLine` method automatically adds a new line after printing the message.
+
+9. `}`
+   - This curly brace indicates the end of the first `Main` method.
+
+10. `static void Main()`
+    - This line defines a second `Main` method, which is also an entry point of the program but does not accept any command-line arguments.
+
+11. `{`
+    - This curly brace indicates the beginning of the second `Main` method body. All the code that belongs to this `Main` method will be enclosed within these braces.
+
+12. `Console.WriteLine("Hello, World!");`
+    - This line of code calls the `WriteLine` method of the `Console` class again, outputting the string "Hello, World!" to the console.
+
+13. `}`
+    - This curly brace indicates the end of the second `Main` method.
+
+14. `}`
+    - This curly brace indicates the end of the `Program5` class.
+
+15. `}`
+    - This curly brace indicates the end of the `HelloWorldApp` namespace.
+
+Summary:
+This C# program demonstrates the structure of a C# application that includes a namespace and two `Main` methods. Both methods print "Hello, World!" to the console, but they differ in their signatures. The first `Main` method accepts command-line arguments, while the second does not. However, having two `Main` methods in the same class will result in a compilation error, as C# does not allow multiple entry points in a single class. To resolve this, only one `Main` method should be defined as the entry point of the program.

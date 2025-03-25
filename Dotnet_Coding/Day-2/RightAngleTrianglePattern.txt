@@ -1,0 +1,71 @@
+C# Program Explanation
+
+"Right Angle Triangle Pattern"
+
+This document explains a simple C# program that prints a right-angle triangle pattern using asterisks (`*`).
+
+Code:
+
+using System;
+
+public class RightAngleTriangle
+{
+    public static void Main(string[] args)
+    {
+        int height = 5; // You can change this value to increase or decrease the height of the triangle
+
+        for (int i = 1; i <= height; i++) // Outer loop for each row
+        {
+            for (int j = 1; j <= i; j++) // Inner loop for printing stars
+            {
+                Console.Write("* "); // Print a star followed by a space
+            }
+            Console.WriteLine(); // Move to the next line after each row
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `public class RightAngleTriangle`
+   - This line defines a new public class named `RightAngleTriangle`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `{`
+   - This curly brace indicates the beginning of the class body. All the code that belongs to the `RightAngleTriangle` class will be enclosed within these braces.
+
+4. `public static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `public` means that this method can be accessed from other classes.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+5. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+6. `int height = 5; // You can change this value to increase or decrease the height of the triangle`
+   - This line declares an integer variable named `height` and initializes it with the value `5`. This variable determines the number of rows in the triangle.
+
+7. `for (int i = 1; i <= height; i++) // Outer loop for each row`
+   - This outer loop iterates from `1` to `height`, controlling the number of rows in the triangle.
+
+8. `for (int j = 1; j <= i; j++) // Inner loop for printing stars`
+   - This inner loop iterates from `1` to `i`, controlling the number of stars printed in each row. The number of stars increases with each row.
+
+9. `Console.Write("* "); // Print a star followed by a space`
+   - This line prints a star followed by a space for each iteration of the inner loop.
+
+10. `Console.WriteLine(); // Move to the next line after each row`
+    - This line moves the cursor to the next line after printing all the stars for the current row.
+
+11. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+12. `}`
+    - This curly brace indicates the end of the `RightAngleTriangle` class.
+
+Summary:
+This simple C# program demonstrates how to print a right-angle triangle pattern using nested loops. The outer loop controls the number of rows, while the inner loop controls the number of stars printed in each row. The program outputs a triangle made of asterisks (`*`). When executed, the program will output:

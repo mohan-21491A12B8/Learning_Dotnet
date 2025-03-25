@@ -1,0 +1,104 @@
+2. perform the operations on the 3 different variables 1. Normal 2. _underscore 3. @ and using these 3 variables perform arithmetic operations with methods and call the methods.
+
+C# Program Explanation
+
+"Variable Operations Example"
+
+This document explains a C# program that demonstrates the use of three different variable naming conventions (normal, underscore, and @ symbol) and performs arithmetic operations on them.
+
+Code:
+
+using System;
+
+public class VariableOperations
+{
+    // Declare three variables
+    int normalVariable = 10;       // Normal variable
+    int _underscoreVariable = 20;  // Variable with underscore
+    int @atSymbolVariable = 30;    // Variable with @ symbol
+
+    // Method to add the three variables
+    public int Add()
+    {
+        return normalVariable + _underscoreVariable + @atSymbolVariable; // Return the sum
+    }
+
+    // Method to subtract the three variables
+    public int Subtract()
+    {
+        return normalVariable - _underscoreVariable - @atSymbolVariable; // Return the difference
+    }
+
+    // Method to multiply the three variables
+    public int Multiply()
+    {
+        return normalVariable * _underscoreVariable * @atSymbolVariable; // Return the product
+    }
+
+    // Method to divide the three variables
+    public double Divide()
+    {
+        // To avoid division by zero, check if the denominator is not zero
+        if (_underscoreVariable != 0 && @atSymbolVariable != 0)
+        {
+            return (double)normalVariable / _underscoreVariable / @atSymbolVariable; // Return the quotient
+        }
+        else
+        {
+            Console.WriteLine("Division by zero is not allowed."); // Handle division by zero
+            return 0;
+        }
+    }
+
+    public static void Main(string[] args)
+    {
+        VariableOperations operations = new VariableOperations(); // Create an instance of the class
+
+        // Call the methods and display the results
+        Console.WriteLine("Addition: " + operations.Add());
+        Console.WriteLine("Subtraction: " + operations.Subtract());
+        Console.WriteLine("Multiplication: " + operations.Multiply());
+        Console.WriteLine("Division: " + operations.Divide());
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `public class VariableOperations`
+   - This line defines a new public class named `VariableOperations`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `int normalVariable = 10;`
+   - This line declares a normal variable named `normalVariable` and initializes it with the value `10`.
+
+4. `int _underscoreVariable = 20;`
+   - This line declares a variable with an underscore named `_underscoreVariable` and initializes it with the value `20`.
+
+5. `int @atSymbolVariable = 30;`
+   - This line declares a variable using the `@` symbol named `@atSymbolVariable` and initializes it with the value `30`.
+
+6. `public int Add()`
+   - This method adds the three variables and returns the result.
+
+7. `public int Subtract()`
+   - This method subtracts the three variables and returns the result.
+
+8. `public int Multiply()`
+   - This method multiplies the three variables and returns the result.
+
+9. `public double Divide()`
+   - This method divides the three variables. It checks for division by zero to avoid runtime errors.
+
+10. `public static void Main(string[] args)`
+    - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+11. `VariableOperations operations = new VariableOperations();`
+    - This line creates an instance of the `VariableOperations` class, allowing access to its methods.
+
+12. `Console.WriteLine(...)`
+    - These lines call the arithmetic methods and print the results to the console.
+
+Summary:
+This C# program demonstrates the use of three different variable naming conventions and performs arithmetic operations on them. The program defines a normal variable, a variable with an underscore, and a variable using the `@` symbol. It includes methods for addition, subtraction, multiplication, and division of these variables. When executed, the program will output the results of these operations, showcasing how to work with different variable names in C#.
