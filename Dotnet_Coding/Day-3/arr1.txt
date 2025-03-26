@@ -1,0 +1,74 @@
+C# Program Explanation
+
+"Jagged Array Example"
+
+This document explains a C# program that demonstrates the use of a jagged array (an array of arrays) and prints its elements to the console.
+
+Code:
+
+using System;
+
+class Arr1
+{
+    static void Main(string[] args)
+    {
+        int[][] a1 = new int[3][]; // Declare a jagged array with 3 rows
+        a1[0] = new int[] { 2, 53, 6, 4, 6 }; // Initialize the first row
+        a1[1] = new int[] { 1, 2, 3, 4, 5, 6 }; // Initialize the second row
+        a1[2] = new int[] { 6, 2 }; // Initialize the third row
+
+        // Loop through the jagged array and print its elements
+        for (int i = 0; i < a1.Length; i++)
+        {
+            for (int j = 0; j < a1[i].Length; j++)
+            {
+                Console.Write(a1[i][j] + " "); // Print each element followed by a space
+            }
+            Console.WriteLine(); // Move to the next line after each row
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Arr1`
+   - This line defines a new class named `Arr1`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+4. `int[][] a1 = new int[3][];`
+   - This line declares a jagged array named `a1` with 3 rows. Each row can have a different number of elements.
+
+5. `a1[0] = new int[] { 2, 53, 6, 4, 6 };`
+   - This line initializes the first row of the jagged array with 5 elements: `2, 53, 6, 4, 6`.
+
+6. `a1[1] = new int[] { 1, 2, 3, 4, 5, 6 };`
+   - This line initializes the second row of the jagged array with 6 elements: `1, 2, 3, 4, 5, 6`.
+
+7. `a1[2] = new int[] { 6, 2 };`
+   - This line initializes the third row of the jagged array with 2 elements: `6, 2`.
+
+8. `for (int i = 0; i < a1.Length; i++)`
+   - This outer loop iterates through each row of the jagged array.
+
+9. `for (int j = 0; j < a1[i].Length; j++)`
+   - This inner loop iterates through each element of the current row.
+
+10. `Console.Write(a1[i][j] + " ");`
+    - This line prints each element of the jagged array followed by a space.
+
+11. `Console.WriteLine();`
+    - This line moves the cursor to the next line after printing all elements of the current row.
+
+12. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+13. `}`
+    - This curly brace indicates the end of the `Arr1` class.
+
+Summary:
+This C# program demonstrates the use of a jagged array, which is an array of arrays where each row can have a different number of elements. The program initializes a jagged array with three rows, each containing a different number of integers. It then uses nested loops to iterate through the jagged array and print its elements to the console. 

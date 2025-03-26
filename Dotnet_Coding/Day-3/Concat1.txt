@@ -1,0 +1,76 @@
+C# Program Explanation
+
+"User  Name Input Example"
+
+This document explains a C# program that prompts the user to enter their first, middle, and last names, and then greets them with the full name.
+
+Code:
+
+using System;
+
+namespace System
+{
+    class System
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter your First Name:"); // Prompt for first name
+            string Fname = Console.ReadLine(); // Read first name input
+            Console.WriteLine("Enter your Middle Name:"); // Prompt for middle name
+            string Mname = Console.ReadLine(); // Read middle name input
+            Console.WriteLine("Enter your Last Name:"); // Prompt for last name
+            string Lname = Console.ReadLine(); // Read last name input
+            Console.WriteLine("hello " + Fname + " " + Mname + " " + Lname); // Greet the user with their full name
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `namespace System`
+   - This line defines a namespace called `System`. However, it is not recommended to create a namespace with the same name as an existing namespace in the .NET framework, as it can lead to confusion and conflicts.
+
+3. `class System`
+   - This line defines a new class named `System`. Again, using the name `System` for a class can lead to confusion with the existing System namespace.
+
+4. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+5. `Console.WriteLine("Enter your First Name:");`
+   - This line outputs a prompt to the console asking the user to enter their first name.
+
+6. `string Fname = Console.ReadLine();`
+   - This line reads the user input from the console and stores it in the variable `Fname`.
+
+7. `Console.WriteLine("Enter your Middle Name:");`
+   - This line outputs a prompt to the console asking the user to enter their middle name.
+
+8. `string Mname = Console.ReadLine();`
+   - This line reads the user input from the console and stores it in the variable `Mname`.
+
+9. `Console.WriteLine("Enter your Last Name:");`
+   - This line outputs a prompt to the console asking the user to enter their last name.
+
+10. `string Lname = Console.ReadLine();`
+    - This line reads the user input from the console and stores it in the variable `Lname`.
+
+11. `Console.WriteLine("hello " + Fname + " " + Mname + " " + Lname);`
+    - This line concatenates the first, middle, and last names with spaces in between and outputs a greeting message to the console.
+
+12. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+13. `}`
+    - This curly brace indicates the end of the `System` class.
+
+14. `}`
+    - This curly brace indicates the end of the `System` namespace.
+
+Summary:
+This C# program prompts the user to enter their first, middle, and last names and then greets them with their full name. The program uses the `Console.ReadLine()` method to read user input and the `Console.WriteLine()` method to display messages. However, it is important to note that using the name `System` for both the namespace and the class can lead to confusion and is not a recommended practice. When executed, the program will output a greeting in the format: `hello FirstName MiddleName LastName`.

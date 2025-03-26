@@ -1,0 +1,77 @@
+C# Program Explanation
+
+"String Concatenation Example"
+
+This document explains a C# program that demonstrates the use of string concatenation using the `+` operator and the `string.Concat` method.
+
+Code:
+
+using System;
+
+namespace concat2
+{
+    class Concat2
+    {
+        static void Main(string[] args)
+        {
+            string s1 = "good"; // Declare and initialize a string variable
+            string s2 = "morning"; // Declare and initialize another string variable
+            int s3 = 100; // Declare and initialize an integer variable
+
+            Console.WriteLine(s1 + s2); // Concatenate two strings using the + operator
+            Console.WriteLine(string.Concat(s1, s3)); // Concatenate a string and an integer using string.Concat
+            Console.WriteLine(string.Concat(100, 100)); // Concatenate two integers using string.Concat
+            Console.WriteLine(s1 + s2 + s3); // Concatenate a string, another string, and an integer using the + operator
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `namespace concat2`
+   - This line defines a namespace called `concat2`. Namespaces are used to organize code and prevent naming conflicts. They allow you to group related classes and other types together.
+
+3. `class Concat2`
+   - This line defines a new class named `Concat2`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+4. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+   - `string[] args` is an array of strings that can hold command-line arguments passed to the program when it is executed.
+
+5. `string s1 = "good";`
+   - This line declares a string variable named `s1` and initializes it with the value `"good"`.
+
+6. `string s2 = "morning";`
+   - This line declares another string variable named `s2` and initializes it with the value `"morning"`.
+
+7. `int s3 = 100;`
+   - This line declares an integer variable named `s3` and initializes it with the value `100`.
+
+8. `Console.WriteLine(s1 + s2);`
+   - This line concatenates the two strings `s1` and `s2` using the `+` operator and outputs the result to the console.
+
+9. `Console.WriteLine(string.Concat(s1, s3));`
+   - This line concatenates the string `s1` and the integer `s3` using the `string.Concat` method and outputs the result to the console.
+
+10. `Console.WriteLine(string.Concat(100, 100));`
+    - This line concatenates two integers using the `string.Concat` method and outputs the result to the console.
+
+11. `Console.WriteLine(s1 + s2 + s3);`
+    - This line concatenates the string `s1`, the string `s2`, and the integer `s3` using the `+` operator and outputs the result to the console.
+
+12. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+13. `}`
+    - This curly brace indicates the end of the `Concat2` class.
+
+14. `}`
+    - This curly brace indicates the end of the `concat2` namespace.
+
+Summary:
+This C# program demonstrates the use of string concatenation using the `+` operator and the `string.Concat` method. The program concatenates strings and integers in different ways and outputs the results to the console.

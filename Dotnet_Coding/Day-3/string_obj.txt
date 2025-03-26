@@ -1,0 +1,48 @@
+C# Program Explanation
+
+"Object to String Conversion Example"
+
+This document explains a C# program that demonstrates how to store a string in an object and convert it back to a string using the `ToString` method.
+
+Code:
+
+using System;
+
+class String_obj
+{
+    static void Main(string[] args)
+    {
+        object s1 = "hi this is mohan"; // Store a string in an object
+        string s2 = s1.ToString(); // Convert the object back to a string using ToString
+        Console.WriteLine(s2); // Output the string
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class String_obj`
+   - This line defines a new class named `String_obj`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+4. `object s1 = "hi this is mohan";`
+   - This line declares an object variable named `s1` and initializes it with a string value. In C#, an object can hold any data type, including strings.
+
+5. `string s2 = s1.ToString();`
+   - This line converts the object `s1` back to a string using the `ToString` method. The `ToString` method is defined in the `Object` class and is overridden by the `String` class to return the string representation of the object.
+
+6. `Console.WriteLine(s2);`
+   - This line outputs the string stored in `s2` to the console.
+
+7. `}`
+   - This curly brace indicates the end of the `Main` method.
+
+8. `}`
+   - This curly brace indicates the end of the `String_obj` class.
+
+Summary:
+This C# program demonstrates how to store a string in an object and convert it back to a string using the `ToString` method. The program initializes an object with a string value and then converts it back to a string for output. 

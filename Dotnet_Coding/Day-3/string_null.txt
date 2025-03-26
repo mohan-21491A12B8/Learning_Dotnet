@@ -1,0 +1,45 @@
+C# Program Explanation
+
+"String Null or White Space Check Example"
+
+This document explains a C# program that checks if a string is null or consists only of white-space characters using the `string.IsNullOrWhiteSpace` method.
+
+Code:
+
+using System;
+
+class String_null
+{
+    static void Main(string[] args)
+    {
+        string s1 = " "; // Initialize string s1 with a space character
+        Console.WriteLine(string.IsNullOrWhiteSpace(s1)); // Check if s1 is null or white space
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class String_null`
+   - This line defines a new class named `String_null`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+4. `string s1 = " ";`
+   - This line declares a string variable named `s1` and initializes it with a single space character. It is important to note that this string is not null, but it does consist only of white-space.
+
+5. `Console.WriteLine(string.IsNullOrWhiteSpace(s1));`
+   - This line calls the `IsNullOrWhiteSpace` method from the `string` class, passing `s1` as an argument. This method checks whether the string is either `null`, an empty string (`""`), or consists only of white-space characters.
+   - Since `s1` contains a space character, `IsNullOrWhiteSpace(s1)` will return `false`, and the output will be `False`.
+
+6. `}`
+   - This curly brace indicates the end of the `Main` method.
+
+7. `}`
+   - This curly brace indicates the end of the `String_null` class.
+
+Summary:
+This C# program demonstrates how to check if a string is null or consists only of white-space characters using the `string.IsNullOrWhiteSpace` method. The program initializes a string with a space character and checks its status. When executed, the program will output `False`, indicating that the string is not null and contains a space character. This method is useful for validating user input and ensuring that strings contain meaningful content.

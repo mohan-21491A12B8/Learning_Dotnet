@@ -1,0 +1,62 @@
+C# Program Explanation
+
+"MyMethod Example with Named Parameters"
+
+This document explains a C# program that demonstrates the use of a method with named parameters to print the name of the youngest child.
+
+Code:
+
+using System;
+
+class MyMethod1
+{
+    static void MyMethod(string child1, string child2, string child3)
+    {
+        Console.WriteLine("The youngest child is: " + child3); // Output the name of the youngest child
+    }
+
+    static void Main(string[] args)
+    {
+        MyMethod(child1: "John", child2: "Mary", child3: "David"); // Call MyMethod with named parameters
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class MyMethod1`
+   - This line defines a new class named `MyMethod1`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `static void MyMethod(string child1, string child2, string child3)`
+   - This line defines a static method named `MyMethod` that takes three string parameters: `child1`, `child2`, and `child3`.
+   - `static` means that this method belongs to the class itself rather than an instance of the class.
+   - `void` indicates that this method does not return any value.
+
+4. `{`
+   - This curly brace indicates the beginning of the `MyMethod` body. All the code that belongs to this method will be enclosed within these braces.
+
+5. `Console.WriteLine("The youngest child is: " + child3);`
+   - This line outputs the name of the youngest child (passed as `child3`) to the console.
+
+6. `}`
+   - This curly brace indicates the end of the `MyMethod`.
+
+7. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+8. `{`
+   - This curly brace indicates the beginning of the `Main` method body. All the code that belongs to the `Main` method will be enclosed within these braces.
+
+9. `MyMethod(child1: "John", child2: "Mary", child3: "David");`
+   - This line calls the `MyMethod` with named parameters. The names of the parameters are specified, allowing the arguments to be passed in any order.
+
+10. `}`
+    - This curly brace indicates the end of the `Main` method.
+
+11. `}`
+    - This curly brace indicates the end of the `MyMethod1` class.
+
+Summary:
+This C# program demonstrates the use of a method with named parameters. The `MyMethod` method takes three string parameters representing the names of children and prints the name of the youngest child. The program calls this method from the `Main` method, using named parameters to specify the arguments. 
