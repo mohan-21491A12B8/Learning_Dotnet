@@ -1,0 +1,51 @@
+C# Program Explanation
+
+"Default Parameter Example"
+
+This document explains a C# program that demonstrates the use of a method with a default parameter value.
+
+Code:
+
+using System;
+
+class Default
+{
+    static void print(string name = "welcome") // Method with a default parameter
+    {
+        Console.WriteLine(name); // Print the name to the console
+    }
+
+    public static void Main(string[] args)
+    {
+        print("mohan"); // Call print method with an argument
+        print();        // Call print method without an argument, using the default value
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Default`
+   - This line defines a new class named `Default`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `static void print(string name = "welcome")`
+   - This line defines a static method named `print` that takes a string parameter `name`. The parameter has a default value of `"welcome"`. If no argument is provided when calling the method, this default value will be used.
+
+4. `Console.WriteLine(name);`
+   - This line prints the value of the `name` parameter to the console.
+
+5. `public static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+6. `print("mohan");`
+   - This line calls the `print` method with the argument `"mohan"`. The output will be `mohan`.
+
+7. `print();`
+   - This line calls the `print` method without any arguments. Since no argument is provided, the default value `"welcome"` is used. The output will be `welcome`.
+
+Summary:
+This C# program demonstrates the use of a method with a default parameter value. The `print` method can be called with or without an argument. If called without an argument, it uses the default value of `"welcome"`. When executed, the program will output:
+
+The results of the two calls to the `print` method, illustrating how default parameters work in C#.

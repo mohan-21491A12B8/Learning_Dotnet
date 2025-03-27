@@ -1,0 +1,55 @@
+C# Program Explanation
+
+"Constructor Example"
+
+This document explains a C# program that demonstrates the use of a constructor to initialize an object and print messages to the console.
+
+Code:
+
+using System;
+
+class Cls1
+{
+    public Cls1() // Constructor
+    {
+        Console.WriteLine("Hello");   // Print "Hello" to the console
+        Console.WriteLine("Good");     // Print "Good" to the console
+        Console.WriteLine("Morning");  // Print "Morning" to the console
+    }
+
+    public static void Main(string[] args)
+    {
+        Cls1 obj = new Cls1(); // Create an instance of Cls1, which calls the constructor
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Cls1`
+   - This line defines a new class named `Cls1`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `public Cls1()`
+   - This line defines a constructor for the `Cls1` class. A constructor is a special method that is called when an instance of the class is created. It is used to initialize the object's properties or perform any setup required.
+
+4. `Console.WriteLine("Hello");`
+   - This line prints "Hello" to the console when the constructor is called.
+
+5. `Console.WriteLine("Good");`
+   - This line prints "Good" to the console when the constructor is called.
+
+6. `Console.WriteLine("Morning");`
+   - This line prints "Morning" to the console when the constructor is called.
+
+7. `public static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+8. `Cls1 obj = new Cls1();`
+   - This line creates a new instance of the `Cls1` class. When the object `obj` is created, the constructor is automatically called, and the messages "Hello", "Good", and "Morning" are printed to the console.
+
+Summary:
+This C# program demonstrates the use of a constructor in a class. The `Cls1` class has a constructor that prints three messages to the console when an instance of the class is created. The `Main` method creates an instance of `Cls1`, which triggers the constructor and outputs the messages. When executed, the program will output:
+
+The result of the constructor being called upon the creation of the `Cls1` object.

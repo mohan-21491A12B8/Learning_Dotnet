@@ -1,0 +1,109 @@
+C# Program Explanation
+
+"Bike Class Example"
+
+This document explains a C# program that defines a `Bike` class with properties and a method to display the bike's details.
+
+Code:
+
+using System;
+
+namespace Bikes
+{
+    class Bike
+    {
+        string name;   // Field to store the name of the bike
+        string color;  // Field to store the color of the bike
+        int milage;    // Field to store the mileage of the bike
+        double cost;   // Field to store the cost of the bike
+
+        void display()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Choose the Bike:");
+            Console.WriteLine("Bike Name: " + name);   // Display the bike's name
+            Console.WriteLine("Bike Color: " + color);  // Display the bike's color
+            Console.WriteLine("Bike Milage: " + milage); // Display the bike's mileage
+            Console.WriteLine("Bike Cost: " + cost);    // Display the bike's cost
+        }
+
+        static void Main(string[] args)
+        {
+            Bike bike = new Bike(); // Create an instance of the Bike class
+            bike.name = "yamaha";   // Set the name of the bike
+            bike.color = "Red";     // Set the color of the bike
+            bike.milage = 1000;     // Set the mileage of the bike
+            bike.cost = 1000.0;     // Set the cost of the bike
+            bike.display();         // Call the display method to show bike details
+
+            Bike duke = new Bike(); // Create another instance of the Bike class
+            duke.name = "duke";     // Set the name of the bike
+            duke.color = "blue";    // Set the color of the bike
+            duke.milage = 1000;     // Set the mileage of the bike
+            duke.cost = 1000.0;     // Set the cost of the bike
+            duke.display();         // Call the display method to show bike details
+
+            Bike pulsor = new Bike(); // Create another instance of the Bike class
+            pulsor.name = "pulsor";   // Set the name of the bike
+            pulsor.color = "black";    // Set the color of the bike
+            pulsor.milage = 1000;     // Set the mileage of the bike
+            pulsor.cost = 1000.0;     // Set the cost of the bike
+            pulsor.display();         // Call the display method to show bike details
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `namespace Bikes`
+   - This line defines a namespace called `Bikes`. Namespaces are used to organize code and prevent naming conflicts.
+
+3. `class Bike`
+   - This line defines a new class named `Bike`. In C#, classes are blueprints for creating objects and can contain fields, methods, properties, and other members.
+
+4. `string name;`
+   - This line declares a field to store the name of the bike.
+
+5. `string color;`
+   - This line declares a field to store the color of the bike.
+
+6. `int milage;`
+   - This line declares a field to store the mileage of the bike.
+
+7. `double cost;`
+   - This line declares a field to store the cost of the bike.
+
+8. `void display()`
+   - This line defines a method named `display` that outputs the bike's details to the console.
+
+9. `Console.WriteLine(...)`
+   - These lines within the `display` method print the bike's name, color, mileage, and cost to the console.
+
+10. `static void Main(string[] args)`
+    - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+11. `Bike bike = new Bike();`
+    - This line creates a new instance of the `Bike` class.
+
+12. `bike.name = "yamaha";`
+    - This line sets the name of the bike instance to "yamaha".
+
+13. `bike.color = "Red";`
+    - This line sets the color of the bike instance to "Red".
+
+14. `bike.milage = 1000;`
+    - This line sets the mileage of the bike instance to 1000.
+
+15. `bike.cost = 1000.0;`
+    - This line sets the cost of the bike instance to 1000.0.
+
+16. `bike.display();`
+    - This line calls the `display` method to print the details of the bike instance.
+
+17. The same steps are repeated for the `duke` and `pulsor` bike instances, creating new instances of the `Bike` class and setting their properties.
+
+Summary:
+This C# program defines a `Bike` class with fields for the bike's name, color, mileage, and cost. It includes a method to display the bike's details. The `Main` method creates multiple instances of the `Bike` class, sets their properties, and calls the display method to show the details of each bike. When executed, the program will output the details of each bike instance to the console.

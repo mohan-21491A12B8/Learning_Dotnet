@@ -1,5 +1,4 @@
-### Updated README.md
-Below is the updated `README.md` that includes instructions for compiling and running your C# program using `csc`,command prompt, and the Visual Studio terminal.
+Instructions for compiling and running your C# program using `csc`,command prompt, and the Visual Studio terminal.
 
 ```markdown
 # Learning Dotnet
