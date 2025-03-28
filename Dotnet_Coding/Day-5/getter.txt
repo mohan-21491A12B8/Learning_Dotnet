@@ -1,0 +1,106 @@
+C# Program Explanation
+
+"Encapsulation Example"
+
+This document explains a C# program that demonstrates the concept of encapsulation using properties to manage access to private fields.
+
+Code:
+
+using System;
+
+class Test30 // Example of encapsulation
+{
+    private string name; // Private field to store the name
+    private int marks; // Private field to store the marks
+
+    // Property for Name
+    public string Name
+    {
+        get
+        {
+            return name; // Getter for the name property
+        }
+        set
+        {
+            name = value; // Setter for the name property
+        }
+    }
+
+    // Property for Marks
+    public int Marks
+    {
+        get
+        {
+            return marks; // Getter for the marks property
+        }
+        set
+        {
+            marks = value; // Setter for the marks property
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        Test30 t1 = new Test30(); // Create an instance of Test30
+        t1.Name = "mohan"; // Set the name using the property
+        t1.Marks = 90; // Set the marks using the property
+
+        Console.WriteLine("Name: " + t1.Name); // Get the name using the property
+        Console.WriteLine("Marks: " + t1.Marks); // Get the marks using the property
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Test30`
+   - This line defines a new class named `Test30`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `private string name;`
+   - This line declares a private field to store the name of the student.
+
+4. `private int marks;`
+   - This line declares a private field to store the marks of the student.
+
+5. `public string Name`
+   - This line defines a public property named `Name` that provides access to the private `name` field.
+
+6. `get`
+   - This line defines the getter for the `Name` property, which returns the value of the `name` field.
+
+7. `set`
+   - This line defines the setter for the `Name` property, which assigns a value to the `name` field.
+
+8. `public int Marks`
+   - This line defines a public property named `Marks` that provides access to the private `marks` field.
+
+9. `get`
+   - This line defines the getter for the `Marks` property, which returns the value of the `marks` field.
+
+10. `set`
+    - This line defines the setter for the `Marks` property, which assigns a value to the `marks` field.
+
+11. `static void Main(string[] args)`
+    - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+12. `Test30 t1 = new Test30();`
+    - This line creates a new instance of the `Test30` class.
+
+13. `t1.Name = "mohan";`
+    - This line sets the `Name` property of the `t1` object to "mohan" using the setter.
+
+14. `t1.Marks = 90;`
+    - This line sets the `Marks` property of the `t1` object to 90 using the setter.
+
+15. `Console.WriteLine("Name: " + t1.Name);`
+    - This line retrieves the value of the `Name` property using the getter and prints it to the console.
+
+16. `Console.WriteLine("Marks: " + t1.Marks);`
+    - This line retrieves the value of the `Marks` property using the getter and prints it to the console.
+
+Summary:
+This C# program demonstrates the concept of encapsulation by using properties to manage access to private fields. The `Test30` class has private fields for `name` and `marks`, and public properties to get and set these values. The `Main` method creates an instance of `Test30`, sets the properties, and prints the values to the console. When executed, the program will output:
+
+The name and marks of the student as set in the program.

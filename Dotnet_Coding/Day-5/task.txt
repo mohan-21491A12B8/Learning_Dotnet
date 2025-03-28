@@ -1,0 +1,19 @@
+1 this keyword in static
+copied constructor
+allows two constructors(over loading)
+
+
+
+1)write a program with class,instance,static,abstract
+
+2) does we create object to a abstract class 
+
+3)one anstract class one abstract method,multiple classes acces that and create object in main method 
+
+4)2 abstract classes implement in two normal classes (one anstarct class has two anstarct methoda,and other has one abstarct and aone static method)
+
+5)abstract ,static method in a class ,extend it to a static class
+
+6)conditional statements,abstract method--marks is abstarct,use thgat marks and find the percentage
+
+7)one abstarct,static,instance variables and same methods,use a normal class to implement to all these

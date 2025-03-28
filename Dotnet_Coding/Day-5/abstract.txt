@@ -1,0 +1,73 @@
+C# Program Explanation
+
+"Abstract Class and Method Example"
+
+This document explains a C# program that demonstrates the use of an abstract class and its derived class implementing an abstract method.
+
+Code:
+
+using System;
+
+abstract class Mohan
+{
+    public abstract void Display(); // Abstract method declaration
+}
+
+class Test37 : Mohan
+{
+    public override void Display() // Implementation of the abstract method
+    {
+        Console.WriteLine("hai"); // Output "hai" to the console
+    }
+
+    public void Add() // Regular method
+    {
+        Console.WriteLine("hello"); // Output "hello" to the console
+    }
+
+    static void Main(string[] args)
+    {
+        Test37 t = new Test37(); // Create an instance of Test37
+        t.Add(); // Call the Add method
+        t.Display(); // Call the Display method
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `abstract class Mohan`
+   - This line defines an abstract class named `Mohan`. Abstract classes cannot be instantiated directly and are intended to be base classes for other classes.
+
+3. `public abstract void Display();`
+   - This line declares an abstract method named `Display`. Abstract methods do not have a body and must be implemented by any non-abstract derived class.
+
+4. `class Test37 : Mohan`
+   - This line defines a class named `Test37` that inherits from the abstract class `Mohan`. This means `Test37` must implement all abstract methods defined in `Mohan`.
+
+5. `public override void Display()`
+   - This line provides the implementation of the `Display` method declared in the `Mohan` class. The `override` keyword indicates that this method is overriding a base class method.
+
+6. `Console.WriteLine("hai");`
+   - This line outputs "hai" to the console when the `Display` method is called.
+
+7. `public void Add()`
+   - This line defines a regular method named `Add` that outputs "hello" to the console.
+
+8. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+9. `Test37 t = new Test37();`
+   - This line creates an instance of the `Test37` class.
+
+10. `t.Add();`
+    - This line calls the `Add` method on the `t` object, which outputs "hello" to the console.
+
+11. `t.Display();`
+    - This line calls the `Display` method on the `t` object, which outputs "hai" to the console.
+
+Summary:
+This C# program demonstrates the use of an abstract class and its derived class implementing an abstract method. The `Mohan` class is an abstract class that declares an abstract method `Display`. The `Test37` class inherits from `Mohan` and provides an implementation for the `Display` method. The `Main` method creates an instance of `Test37`, calls the `Add` method, and then calls the `Display` method. 
+When executed, the program will output:The results of calling the `Add` and `Display` methods.

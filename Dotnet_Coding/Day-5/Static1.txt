@@ -1,0 +1,64 @@
+C# Program Explanation
+
+"Static Constructor Example"
+
+This document explains a C# program that demonstrates the use of a static class and a static constructor.
+
+Code:
+
+using System;
+
+static class Test32
+{
+    public static int a = 23; // Static variable a
+    public static int b = 786; // Static variable b
+
+    // Static constructor
+    static Test32()
+    {
+        a = 89; // Initialize a to 89
+        b = 786; // b remains 786
+        Console.WriteLine(a + " " + b); // Output the values of a and b
+    }
+
+    static void Main() // Entry point of the program
+    {
+        // No code here, but the static constructor will be called when the class is accessed
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `static class Test32`
+   - This line defines a static class named `Test32`. A static class cannot be instantiated and can only contain static members.
+
+3. `public static int a = 23;`
+   - This line declares a static variable `a` and initializes it with the value 23.
+
+4. `public static int b = 786;`
+   - This line declares a static variable `b` and initializes it with the value 786.
+
+5. `static Test32()`
+   - This line defines a static constructor for the `Test32` class. A static constructor is called automatically before any static members are accessed or any static methods are called.
+
+6. `a = 89;`
+   - This line sets the value of `a` to 89 within the static constructor.
+
+7. `b = 786;`
+   - This line keeps the value of `b` as 786.
+
+8. `Console.WriteLine(a + " " + b);`
+   - This line outputs the values of `a` and `b` to the console when the static constructor is called.
+
+9. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program. However, since there is no code in the `Main` method, nothing will be executed when the program runs.
+
+Summary:
+This C# program demonstrates the use of a static class and a static constructor. The `Test32` class contains two static variables, `a` and `b`, and a static constructor that initializes `a` to 89 and outputs the values of `a` and `b`. The static constructor is called automatically when the class is accessed. However, since the `Main` method does not contain any code that accesses the class, the static constructor will not be executed, and no output will be produced when the program runs.
+
+If you were to add a line in the `Main` method to access the class, such as `Console.WriteLine(Test32.a);`, the static constructor would execute, and you would see the output:89 786
+
+This output shows the result of the static constructor being called.

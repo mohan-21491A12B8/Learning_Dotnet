@@ -1,0 +1,63 @@
+C# Program Explanation
+
+"Static Class Example"
+
+This document explains a C# program that demonstrates the use of a static class and its static members.
+
+Code:
+
+using System;
+
+static class Test32
+{
+    public static int a = 23; // Static variable a
+    public static int b = 786; // Static variable b
+
+    static void Print() // Static method to print values
+    {
+        Console.WriteLine(a + " " + b); // Outputs the values of a and b
+    }
+
+    static void Main() // Entry point of the program
+    {
+        Print(); // Calls the Print method
+        Console.WriteLine(a); // Outputs the value of a
+        Console.WriteLine(b); // Outputs the value of b
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `static class Test32`
+   - This line defines a static class named `Test32`. A static class cannot be instantiated and can only contain static members.
+
+3. `public static int a = 23;`
+   - This line declares a static variable `a` and initializes it with the value 23. Static variables are shared across all instances of the class (though in this case, the class cannot be instantiated).
+
+4. `public static int b = 786;`
+   - This line declares a static variable `b` and initializes it with the value 786.
+
+5. `static void Print()`
+   - This line defines a static method named `Print`. This method can be called without creating an instance of the class.
+
+6. `Console.WriteLine(a + " " + b);`
+   - This line outputs the values of `a` and `b` to the console when the `Print` method is called.
+
+7. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+8. `Print();`
+   - This line calls the `Print` method, which outputs the values of `a` and `b`.
+
+9. `Console.WriteLine(a);`
+   - This line outputs the value of `a` to the console.
+
+10. `Console.WriteLine(b);`
+    - This line outputs the value of `b` to the console.
+
+Summary:
+This C# program demonstrates the use of a static class and its static members. The `Test32` class contains two static variables, `a` and `b`, and a static method `Print` that outputs their values. The `Main` method calls the `Print` method and then outputs the values of `a` and `b` individually. 
+When executed, the program will output:The results of calling the `Print` method, followed by the individual outputs of the static variables `a` and `b`.

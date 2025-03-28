@@ -1,0 +1,88 @@
+C# Program Explanation
+
+"Constructor and Property Example"
+
+This document explains a C# program that demonstrates the use of a parameterized constructor, a copy constructor, and a property to display information about a student.
+
+Code:
+
+using System;
+
+class Test31
+{
+    private string name; // Private field to store the student's name
+    private int marks; // Private field to store the student's marks
+
+    // Parameterized Constructor
+    public Test31(string name, int marks)
+    {
+        this.name = name; // Initialize the name field
+        this.marks = marks; // Initialize the marks field
+    }
+
+    // Copy Constructor
+    public Test31(Test31 t)
+    {
+        name = t.name; // Copy the name from the source object
+        marks = t.marks; // Copy the marks from the source object
+    }
+
+    // Display Property
+    public string Display
+    {
+        get
+        {
+            return "My name is " + name + " and my marks are " + marks.ToString(); // Return a formatted string
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        Test31 t2 = new Test31("Ram", 89); // Create a new Test31 object with name "Ram" and marks 89
+        Test31 t3 = new Test31(t2); // Create a copy of t2 using the copy constructor
+        Console.WriteLine(t3.Display); // Output the display property of t3
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Test31`
+   - This line defines a new class named `Test31`. In C#, every program must have at least one class. A class is a blueprint for creating objects and can contain methods, properties, and other members.
+
+3. `private string name;`
+   - This line declares a private field to store the student's name.
+
+4. `private int marks;`
+   - This line declares a private field to store the student's marks.
+
+5. `public Test31(string name, int marks)`
+   - This line defines a parameterized constructor that takes two parameters: `name` and `marks`. This constructor is used to initialize the `name` and `marks` fields.
+
+6. `public Test31(Test31 t)`
+   - This line defines a copy constructor that takes another `Test31` object as a parameter. This constructor is used to create a copy of the source object.
+
+7. `public string Display`
+   - This line defines a property named `Display` that returns a formatted string containing the student's name and marks.
+
+8. `get`
+   - This line defines the getter for the `Display` property. The getter returns a formatted string.
+
+9. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+10. `Test31 t2 = new Test31("Ram", 89);`
+    - This line creates a new `Test31` object with name "Ram" and marks 89.
+
+11. `Test31 t3 = new Test31(t2);`
+    - This line creates a copy of `t2` using the copy constructor.
+
+12. `Console.WriteLine(t3.Display);`
+    - This line outputs the `Display` property of `t3`, which contains the student's name and marks.
+
+Summary:
+This C# program demonstrates the use of a parameterized constructor, a copy constructor, and a property to display information about a student. The program creates a new `Test31` object with name "Ram" and marks 89, creates a copy of the object using the copy constructor, and outputs the `Display` property of the copy. When executed, the program will output:
+
+The result of the `Display` property, which contains the student's name and marks.

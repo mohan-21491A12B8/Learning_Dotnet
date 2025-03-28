@@ -1,0 +1,65 @@
+C# Program Explanation
+
+"Inheritance Example"
+
+This document explains a C# program that demonstrates class inheritance, where a derived class inherits methods from a base class.
+
+Code:
+
+using System;
+
+class Test
+{
+    public void Display() // Method in the base class
+    {
+        Console.WriteLine("hai"); // Output "hai" to the console
+    }
+}
+
+class Test37 : Test // Derived class
+{
+    public void Add() // Method in the derived class
+    {
+        Console.WriteLine("Welcome"); // Output "Welcome" to the console
+    }
+
+    static void Main(string[] args)
+    {
+        Test37 t = new Test37(); // Create an instance of the derived class
+        t.Add(); // Call the Add method
+        t.Display(); // Call the Display method inherited from the base class
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Test`
+   - This line defines a new class named `Test`. This class serves as the base class.
+
+3. `public void Display()`
+   - This line defines a public method named `Display` in the `Test` class. This method outputs "hai" to the console.
+
+4. `class Test37 : Test`
+   - This line defines a class named `Test37` that inherits from the `Test` class. This means `Test37` has access to the public methods of the `Test` class.
+
+5. `public void Add()`
+   - This line defines a public method named `Add` in the `Test37` class. This method outputs "Welcome" to the console.
+
+6. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+7. `Test37 t = new Test37();`
+   - This line creates an instance of the `Test37` class.
+
+8. `t.Add();`
+   - This line calls the `Add` method on the `t` object, which outputs "Welcome" to the console.
+
+9. `t.Display();`
+   - This line calls the `Display` method on the `t` object, which outputs "hai" to the console. This method is inherited from the `Test` class.
+
+Summary:
+This C# program demonstrates class inheritance, where the `Test37` class inherits from the `Test` class. The `Test` class has a method `Display`, and the `Test37` class has its own method `Add`. The `Main` method creates an instance of `Test37`, calls both the `Add` and `Display` methods, and outputs the results. 
+When executed, the program will output:The results of calling the `Add` method from the derived class and the `Display` method from the base class.
