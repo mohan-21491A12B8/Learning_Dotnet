@@ -1,0 +1,87 @@
+C# Program Explanation
+
+"Sealed Class Example"
+
+This document explains a C# program that demonstrates the use of a sealed class and its functionality.
+
+Code:
+
+using System;
+
+public sealed class Sealed // Sealed class definition
+{
+    public int value { get; set; } // Property to hold an integer value
+
+    public void display() // Method to display the value
+    {
+        Console.WriteLine($"value is: {value}"); // Output the value using string interpolation
+    }
+}
+
+public class SampleTester // Class to test the Sealed class
+{
+    public void show() // Method to demonstrate the functionality of the Sealed class
+    {
+        Sealed sealedObject = new Sealed(); // Create an instance of the Sealed class
+        sealedObject.value = 100; // Set the value property
+        sealedObject.display(); // Call the display method to output the value
+    }
+}
+
+class Program // Main class to execute the program
+{
+    public static void Main(string[] args) // Entry point of the program
+    {
+        SampleTester user = new SampleTester(); // Create an instance of SampleTester
+        user.show(); // Call the show method to demonstrate the Sealed class
+    }    
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `public sealed class Sealed`
+   - This line defines a sealed class named `Sealed`. A sealed class cannot be inherited, meaning no other class can derive from it.
+
+3. `public int value { get; set; }`
+   - This line defines a property named `value` with a getter and setter. This property will hold an integer value.
+
+4. `public void display()`
+   - This line defines a method named `display` that outputs the value of the `value` property.
+
+5. `Console.WriteLine($"value is: {value}");`
+   - This line uses string interpolation to output the current value of the `value` property to the console.
+
+6. `public class SampleTester`
+   - This line defines a class named `SampleTester`, which will be used to test the functionality of the `Sealed` class.
+
+7. `public void show()`
+   - This line defines a method named `show` that demonstrates how to use the `Sealed` class.
+
+8. `Sealed sealedObject = new Sealed();`
+   - This line creates an instance of the `Sealed` class.
+
+9. `sealedObject.value = 100;`
+   - This line sets the `value` property of the `sealedObject` instance to 100.
+
+10. `sealedObject.display();`
+    - This line calls the `display` method on the `sealedObject` instance, which outputs the value to the console.
+
+11. `class Program`
+    - This line defines a class named `Program`, which contains the `Main` method.
+
+12. `public static void Main(string[] args)`
+    - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+13. `SampleTester user = new SampleTester();`
+    - This line creates an instance of the `SampleTester` class.
+
+14. `user.show();`
+    - This line calls the `show` method on the `user` instance, which demonstrates the functionality of the `Sealed` class.
+
+Summary:
+This C# program demonstrates the use of a sealed class and its functionality. The `Sealed` class has a property `value` and a method `display` to output the value. The `SampleTester` class contains a method `show` that creates an instance of the `Sealed` class, sets its value, and displays it. The `Main` method creates an instance of `SampleTester` and calls the `show` method. When executed, the program will output:
+value is: 100
+The result of calling the `display` method from the `Sealed` class, demonstrating how to use properties and methods in a sealed class.
