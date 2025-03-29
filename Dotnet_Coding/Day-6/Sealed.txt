@@ -1,0 +1,92 @@
+C# Program Explanation
+
+"Virtual Method and Sealed Class Example"
+
+This document explains a C# program that demonstrates the use of a virtual method, method overriding, and a sealed class.
+
+Code:
+
+using System;
+
+class Sample56 // Base class
+{
+    public int a = 45; // Instance variable a
+
+    public virtual void Add() // Virtual method
+    {
+        a = 34; // Modify the value of a
+        Console.WriteLine(a); // Output the value of a
+        Console.WriteLine("welcome"); // Output a welcome message
+    }
+}
+
+class Sealed : Sample56 // Derived class that inherits from Sample56
+{
+    public override void Add() // Override the Add method
+    {
+        Console.WriteLine("hello"); // Output a greeting message
+    }
+
+    static void Main(string[] args) // Entry point of the program
+    {
+        Sample56 s = new Sample56(); // Create an instance of the Sample56 class
+        s.Add(); // Call the Add method of Sample56
+
+        Sealed s1 = new Sealed(); // Create an instance of the Sealed class
+        s1.Add(); // Call the overridden Add method of Sealed
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class Sample56`
+   - This line defines a class named `Sample56`, which serves as the base class.
+
+3. `public int a = 45;`
+   - This line declares an instance variable `a` and initializes it with the value 45.
+
+4. `public virtual void Add()`
+   - This line defines a virtual method named `Add`. Virtual methods can be overridden in derived classes.
+
+5. `a = 34;`
+   - This line modifies the value of `a` to 34 within the `Add` method.
+
+6. `Console.WriteLine(a);`
+   - This line outputs the current value of `a` to the console.
+
+7. `Console.WriteLine("welcome");`
+   - This line outputs a welcome message to the console.
+
+8. `class Sealed : Sample56`
+   - This line defines a class named `Sealed` that inherits from the `Sample56` class. The `Sealed` class can override methods from the base class.
+
+9. `public override void Add()`
+   - This line provides an override for the `Add` method. This method replaces the implementation of the `Add` method in the base class.
+
+10. `Console.WriteLine("hello");`
+    - This line outputs "hello" to the console when the `Add` method of the `Sealed` class is called.
+
+11. `static void Main(string[] args)`
+    - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+12. `Sample56 s = new Sample56();`
+    - This line creates an instance of the `Sample56` class.
+
+13. `s.Add();`
+    - This line calls the `Add` method of the `Sample56` instance, which modifies `a` to 34 and outputs the value of `a` and the welcome message.
+
+14. `Sealed s1 = new Sealed();`
+    - This line creates an instance of the `Sealed` class.
+
+15. `s1.Add();`
+    - This line calls the overridden `Add` method of the `Sealed` instance, which outputs "hello".
+
+**Note:** The line `s.a;` and `s1.a;` in the `Main` method are incomplete and do not perform any action. If the intention was to output the value of `a`, it should be `Console.WriteLine(s.a);` and `Console.WriteLine(s1.a);`.
+
+Summary:
+This C# program demonstrates the use of a virtual method and method overriding in a derived class. The `Sample56` class has a virtual method `Add` that modifies an instance variable `a` and outputs a welcome message. The `Sealed` class overrides the `Add` method to provide a different implementation. The `Main` method creates instances of both classes, calls their respective `Add` methods, and outputs the results. When executed, the program will output:
+
+The results of calling the `Add` method from both the `Sample56` and `Sealed` classes.

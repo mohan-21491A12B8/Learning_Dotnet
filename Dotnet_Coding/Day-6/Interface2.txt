@@ -1,0 +1,134 @@
+C# Program Explanation
+
+"Multiple Interface and Class Inheritance Example"
+
+This document explains a C# program that demonstrates the implementation of multiple interfaces and class inheritance.
+
+Code:
+
+using System;
+
+interface i1 // First interface declaration
+{
+    void m1(); // Method signature for m1
+}
+
+interface i2 // Second interface declaration
+{
+    void m2(); // Method signature for m2
+}
+
+interface i3 // Third interface declaration
+{
+    void m3(); // Method signature for m3
+}
+
+interface i4 // Fourth interface declaration
+{
+    void m4(); // Method signature for m4
+}
+
+class Mohan : i1, i2 // Class Mohan implementing interfaces i1 and i2
+{
+    public void m1() // Implementation of m1 from i1
+    {
+        Console.WriteLine("First interface"); // Output message from m1
+    }
+
+    public void m2() // Implementation of m2 from i2
+    {
+        Console.WriteLine("Second interface"); // Output message from m2
+    }
+}
+
+class Interface2 : Mohan, i4 // Class Interface2 inheriting from Mohan and implementing i4
+{
+    public void m3() // Implementation of m3 from i3
+    {
+        Console.WriteLine("Third interface"); // Output message from m3
+    }
+
+    public void m4() // Implementation of m4 from i4
+    {
+        Console.WriteLine("Fourth interface"); // Output message from m4
+    }
+
+    public void show() // Additional method in Interface2
+    {
+        Console.WriteLine("inherits class1 and i4"); // Output message from show
+    }
+
+    static void Main(string[] args) // Entry point of the program
+    {
+        Interface2 obj = new Interface2(); // Create an instance of Interface2
+        obj.m1(); // Call m1 from the inherited class Mohan
+        obj.m2(); // Call m2 from the inherited class Mohan
+        obj.m3(); // Call m3 from Interface2
+        obj.m4(); // Call m4 from Interface2
+        obj.show(); // Call show from Interface2
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `interface i1`
+   - This line defines the first interface named `i1`, which declares the method `m1`.
+
+3. `interface i2`
+   - This line defines the second interface named `i2`, which declares the method `m2`.
+
+4. `interface i3`
+   - This line defines the third interface named `i3`, which declares the method `m3`.
+
+5. `interface i4`
+   - This line defines the fourth interface named `i4`, which declares the method `m4`.
+
+6. `class Mohan : i1, i2`
+   - This line defines a class named `Mohan` that implements the `i1` and `i2` interfaces. This means `Mohan` must provide implementations for the methods declared in both interfaces.
+
+7. `public void m1()`
+   - This line provides the implementation for the `m1` method from the `i1` interface. When called, it outputs "First interface" to the console.
+
+8. `public void m2()`
+   - This line provides the implementation for the `m2` method from the `i2` interface. When called, it outputs "Second interface" to the console.
+
+9. `class Interface2 : Mohan, i4`
+   - This line defines a class named `Interface2` that inherits from the `Mohan` class and implements the `i4` interface. This means `Interface2` inherits the methods from `Mohan` and must provide an implementation for the `m4` method from `i4`.
+
+10. `public void m3()`
+    - This line provides the implementation for the `m3` method from the `i3` interface. When called, it outputs "Third interface" to the console.
+
+11. `public void m4()`
+    - This line provides the implementation for the `m4` method from the `i4` interface. When called, it outputs "Fourth interface" to the console.
+
+12. `public void show()`
+    - This line defines an additional method named `show` in the `Interface2` class. When called, it outputs "inherits class1 and i4" to the console.
+
+13. `static void Main(string[] args)`
+    - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+14. `Interface2 obj = new Interface2();`
+    - This line creates an instance of the `Interface2` class.
+
+15. `obj.m1();`
+    - This line calls the `m1` method from the inherited `Mohan` class, which outputs "First interface".
+
+16. `obj.m2();`
+    - This line calls the `m2` method from the inherited `Mohan` class, which outputs "Second interface".
+
+17. `obj.m3();`
+    - This line calls the `m3` method from the `Interface2` class, which outputs "Third interface".
+
+18. `obj.m4();`
+    - This line calls the `m4` method from the `Interface2` class, which outputs "Fourth interface".
+
+19. `obj.show();`
+    - This line calls the `show` method from the `Interface2` class, which outputs "inherits class1 and i4".
+
+Summary:
+This C# program demonstrates the implementation of multiple interfaces and class inheritance. The `Mohan` class implements the `i1` and `i2` interfaces, while the `Interface2` class inherits from `Mohan` and implements the `i4` interface. The `Main` method creates an instance of `Interface2`, calls the methods from both the inherited class and the implemented interfaces, and outputs the results. When executed, the program will output:
+
+The results of calling the methods from the `Mohan` class and the `Interface2` class.

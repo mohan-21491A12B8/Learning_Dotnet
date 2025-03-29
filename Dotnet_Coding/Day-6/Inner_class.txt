@@ -1,0 +1,77 @@
+C# Program Explanation
+
+"Inner Class Example"
+
+This document explains a C# program that demonstrates the use of an inner class within an outer class.
+
+Code:
+
+using System;
+
+public class Sample45
+{
+    public void show() // Method in the outer class
+    {
+        Console.WriteLine("Hello, World!, this is outer class"); // Output message from the outer class
+    }
+
+    public class Sample46 // Inner class
+    {
+        public void display() // Method in the inner class
+        {
+            Console.WriteLine("Welcome to inner class"); // Output message from the inner class
+        }
+    }
+}
+
+class Innner_classs // Main class to execute the program
+{
+    static void Main(string[] args)
+    {
+        Sample45.Sample46 v = new Sample45.Sample46(); // Create an instance of the inner class
+        v.display(); // Call the display method of the inner class
+
+        Sample45 v2 = new Sample45(); // Create an instance of the outer class
+        v2.show(); // Call the show method of the outer class
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `public class Sample45`
+   - This line defines a public class named `Sample45`, which serves as the outer class.
+
+3. `public void show()`
+   - This line defines a method named `show` in the `Sample45` class. This method outputs a message indicating that it belongs to the outer class.
+
+4. `public class Sample46`
+   - This line defines a public inner class named `Sample46` within the `Sample45` class. Inner classes can access the members of their outer class.
+
+5. `public void display()`
+   - This line defines a method named `display` in the `Sample46` class. This method outputs a message indicating that it belongs to the inner class.
+
+6. `class Innner_classs`
+   - This line defines a class named `Innner_classs`, which contains the `Main` method to execute the program.
+
+7. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+8. `Sample45.Sample46 v = new Sample45.Sample46();`
+   - This line creates an instance of the inner class `Sample46` using the outer class `Sample45`. This demonstrates how to instantiate an inner class.
+
+9. `v.display();`
+   - This line calls the `display` method of the inner class instance, which outputs a message from the inner class.
+
+10. `Sample45 v2 = new Sample45();`
+    - This line creates an instance of the outer class `Sample45`.
+
+11. `v2.show();`
+    - This line calls the `show` method of the outer class instance, which outputs a message from the outer class.
+
+Summary:
+This C# program demonstrates the use of an inner class within an outer class. The `Sample45` class is the outer class that contains a method `show` and an inner class `Sample46`, which contains a method `display`. The `Main` method creates instances of both the outer and inner classes and calls their respective methods to output messages. When executed, the program will output:
+
+The results of calling the `display` method from the inner class and the `show` method from the outer class.

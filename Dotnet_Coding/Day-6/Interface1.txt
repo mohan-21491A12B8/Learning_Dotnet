@@ -1,0 +1,82 @@
+C# Program Explanation
+
+"Multiple Interface Implementation Example"
+
+This document explains a C# program that demonstrates the implementation of multiple interfaces in a class.
+
+Code:
+
+using System;
+
+interface i1 // First interface declaration
+{
+    void Add(); // Method signature for Add
+}
+
+interface i2 // Second interface declaration
+{
+    void Show(); // Method signature for Show
+}
+
+class Interface1 : i1, i2 // Class implementing both interfaces
+{
+    public void Add() // Implementation of the Add method from i1
+    {
+        Console.WriteLine("Add"); // Output message from the Add method
+    }
+
+    public void Show() // Implementation of the Show method from i2
+    {
+        Console.WriteLine("Show"); // Output message from the Show method
+    }
+
+    static void Main(string[] args) // Entry point of the program
+    {
+        Interface1 i = new Interface1(); // Create an instance of the Interface1 class
+        i.Add(); // Call the Add method
+        i.Show(); // Call the Show method
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `interface i1`
+   - This line defines the first interface named `i1`. An interface is a contract that defines a set of methods that implementing classes must provide.
+
+3. `void Add();`
+   - This line declares a method signature for `Add`. Any class that implements the `i1` interface must provide an implementation for this method.
+
+4. `interface i2`
+   - This line defines the second interface named `i2`.
+
+5. `void Show();`
+   - This line declares a method signature for `Show`. Any class that implements the `i2` interface must provide an implementation for this method.
+
+6. `class Interface1 : i1, i2`
+   - This line defines a class named `Interface1` that implements both the `i1` and `i2` interfaces. This means `Interface1` must provide implementations for all methods declared in both interfaces.
+
+7. `public void Add()`
+   - This line provides the implementation for the `Add` method from the `i1` interface. When called, it outputs "Add" to the console.
+
+8. `public void Show()`
+   - This line provides the implementation for the `Show` method from the `i2` interface. When called, it outputs "Show" to the console.
+
+9. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+10. `Interface1 i = new Interface1();`
+    - This line creates an instance of the `Interface1` class.
+
+11. `i.Add();`
+    - This line calls the `Add` method on the `i` object, which outputs "Add" to the console.
+
+12. `i.Show();`
+    - This line calls the `Show` method on the `i` object, which outputs "Show" to the console.
+
+Summary:
+This C# program demonstrates the implementation of multiple interfaces in a class. The `i1` interface defines the `Add` method, and the `i2` interface defines the `Show` method. The `Interface1` class implements both interfaces and provides concrete implementations for both methods. The `Main` method creates an instance of `Interface1`, calls the `Add` and `Show` methods, and outputs the results. When executed, the program will output:
+
+The results of calling the `Add` and `Show` methods from the `Interface1` class.

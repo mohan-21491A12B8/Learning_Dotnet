@@ -1,0 +1,106 @@
+C# Program Explanation
+
+"Partial Class Example"
+
+This document explains a C# program that demonstrates the use of partial classes in C#.
+
+Code:
+
+using System;
+
+namespace PartialClassExample
+{
+    public partial class Person // First part of the partial class
+    {
+        public string FirstName { get; set; } // Property for the first name
+        public string LastName { get; set; } // Property for the last name
+
+        public void DisplayFullName() // Method to display the full name
+        {
+            Console.WriteLine("Full Name: " + FirstName + " " + LastName); // Output the full name
+        }
+    }
+
+    public partial class Person // Second part of the partial class
+    {
+        public int Age { get; set; } // Property for age
+
+        public void DisplayAge() // Method to display the age
+        {
+            Console.WriteLine("Age: " + Age); // Output the age
+        }
+    }
+
+    public class Program // Main class to execute the program
+    {
+        static void Main(string[] args) // Entry point of the program
+        {
+            Person p = new Person // Create an instance of the Person class
+            {
+                FirstName = "john", // Set the first name
+                LastName = "wel", // Set the last name
+                Age = 30 // Set the age
+            };
+
+            p.DisplayFullName(); // Call the method to display the full name
+            p.DisplayAge(); // Call the method to display the age
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `namespace PartialClassExample`
+   - This line defines a namespace named `PartialClassExample`. Namespaces are used to organize code and prevent naming conflicts.
+
+3. `public partial class Person`
+   - This line defines the first part of a partial class named `Person`. Partial classes allow the definition of a class to be split across multiple files or sections.
+
+4. `public string FirstName { get; set; }`
+   - This line defines a property named `FirstName` with a getter and setter.
+
+5. `public string LastName { get; set; }`
+   - This line defines a property named `LastName` with a getter and setter.
+
+6. `public void DisplayFullName()`
+   - This line defines a method named `DisplayFullName` that outputs the full name of the person.
+
+7. `public partial class Person`
+   - This line defines the second part of the partial class `Person`.
+
+8. `public int Age { get; set; }`
+   - This line defines a property named `Age` with a getter and setter.
+
+9. `public void DisplayAge()`
+   - This line defines a method named `DisplayAge` that outputs the age of the person.
+
+10. `public class Program`
+    - This line defines a class named `Program`, which contains the `Main` method.
+
+11. `static void Main(string[] args)`
+    - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+12. `Person p = new Person`
+    - This line creates an instance of the `Person` class.
+
+13. `{ FirstName = "john", LastName = "wel", Age = 30 };`
+    - This block initializes the properties of the `Person` instance.
+
+14. `p.DisplayFullName();`
+    - This line calls the `DisplayFullName` method to output the full name of the person.
+
+15. `p.DisplayAge();`
+    - This line calls the `DisplayAge` method to output the age of the person.
+
+**Note:** There are a couple of issues in the provided code:
+- The property `LastNamee` should be corrected to `LastName`.
+- The method call `p.Di();` should be corrected to `p.DisplayFullName();`.
+- The `DisplayFullName` method has a syntax error in the string concatenation. It should be `Console.WriteLine("Full Name: " + FirstName + " " + LastName);`.
+
+Summary:
+This C# program demonstrates the use of partial classes, allowing the `Person` class to be defined in multiple parts. The `Person` class has properties for `FirstName`, `LastName`, and `Age`, along with methods to display the full name and age. The `Main` method creates an instance of `Person`, sets its properties, and calls the methods to display the information. When executed, the program will output:
+
+The results of calling the methods from the `Person` class, displaying the full name and age of the person.

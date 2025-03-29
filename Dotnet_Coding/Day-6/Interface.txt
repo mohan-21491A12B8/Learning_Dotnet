@@ -1,0 +1,75 @@
+C# Program Explanation
+
+"Interface Implementation Example"
+
+This document explains a C# program that demonstrates the use of an interface and its implementation in a class.
+
+Code:
+
+using System;
+
+interface i1 // Interface declaration
+{
+    void Add(); // Method signature for Add
+    void Show(); // Method signature for Show
+}
+
+class Qis1 : i1 // Class implementing the interface
+{
+    public void Add() // Implementation of the Add method
+    {
+        Console.WriteLine("hi"); // Output message from the Add method
+    }
+
+    public void Show() // Implementation of the Show method
+    {
+        Console.WriteLine("welcome"); // Output message from the Show method
+    }
+
+    static void Main(string[] args) // Entry point of the program
+    {
+        Qis1 q = new Qis1(); // Create an instance of the Qis1 class
+        q.Add(); // Call the Add method
+        q.Show(); // Call the Show method
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `interface i1`
+   - This line defines an interface named `i1`. An interface is a contract that defines a set of methods that implementing classes must provide.
+
+3. `void Add();`
+   - This line declares a method signature for `Add`. Any class that implements the `i1` interface must provide an implementation for this method.
+
+4. `void Show();`
+   - This line declares a method signature for `Show`. Any class that implements the `i1` interface must provide an implementation for this method.
+
+5. `class Qis1 : i1`
+   - This line defines a class named `Qis1` that implements the `i1` interface. This means `Qis1` must provide implementations for all methods declared in the `i1` interface.
+
+6. `public void Add()`
+   - This line provides the implementation for the `Add` method. When called, it outputs "hi" to the console.
+
+7. `public void Show()`
+   - This line provides the implementation for the `Show` method. When called, it outputs "welcome" to the console.
+
+8. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+9. `Qis1 q = new Qis1();`
+   - This line creates an instance of the `Qis1` class.
+
+10. `q.Add();`
+    - This line calls the `Add` method on the `q` object, which outputs "hi" to the console.
+
+11. `q.Show();`
+    - This line calls the `Show` method on the `q` object, which outputs "welcome" to the console.
+
+Summary:
+This C# program demonstrates the use of an interface and its implementation in a class. The `i1` interface defines two methods, `Add` and `Show`. The `Qis1` class implements this interface and provides concrete implementations for both methods. The `Main` method creates an instance of `Qis1`, calls the `Add` and `Show` methods, and outputs the results. When executed, the program will output:
+
+The results of calling the `Add` and `Show` methods from the `Qis1` class.
