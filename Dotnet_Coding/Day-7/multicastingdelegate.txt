@@ -1,0 +1,86 @@
+C# Program Explanation
+
+"Multicast Delegates Example"
+
+This document explains a C# program that demonstrates the use of multicast delegates to call multiple methods with the same signature.
+
+Code:
+
+using System;
+
+class c1 // Class definition
+{
+    // Delegate declaration for methods that take two integers as parameters
+    public delegate void show(int a, int b);
+
+    // Method to perform addition
+    public void add(int a, int b)
+    {
+        Console.WriteLine(a + b); // Output the sum of a and b
+    }
+
+    // Method to perform subtraction
+    public void sub(int a, int b)
+    {
+        Console.WriteLine(a - b); // Output the difference of a and b
+    }
+
+    static void Main(string[] args) // Entry point of the program
+    {
+        c1 c = new c1(); // Create an instance of the c1 class
+        show a1 = new show(c.add); // Create a delegate instance for the add method
+        a1 += c.sub; // Add the sub method to the delegate (multicasting)
+
+        // Invoke the delegate with parameters for both methods
+        a1.Invoke(23, 12); // Calls both add and sub methods with 23 and 12
+        a1.Invoke(23, 32); // Calls both add and sub methods with 23 and 32
+    } 
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class c1`
+   - This line defines a class named `c1`.
+
+3. `public delegate void show(int a, int b);`
+   - This line declares a delegate named `show` that can point to any method that takes two integers as parameters and returns void.
+
+4. `public void add(int a, int b)`
+   - This method takes two integers as parameters and outputs their sum.
+
+5. `public void sub(int a, int b)`
+   - This method takes two integers as parameters and outputs their difference.
+
+6. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+7. `c1 c = new c1();`
+   - This line creates an instance of the `c1` class.
+
+8. `show a1 = new show(c.add);`
+   - This line creates an instance of the `show` delegate and associates it with the `add` method of the `c1` instance.
+
+9. `a1 += c.sub;`
+   - This line adds the `sub` method to the delegate `a1`, allowing it to call both the `add` and `sub` methods when invoked. This is known as a multicast delegate.
+
+10. `a1.Invoke(23, 12);`
+    - This line calls the delegate `a1`, which invokes both the `add` and `sub` methods with the arguments 23 and 12. The output will be:
+      ```
+      35
+      11
+      ```
+
+11. `a1.Invoke(23, 32);`
+    - This line calls the delegate `a1`, which invokes both the `add` and `sub` methods with the arguments 23 and 32. The output will be:
+      ```
+      55
+      -9
+      ```
+
+Summary:
+This C# program demonstrates the use of multicast delegates to call multiple methods with the same signature. The program defines a delegate named `show` and associates it with the `add` and `sub` methods. When executed, the program will output:
+
+The results of the addition and subtraction operations performed through the multicast delegate.

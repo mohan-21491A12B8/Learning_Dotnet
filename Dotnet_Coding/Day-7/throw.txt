@@ -1,0 +1,103 @@
+C# Program Explanation
+
+"Exception Handling with Custom Exception Example"
+
+This document explains a C# program that demonstrates the use of exception handling with multiple catch blocks and a custom exception for non-negative input.
+
+Code:
+
+using System;
+
+class c1 // Class definition
+{
+    static void Main(string[] args) // Entry point of the program
+    {
+        try
+        {
+            int a = 10; // Initialize variable a
+            Console.WriteLine("enter b value"); // Prompt user for input
+            int b = Convert.ToInt32(Console.ReadLine()); // Read user input and convert to integer
+
+            // Check if b is negative and throw a custom exception if it is
+            if (b < 0)
+            {
+                throw new Exception("you should enter the non negative number"); // Throw custom exception
+            }
+
+            Console.WriteLine(a / b); // Attempt to divide a by b
+        }
+        catch (DivideByZeroException e) // Catch block for divide by zero exceptions
+        {
+            Console.WriteLine(e.StackTrace); // Output the stack trace of the exception
+        }
+        catch (FormatException e) // Catch block for format exceptions (invalid input)
+        {
+            Console.WriteLine(e.StackTrace); // Output the stack trace of the exception
+        }
+        catch (Exception e) // Catch block for any other exceptions
+        {
+            Console.WriteLine(e.Message); // Output the message of the exception
+        }
+
+        Console.WriteLine("hii"); // Output a message after the try-catch block
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class c1`
+   - This line defines a class named `c1`.
+
+3. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+4. `try { ... }`
+   - The `try` block contains code that may throw an exception. It includes reading user input and performing a division operation.
+
+5. `int a = 10;`
+   - This line initializes an integer variable `a` with the value 10.
+
+6. `Console.WriteLine("enter b value");`
+   - This line prompts the user to enter a value for `b`.
+
+7. `int b = Convert.ToInt32(Console.ReadLine());`
+   - This line reads the user input from the console and converts it to an integer. If the input is not a valid integer, a `FormatException` will be thrown.
+
+8. `if (b < 0) { ... }`
+   - This line checks if the value of `b` is negative. If it is, a custom exception is thrown with a message indicating that a non-negative number is required.
+
+9. `Console.WriteLine(a / b);`
+   - This line attempts to divide `a` by `b`. If `b` is zero, a `DivideByZeroException` will be thrown.
+
+10. `catch (DivideByZeroException e) { ... }`
+    - This catch block handles `DivideByZeroException`. It outputs the stack trace of the exception.
+
+11. `catch (FormatException e) { ... }`
+    - This catch block handles `FormatException`. It outputs the stack trace of the exception.
+
+12. `catch (Exception e) { ... }`
+    - This catch block handles any other exceptions. It outputs the message of the exception, which includes the custom message for negative input.
+
+13. `Console.WriteLine("hii");`
+    - This line outputs the string "hii" after the `try-catch` block, demonstrating that the program continues execution even after an exception is caught.
+
+Summary:
+This C# program demonstrates exception handling using multiple catch blocks. It prompts the user to enter a value for `b`, checks if it is negative, and handles potential exceptions such as `DivideByZeroException` and `FormatException`. When executed, the program will output the appropriate error message or stack trace based on the exception encountered. After handling the exception, the program continues to execute and outputs:
+hii
+
+If the user enters a negative number, the output will be:
+you should enter the non negative number hii
+hii
+
+If the user enters a non-integer value, the output will be the stack trace for `FormatException` followed by:
+hii
+
+
+If the user enters zero, the output will be the stack trace for `DivideByZeroException` followed by:
+hii
+
+In other words:
+If the user enters a negative number or invalid input, the program will display the corresponding exception message or stack trace.

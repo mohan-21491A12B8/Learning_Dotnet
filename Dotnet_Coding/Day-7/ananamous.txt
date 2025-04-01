@@ -1,0 +1,95 @@
+C# Program Explanation
+
+"Anonymous Methods Example"
+
+This document explains a C# program that demonstrates the use of anonymous methods with delegates.
+
+Code:
+
+using System;
+
+class c1 // Class definition
+{
+    public delegate void show(string str); // Delegate declaration for show
+    public delegate void show1(string str); // Delegate declaration for show1
+
+    static void Main(string[] args) // Entry point of the program
+    {
+        string s3 = "information technology"; // String variable to hold information
+
+        // Anonymous method assigned to delegate show
+        show s1 = delegate(string s4) 
+        {
+            Console.WriteLine(s4); // Output the parameter passed to the anonymous method
+            Console.WriteLine(s3); // Output the value of s3
+        };
+
+        s1("mohan"); // Call the anonymous method with "mohan" as the argument
+
+        // Anonymous method assigned to delegate show1
+        show1 s2 = delegate(string s5) 
+        {
+            Console.WriteLine(s5); // Output the parameter passed to the anonymous method
+            Console.WriteLine(s3); // Output the value of s3
+        };
+
+        s2("sai"); // Call the anonymous method with "sai" as the argument
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class c1`
+   - This line defines a class named `c1`.
+
+3. `public delegate void show(string str);`
+   - This line declares a delegate named `show` that can point to any method that takes a string parameter and returns void.
+
+4. `public delegate void show1(string str);`
+   - This line declares another delegate named `show1`, similar to `show`.
+
+5. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+6. `string s3 = "information technology";`
+   - This line initializes a string variable `s3` with the value "information technology".
+
+7. `show s1 = delegate(string s4)`
+   - This line creates an instance of the `show` delegate and assigns an anonymous method to it. The anonymous method takes a string parameter `s4`.
+
+8. `Console.WriteLine(s4);`
+   - This line outputs the value of the parameter `s4` passed to the anonymous method.
+
+9. `Console.WriteLine(s3);`
+   - This line outputs the value of the variable `s3`, which is accessible within the anonymous method.
+
+10. `s1("mohan");`
+    - This line calls the anonymous method assigned to the `s1` delegate, passing "mohan" as the argument. The output will be:
+      ```
+      mohan
+      information technology
+      ```
+
+11. `show1 s2 = delegate(string s5)`
+    - This line creates an instance of the `show1` delegate and assigns another anonymous method to it. The anonymous method takes a string parameter `s5`.
+
+12. `Console.WriteLine(s5);`
+    - This line outputs the value of the parameter `s5` passed to the anonymous method.
+
+13. `Console.WriteLine(s3);`
+    - This line outputs the value of the variable `s3`, which is accessible within the anonymous method.
+
+14. `s2("sai");`
+    - This line calls the anonymous method assigned to the `s2` delegate, passing "sai" as the argument. The output will be:
+      ```
+      sai
+      information technology
+      ```
+
+Summary:
+This C# program demonstrates the use of anonymous methods with delegates. The program defines two delegates, `show` and `show1`, and assigns anonymous methods to them. These anonymous methods output the values of their parameters and a string variable `s3`. When executed, the program will output:
+
+The results of calling the anonymous methods with the arguments "mohan" and "sai".

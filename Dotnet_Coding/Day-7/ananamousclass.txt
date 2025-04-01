@@ -1,0 +1,51 @@
+C# Program Explanation
+
+"Anonymous Type Example"
+
+This document explains a C# program that demonstrates the use of anonymous types to create an object without a defined class.
+
+Code:
+
+using System;
+
+class c1 // Class definition
+{
+    static void Main(string[] args) // Entry point of the program
+    {
+        // Creating an anonymous type with properties
+        var person = new 
+        {
+            name = "Mohan", // Property name
+            age = 21,       // Property age
+            city = "Ongole" // Property city
+        };
+
+        // Outputting the properties of the anonymous type
+        Console.WriteLine("name: " + person.name + "\nage: " + person.age + "\ncity: " + person.city);
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class c1`
+   - This line defines a class named `c1`.
+
+3. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+4. `var person = new { ... }`
+   - This line creates an instance of an anonymous type with three properties: `name`, `age`, and `city`. The `var` keyword allows the compiler to infer the type of `person`.
+
+5. `Console.WriteLine(...)`
+   - This line outputs the values of the properties of the anonymous type. It concatenates the property names with their values and formats them for display.
+
+Output:
+When executed, the program will output:
+name: Mohan age: 21 city: Ongole
+
+
+Summary:
+This C# program demonstrates how to use anonymous types to encapsulate data without defining a formal class. The program creates an anonymous type with properties for a person's name, age, and city, and then prints these properties to the console. This feature is particularly useful for scenarios where you need a simple data structure without the overhead of a full class definition.

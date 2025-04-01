@@ -1,0 +1,67 @@
+C# Program Explanation
+
+"Delegate to a Static Method Example"
+
+This document explains a C# program that demonstrates the use of a delegate to call a static method.
+
+Code:
+
+using System;
+
+public class c1 // Class definition for c1
+{
+    // Delegate declaration for displaying a string
+    public delegate void display(string s1);
+}
+
+class c2 // Class definition for c2
+{
+    // Static method that takes a delegate and a string as parameters
+    public static void show(c1.display x, string name)
+    {
+        x(name); // Invoke the delegate with the provided name
+    }
+
+    static void Main(string[] args) // Entry point of the program
+    {
+        // Call the show method with an anonymous method as the delegate
+        show(delegate(string name) 
+        {
+            Console.WriteLine(name); // Output the name passed to the delegate
+        }, "Mohan"); // Pass "Mohan" as the argument
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `public class c1`
+   - This line defines a public class named `c1`.
+
+3. `public delegate void display(string s1);`
+   - This line declares a delegate named `display` within the `c1` class that can point to any method that takes a string parameter and returns void.
+
+4. `class c2`
+   - This line defines another class named `c2`.
+
+5. `public static void show(c1.display x, string name)`
+   - This static method takes a delegate of type `c1.display` and a string parameter `name`. It invokes the delegate `x` with the provided `name`.
+
+6. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+7. `show(delegate(string name) { ... }, "Mohan");`
+   - This line calls the `show` method, passing an anonymous method as the delegate. The anonymous method takes a string parameter `name` and outputs it using `Console.WriteLine`.
+
+8. `Console.WriteLine(name);`
+   - This line outputs the value of the parameter `name` passed to the anonymous method. In this case, it will output:
+     ```
+     Mohan
+     ```
+
+Summary:
+This C# program demonstrates how to use a delegate to call a static method. The program defines a delegate named `display` in class `c1` and a static method `show` in class `c2` that takes this delegate as a parameter. When executed, the program will output:
+
+The result of calling the anonymous method with the argument "Mohan".

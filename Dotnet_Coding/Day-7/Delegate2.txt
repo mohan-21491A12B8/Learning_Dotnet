@@ -1,0 +1,62 @@
+C# Program Explanation
+
+"Anonymous Method with Delegate Example"
+
+This document explains a C# program that demonstrates the use of an anonymous method with a delegate.
+
+Code:
+
+using System;
+
+class Cse2 // Class definition
+{
+    // Delegate declaration for showing a string
+    public delegate void Show(string str);
+
+    static void Main(string[] args) // Entry point of the program
+    {
+        string s3 = "ram"; // String variable to hold a value
+
+        // Anonymous method assigned to delegate Show
+        Show s1 = delegate(string s2) 
+        {
+            Console.WriteLine(s2); // Output the parameter passed to the anonymous method
+        };
+
+        s1("mohan"); // Call the anonymous method with "mohan" as the argument
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class Cse2`
+   - This line defines a class named `Cse2`.
+
+3. `public delegate void Show(string str);`
+   - This line declares a delegate named `Show` that can point to any method that takes a string parameter and returns void.
+
+4. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `string s3 = "ram";`
+   - This line initializes a string variable `s3` with the value "ram". Note that `s3` is not used in the program.
+
+6. `Show s1 = delegate(string s2)`
+   - This line creates an instance of the `Show` delegate and assigns an anonymous method to it. The anonymous method takes a string parameter `s2`.
+
+7. `Console.WriteLine(s2);`
+   - This line outputs the value of the parameter `s2` passed to the anonymous method.
+
+8. `s1("mohan");`
+   - This line calls the anonymous method assigned to the `s1` delegate, passing "mohan" as the argument. The output will be:
+     ```
+     mohan
+     ```
+
+Summary:
+This C# program demonstrates the use of an anonymous method with a delegate. The program defines a delegate named `Show` and assigns an anonymous method to it that outputs the value of its parameter. When executed, the program will output:
+
+The result of calling the anonymous method with the argument "mohan".

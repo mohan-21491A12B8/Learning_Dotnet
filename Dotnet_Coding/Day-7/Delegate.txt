@@ -1,0 +1,88 @@
+C# Program Explanation
+
+"Delegates Example"
+
+This document explains a C# program that demonstrates the use of delegates to perform addition and subtraction operations.
+
+Code:
+
+using System;
+
+class Cse1 // Class definition
+{
+    // Delegate declaration for addition
+    public delegate void addnum(int a, int b);
+    // Delegate declaration for subtraction
+    public delegate void subnum(int a, int b);
+
+    // Method to perform addition
+    public void Add(int a, int b)
+    {
+        Console.WriteLine("Addition of two numbers is : " + (a + b)); // Output the result of addition
+    }
+
+    // Method to perform subtraction
+    public void Sub(int a, int b)
+    {
+        Console.WriteLine("Subtraction of two numbers is : " + (a - b)); // Output the result of subtraction
+    }
+
+    static void Main(string[] args) // Entry point of the program
+    {
+        Cse1 c1 = new Cse1(); // Create an instance of the Cse1 class
+        addnum a1 = new addnum(c1.Add); // Create a delegate instance for addition
+        subnum s1 = new subnum(c1.Sub); // Create a delegate instance for subtraction
+
+        a1(10, 20); // Call the Add method through the delegate
+        s1(10, 5);  // Call the Sub method through the delegate
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class Cse1`
+   - This line defines a class named `Cse1`.
+
+3. `public delegate void addnum(int a, int b);`
+   - This line declares a delegate named `addnum` that can point to any method that takes two integers as parameters and returns void.
+
+4. `public delegate void subnum(int a, int b);`
+   - This line declares another delegate named `subnum`, similar to `addnum`.
+
+5. `public void Add(int a, int b)`
+   - This method takes two integers as parameters and outputs their sum.
+
+6. `public void Sub(int a, int b)`
+   - This method takes two integers as parameters and outputs their difference.
+
+7. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+8. `Cse1 c1 = new Cse1();`
+   - This line creates an instance of the `Cse1` class.
+
+9. `addnum a1 = new addnum(c1.Add);`
+   - This line creates an instance of the `addnum` delegate and associates it with the `Add` method of the `Cse1` instance.
+
+10. `subnum s1 = new subnum(c1.Sub);`
+    - This line creates an instance of the `subnum` delegate and associates it with the `Sub` method of the `Cse1` instance.
+
+11. `a1(10, 20);`
+    - This line calls the `Add` method through the `a1` delegate, passing 10 and 20 as arguments. The output will be:
+      ```
+      Addition of two numbers is : 30
+      ```
+
+12. `s1(10, 5);`
+    - This line calls the `Sub` method through the `s1` delegate, passing 10 and 5 as arguments. The output will be:
+      ```
+      Subtraction of two numbers is : 5
+      ```
+
+Summary:
+This C# program demonstrates the use of delegates to encapsulate methods for performing addition and subtraction. The program defines two delegates, `addnum` and `subnum`, and associates them with the `Add` and `Sub` methods, respectively. When executed, the program will output:
+
+The results of the addition and subtraction operations performed through the delegates.

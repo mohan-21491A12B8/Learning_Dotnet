@@ -1,0 +1,81 @@
+C# Program Explanation
+
+"Exception Handling Example"
+
+This document explains a C# program that demonstrates exception handling using try-catch blocks.
+
+Code:
+
+using System;
+
+class c1 // Class definition
+{
+    static void Main(string[] args) // Entry point of the program
+    {
+        try // Start of the try block
+        {
+            int a = 10; // Initialize variable a with the value 10
+            Console.WriteLine("enter b value"); // Prompt the user to enter a value for b
+            int b = Convert.ToInt32(Console.ReadLine()); // Read user input and convert it to an integer
+            Console.WriteLine(a / b); // Attempt to divide a by b and output the result
+        }
+        catch (DivideByZeroException e) // Catch block for handling division by zero
+        {           
+            Console.WriteLine(e.StackTrace); // Output the stack trace of the exception
+        }
+        catch (FormatException e) // Catch block for handling format exceptions
+        {
+            Console.WriteLine(e.StackTrace); // Output the stack trace of the exception
+        }
+        Console.WriteLine("hii"); // Output a greeting message
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line is a directive that tells the compiler to include the System namespace. The System namespace contains fundamental classes and base classes that define commonly used types, such as strings, dates, and console input/output.
+
+2. `class c1`
+   - This line defines a class named `c1`.
+
+3. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program. When the program is executed, the code inside the `Main` method is the first to run.
+
+4. `try`
+   - This line begins a try block, which is used to enclose code that may throw exceptions.
+
+5. `int a = 10;`
+   - This line initializes an integer variable `a` with the value 10.
+
+6. `Console.WriteLine("enter b value");`
+   - This line prompts the user to enter a value for the variable `b`.
+
+7. `int b = Convert.ToInt32(Console.ReadLine());`
+   - This line reads user input from the console, converts it to an integer, and assigns it to the variable `b`. If the input is not a valid integer, a `FormatException` will be thrown.
+
+8. `Console.WriteLine(a / b);`
+   - This line attempts to divide `a` by `b` and output the result. If `b` is zero, a `DivideByZeroException` will be thrown.
+
+9. `catch (DivideByZeroException e)`
+   - This line begins a catch block that handles `DivideByZeroException`. This exception is thrown when there is an attempt to divide by zero.
+
+10. `Console.WriteLine(e.StackTrace);`
+    - This line outputs the stack trace of the caught exception, which provides information about where the exception occurred in the code.
+
+11. `catch (FormatException e)`
+    - This line begins a catch block that handles `FormatException`. This exception is thrown when the input cannot be converted to an integer.
+
+12. `Console.WriteLine(e.StackTrace);`
+    - This line outputs the stack trace of the caught exception for the format error.
+
+13. `Console.WriteLine("hii");`
+    - This line outputs a greeting message to the console, which will be displayed regardless of whether an exception occurred.
+
+Summary:
+This C# program demonstrates exception handling using try-catch blocks. The program prompts the user to enter a value for `b`, attempts to divide `a` by `b`, and handles potential exceptions that may arise from invalid input or division by zero. If an exception occurs, the program outputs the stack trace of the exception. Regardless of whether an exception occurs, the program will output "hii" at the end. 
+
+When executed, the program will behave as follows:
+- If the user enters a valid integer for `b`, it will output the result of the division.
+- If the user enters zero for `b`, it will output the stack trace for the `DivideByZeroException`.
+- If the user enters a non-integer value, it will output the stack trace for the `FormatException`.

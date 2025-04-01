@@ -1,0 +1,74 @@
+C# Program Explanation
+
+"Exception Handling Example"
+
+This document explains a C# program that demonstrates the use of exception handling using try-catch blocks.
+
+Code:
+
+using System;
+
+class c1 // Class definition
+{
+    static void Main(string[] args) // Entry point of the program
+    {
+        try
+        {
+            int a = 10; // Initialize variable a
+            int b = 0;  // Initialize variable b with zero
+            Console.WriteLine(a / b); // Attempt to divide a by b (this will cause a divide by zero exception)
+        }
+        catch (Exception e) // Catch any exception that occurs in the try block
+        {
+            Console.WriteLine(e.ToString()); // Output the exception details
+            Console.WriteLine(e.StackTrace); // Output the stack trace of the exception
+            Console.WriteLine(e.Message); // Output the message of the exception
+        }
+        Console.WriteLine("hii"); // Output a message after the try-catch block
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class c1`
+   - This line defines a class named `c1`.
+
+3. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+4. `try { ... }`
+   - The `try` block contains code that may throw an exception. In this case, it attempts to divide `a` by `b`, which will result in a `DivideByZeroException` since `b` is zero.
+
+5. `int a = 10;`
+   - This line initializes an integer variable `a` with the value 10.
+
+6. `int b = 0;`
+   - This line initializes an integer variable `b` with the value 0.
+
+7. `Console.WriteLine(a / b);`
+   - This line attempts to divide `a` by `b`. Since `b` is zero, this will throw a `DivideByZeroException`.
+
+8. `catch (Exception e) { ... }`
+   - The `catch` block catches any exception that occurs in the `try` block. The caught exception is stored in the variable `e`.
+
+9. `Console.WriteLine(e.ToString());`
+   - This line outputs the string representation of the exception, which includes the type of exception and the error message.
+
+10. `Console.WriteLine(e.StackTrace);`
+    - This line outputs the stack trace of the exception, which provides information about the call stack at the time the exception was thrown.
+
+11. `Console.WriteLine(e.Message);`
+    - This line outputs the message associated with the exception, which provides a description of the error.
+
+12. `Console.WriteLine("hii");`
+    - This line outputs the string "hii" after the `try-catch` block, demonstrating that the program continues execution even after an exception is caught.
+
+Summary:
+This C# program demonstrates exception handling using a `try-catch` block. When the program attempts to divide by zero, it catches the resulting `DivideByZeroException` and outputs the exception details, including the type, stack trace, and message. After handling the exception, the program continues to execute and outputs:
+
+System.DivideByZeroException: Attempted to divide by zero. at c1.Main(String[] args) in <file_path>:line <line_number> Attempted to divide by zero. hii
+
+(Note: The exact output for the stack trace will vary based on the environment and file path.)
