@@ -1,0 +1,70 @@
+C# Program Explanation
+
+"Try-Finally Example"
+
+This document explains a C# program that demonstrates the use of a `try` block and a `finally` block to handle exceptions and ensure cleanup operations.
+
+Code:
+
+using System;
+
+class TryFinallyExample // Class definition
+{
+    static void Main() // Entry point of the program
+    {
+        try
+        {
+            Console.Write("Enter a number: "); // Prompt user for input
+            int num = int.Parse(Console.ReadLine()); // Read and parse the number from user input
+            int result = 10 / num; // Attempt to divide 10 by the input number
+            Console.WriteLine("Result: " + result); // Display the result of the division
+        }
+        finally
+        {
+            Console.WriteLine("Finally block executed. Cleaning up resources..."); // Cleanup message
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class TryFinallyExample`
+   - This line defines a class named `TryFinallyExample`.
+
+3. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+4. `try` Block
+   - The `try` block contains code that may throw exceptions. In this case, it prompts the user for a number and attempts to parse it.
+
+5. `Console.Write("Enter a number: ");`
+   - This line prompts the user to enter a number.
+
+6. `int num = int.Parse(Console.ReadLine());`
+   - This line reads the user input and attempts to parse it as an integer. If the input is not a valid integer, a `FormatException` may be thrown.
+
+7. `int result = 10 / num;`
+   - This line attempts to divide 10 by the input number. If the user enters 0, a `DivideByZeroException` will be thrown.
+
+8. `Console.WriteLine("Result: " + result);`
+   - If no exceptions occur, this line outputs the result of the division.
+
+9. `finally` Block
+   - The `finally` block is executed after the `try` block, regardless of whether an exception was thrown. It is used for cleanup operations.
+
+10. `Console.WriteLine("Finally block executed. Cleaning up resources...");`
+    - This line outputs a message indicating that the `finally` block has been executed, which is useful for resource management or cleanup tasks.
+
+Summary:
+This C# program demonstrates the use of a `try` block to handle potential exceptions when parsing user input and performing a division operation. The `finally` block ensures that a cleanup message is displayed regardless of whether an exception occurred. 
+
+When executed, if the user enters a valid number, the program will output:
+Result: [Result of the division] Finally block executed. Cleaning up resources...
+
+If the user enters an invalid number or zero, the program will throw an exception, but the `finally` block will still execute, displaying:
+Finally block executed. Cleaning up resources...
+
+so,this structure helps maintain program stability and ensures that necessary cleanup actions are taken.

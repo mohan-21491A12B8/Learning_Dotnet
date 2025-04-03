@@ -1,0 +1,87 @@
+C# Program Explanation
+
+"Custom Exception Handling Example"
+
+This document explains a C# program that demonstrates the use of exception handling to manage division by zero errors.
+
+Code:
+
+using System;
+
+class Exec1 // Class definition
+{
+    void CheckNum(int num) // Method to check the number
+    {
+        if (num == 0) // Check if the number is zero
+        {
+            throw new DivideByZeroException("number"); // Throw a DivideByZeroException if the number is zero
+        }
+        int result = 10 / num; // Perform division
+        Console.WriteLine("Correct number: " + result); // Display the result of the division
+    }
+
+    public static void Main() // Entry point of the program
+    {
+        Exec1 e1 = new Exec1(); // Create an instance of Exec1
+        try
+        {
+            e1.CheckNum(34); // Call CheckNum with a valid number
+        }
+        catch (DivideByZeroException e) // Catch DivideByZeroException
+        {
+            Console.WriteLine("Error: " + e.Message); // Output the error message
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class Exec1`
+   - This line defines a class named `Exec1`.
+
+3. `void CheckNum(int num)`
+   - This method takes an integer parameter `num` and checks if it is zero.
+
+4. `if (num == 0) { ... }`
+   - This block checks if the input number is zero. If it is, a `DivideByZeroException` is thrown.
+
+5. `throw new DivideByZeroException("number");`
+   - This line throws a `DivideByZeroException` with a message indicating that the number is invalid.
+
+6. `int result = 10 / num;`
+   - This line performs the division of 10 by the input number if it is not zero.
+
+7. `Console.WriteLine("Correct number: " + result);`
+   - This line outputs the result of the division to the console.
+
+8. `public static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+9. `Exec1 e1 = new Exec1();`
+   - This line creates an instance of the `Exec1` class.
+
+10. `try { ... }`
+    - The `try` block contains code that may throw exceptions. In this case, it calls the `CheckNum` method.
+
+11. `e1.CheckNum(34);`
+    - This line calls the `CheckNum` method with a valid number (34).
+
+12. `catch (DivideByZeroException e) { ... }`
+    - This block catches any `DivideByZeroException` that occurs in the `try` block and outputs the message of the exception.
+
+13. `Console.WriteLine("Error: " + e.Message);`
+    - This line outputs the error message if a `DivideByZeroException` is caught.
+
+Summary:
+This C# program demonstrates the use of exception handling to manage division by zero errors. The program defines a method `CheckNum` that checks if the input number is zero and throws a `DivideByZeroException` if it is. The `Main` method calls `CheckNum` with a valid number and handles any exceptions that may occur. 
+
+When executed with a valid number (like 34), the program will output:
+Correct number: 0.2941176470588235
+
+If the method is called with zero, it will output:
+Error: number
+
+This structure helps maintain program stability by handling potential errors gracefully.

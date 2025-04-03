@@ -1,0 +1,48 @@
+C# Program Explanation
+
+"Lambda Expression with Delegate Example"
+
+This document explains a C# program that demonstrates the use of a delegate with a lambda expression to display a message.
+
+Code:
+
+using System;
+
+class Exe1 // Class definition
+{
+    public delegate void show(string message); // Delegate declaration for methods that take a string parameter and return void
+
+    static void Main() // Entry point of the program
+    {
+        // Lambda expression to define the action of displaying a message
+        show s1 = x => Console.WriteLine(x);
+
+        // Invoke the delegate with a string message
+        s1("hai"); // Output the message "hai"
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class Exe1`
+   - This line defines a class named `Exe1`.
+
+3. `public delegate void show(string message);`
+   - This line declares a delegate named `show` that can point to any method that takes a string as a parameter and returns void.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `show s1 = x => Console.WriteLine(x);`
+   - This line creates an instance of the `show` delegate and assigns it a lambda expression that takes a parameter `x` and writes it to the console.
+
+6. `s1("hai");`
+   - This line invokes the delegate `s1` with the argument "hai", which results in the message "hai" being printed to the console.
+
+Summary:
+This C# program demonstrates the use of a delegate with a lambda expression to display a message. The program defines a delegate named `show`, assigns a lambda expression to it that outputs a string to the console, and then invokes the delegate with a specific message. When executed, the program will output:
+
+This output represents the message passed to the delegate.

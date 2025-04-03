@@ -1,0 +1,101 @@
+C# Program Explanation
+
+"Custom Exception Handling Example"
+
+This document explains a C# program that demonstrates the creation and handling of a custom exception.
+
+Code:
+
+using System;
+
+class QisException : Exception // Custom exception class
+{
+    public QisException(string message) : base(message) // Constructor that passes the message to the base Exception class
+    {
+    }
+}
+
+class Mohan // Class containing the age check logic
+{
+    public void AgeCheck(int age) // Method to check if the age is valid
+    {
+        if (age < 18) // Check if age is less than 18
+        {
+            throw new QisException("age is not valid"); // Throw custom exception if age is invalid
+        }
+        Console.WriteLine("Eligible"); // Output if age is valid
+    }
+
+    public static void Main() // Entry point of the program
+    {
+        try
+        {
+            Console.WriteLine("Enter the age: "); // Prompt user for age input
+            int age = int.Parse(Console.ReadLine()); // Read and parse the age from user input
+            Mohan m = new Mohan(); // Create an instance of Mohan
+            m.AgeCheck(age); // Call the AgeCheck method
+        }
+        catch (QisException e) // Catch the custom QisException
+        {
+            Console.WriteLine(e.Message); // Output the exception message
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class QisException : Exception`
+   - This line defines a custom exception class named `QisException` that inherits from the built-in `Exception` class.
+
+3. `public QisException(string message) : base(message)`
+   - This is the constructor for the `QisException` class. It takes a string message as a parameter and passes it to the base `Exception` class constructor.
+
+4. `class Mohan`
+   - This line defines a class named `Mohan`, which contains the logic for checking age eligibility.
+
+5. `public void AgeCheck(int age)`
+   - This method checks if the provided age is valid (18 or older).
+
+6. `if (age < 18) { ... }`
+   - This block checks if the age is less than 18. If true, it throws a `QisException`.
+
+7. `throw new QisException("age is not valid");`
+   - This line throws a new instance of `QisException` with a message indicating that the age is not valid.
+
+8. `Console.WriteLine("Eligible");`
+   - This line outputs "Eligible" if the age is valid.
+
+9. `public static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+10. `try { ... }`
+    - The `try` block contains code that may throw exceptions. In this case, it prompts the user for age input and calls the `AgeCheck` method.
+
+11. `int age = int.Parse(Console.ReadLine());`
+    - This line reads the user input and attempts to parse it as an integer.
+
+12. `Mohan m = new Mohan();`
+    - This line creates an instance of the `Mohan` class.
+
+13. `m.AgeCheck(age);`
+    - This line calls the `AgeCheck` method with the provided age.
+
+14. `catch (QisException e) { ... }`
+    - This catch block handles the `QisException` thrown by the `AgeCheck` method.
+
+15. `Console.WriteLine(e.Message);`
+    - This line outputs the message associated with the caught exception.
+
+Summary:
+This C# program demonstrates the creation and handling of a custom exception. The program prompts the user to enter their age and checks if it is valid (18 or older). If the age is less than 18, a custom exception `QisException` is thrown, and the program outputs the associated error message. 
+
+When executed with an age less than 18, the program will output:
+age is not valid
+
+If the user enters an age of 18 or older, the program will output:
+Eligible
+
+This structure helps maintain program stability by handling potential errors gracefully.

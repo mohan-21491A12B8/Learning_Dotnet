@@ -1,0 +1,80 @@
+C# Program Explanation
+
+"Handling Multiple Exceptions in a Single Catch Block"
+
+This document explains a C# program that demonstrates how to handle multiple exceptions using a single catch block with a conditional filter.
+
+Code:
+
+using System;
+
+class Exec1 // Class definition
+{
+    static void Main() // Entry point of the program
+    {
+        try
+        {
+            Console.Write("Enter a number: "); // Prompt user for input
+            int num = int.Parse(Console.ReadLine()); // Read and parse the number from user input
+            int c = 10 / num; // Attempt to divide 10 by the input number
+            Console.WriteLine("Result: " + c); // Display the result of the division
+        }
+        catch (Exception e) when (e is FormatException || e is DivideByZeroException) // Handle specific exceptions
+        {
+            Console.WriteLine("Error: " + e.Message); // Output the error message
+        }
+        catch (Exception e) // Catch any other unexpected exceptions
+        {
+            throw; // Re-throw the exception for further handling
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class Exec1`
+   - This line defines a class named `Exec1`.
+
+3. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+4. `try { ... }`
+   - The `try` block contains code that may throw exceptions. In this case, it prompts the user for a number and attempts to parse it.
+
+5. `Console.Write("Enter a number: ");`
+   - This line prompts the user to enter a number.
+
+6. `int num = int.Parse(Console.ReadLine());`
+   - This line reads the user input and attempts to parse it as an integer. If the input is not a valid integer, a `FormatException` may be thrown.
+
+7. `int c = 10 / num;`
+   - This line attempts to divide 10 by the input number. If the user enters 0, a `DivideByZeroException` will be thrown.
+
+8. `catch (Exception e) when (e is FormatException || e is DivideByZeroException) { ... }`
+   - This catch block handles both `FormatException` and `DivideByZeroException` using a conditional filter. If either exception occurs, the block will execute.
+
+9. `Console.WriteLine("Error: " + e.Message);`
+   - This line outputs the error message associated with the caught exception.
+
+10. `catch (Exception e) { ... }`
+    - This catch block handles any other unexpected exceptions that may occur.
+
+11. `throw;`
+    - This line re-throws the caught exception for further handling, allowing it to propagate up the call stack.
+
+Summary:
+This C# program demonstrates how to handle multiple exceptions in a single catch block using a conditional filter. The program prompts the user to enter a number, attempts to parse it, and performs a division operation. If a `FormatException` or `DivideByZeroException` occurs, the program outputs an appropriate error message. 
+
+When executed with a valid number, the program will output:
+Result: [Result of the division]
+
+If the user enters an invalid number, it will output:
+Error: Input string was not in a correct format.
+
+If the user enters zero, it will output:
+Error: Attempted to divide by zero.
+
+For any other unexpected exceptions, the program will re-throw the exception for further handling.

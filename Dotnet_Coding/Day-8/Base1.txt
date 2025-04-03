@@ -1,0 +1,107 @@
+C# Program Explanation
+
+"Class Inheritance and Constructor Behavior"
+
+This document explains a C# program that demonstrates class inheritance, constructor behavior, and method overriding.
+
+Code:
+
+using System;
+
+class Sample2 // Base class
+{
+    public int a = 90; // Public field
+
+    public Sample2() // Constructor of Sample2
+    {
+        Console.WriteLine("hi"); // Output when an instance of Sample2 is created
+    }
+
+    public void show() // Method to display a message
+    {
+        Console.WriteLine("hello"); // Output a greeting message
+    }
+}
+
+class Exec3 : Sample2 // Derived class that inherits from Sample2
+{
+    public Exec3() : base() // Constructor of Exec3, calling the base class constructor
+    {
+        Console.WriteLine("this is child"); // Output when an instance of Exec3 is created
+    }
+
+    public void Display() // Method to display information
+    {
+        base.show(); // Call the show method from the base class
+        Console.WriteLine(base.a); // Access the public field 'a' from the base class
+        Console.WriteLine("child method"); // Output a message indicating the child method
+    }
+
+    static void Main() // Entry point of the program
+    {
+        Exec3 e1 = new Exec3(); // Create an instance of Exec3
+        e1.Display(); // Call the Display method
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class Sample2`
+   - This line defines a base class named `Sample2`.
+
+3. `public int a = 90;`
+   - This line declares a public integer field `a` and initializes it to 90.
+
+4. `public Sample2()`
+   - This is the constructor for the `Sample2` class. It is called when an instance of `Sample2` is created.
+
+5. `Console.WriteLine("hi");`
+   - This line outputs "hi" when an instance of `Sample2` is created.
+
+6. `public void show()`
+   - This method outputs "hello" when called.
+
+7. `class Exec3 : Sample2`
+   - This line defines a derived class named `Exec3` that inherits from the `Sample2` class.
+
+8. `public Exec3() : base()`
+   - This is the constructor for the `Exec3` class. It calls the base class constructor using `: base()`.
+
+9. `Console.WriteLine("this is child");`
+   - This line outputs "this is child" when an instance of `Exec3` is created.
+
+10. `public void Display()`
+    - This method calls the `show` method from the base class and outputs the value of `a` and a message indicating the child method.
+
+11. `base.show();`
+    - This line calls the `show` method from the base class `Sample2`.
+
+12. `Console.WriteLine(base.a);`
+    - This line accesses the public field `a` from the base class and outputs its value.
+
+13. `Console.WriteLine("child method");`
+    - This line outputs "child method".
+
+14. `static void Main()`
+    - This line defines the `Main` method, which is the entry point of the program.
+
+15. `Exec3 e1 = new Exec3();`
+    - This line creates an instance of the `Exec3` class, which also calls the constructor of the base class `Sample2`.
+
+16. `e1.Display();`
+    - This line calls the `Display` method on the instance of `Exec3`.
+
+Summary:
+This C# program demonstrates class inheritance and constructor behavior. When an instance of `Exec3` is created, it first calls the constructor of the base class `Sample2`, which outputs "hi". Then, it outputs "this is child" from the `Exec3` constructor. The `Display` method is called, which outputs "hello" from the `show` method of the base class, the value of `a` (which is 90), and "child method" from the `Display` method.
+
+When executed, the program will output:
+hi
+this is child
+hello
+90
+child method
+
+This output illustrates the flow of control from the base class to the derived class, showcasing how constructors and methods work in an inheritance hierarchy.

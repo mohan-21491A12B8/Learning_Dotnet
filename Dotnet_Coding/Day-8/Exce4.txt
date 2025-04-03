@@ -1,0 +1,77 @@
+C# Program Explanation
+
+"Type Reflection Example"
+
+This document explains a C# program that demonstrates the use of type reflection to find a class by its name and handle potential exceptions.
+
+Code:
+
+using System;
+
+class Exec4 // Class definition
+{
+    public static void Main() // Entry point of the program
+    {
+        try
+        {
+            Console.WriteLine("Enter the type name:"); // Prompt user for input
+            string typeName = Console.ReadLine(); // Read the type name from user input
+
+            // Use Type.GetType() to get the type based on the provided name
+            Type t = Type.GetType(typeName);
+            if (t == null) // Check if the type was found
+            {
+                throw new TypeLoadException("Class not found"); // Throw exception if the class is not found
+            }
+            Console.WriteLine("Class found: " + t.FullName); // Display the full name of the found type
+        }
+        catch (TypeLoadException e) // Handle TypeLoadException
+        {
+            Console.WriteLine(e.Message); // Output the message of the exception
+        }
+        catch (Exception e) // Catch any other exceptions
+        {
+            Console.WriteLine("An error occurred: " + e.Message); // Output a generic error message
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class Exec4`
+   - This line defines a class named `Exec4`.
+
+3. `public static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+4. `Console.WriteLine("Enter the type name:");`
+   - This line prompts the user to enter the name of a type (class).
+
+5. `string typeName = Console.ReadLine();`
+   - This line reads the user input from the console and stores it in the variable `typeName`.
+
+6. `Type t = Type.GetType(typeName);`
+   - This line attempts to get the type corresponding to the provided name using `Type.GetType()`.
+
+7. `if (t == null) { ... }`
+   - This block checks if the type was found. If not, it throws a `TypeLoadException` with a message indicating that the class was not found.
+
+8. `Console.WriteLine("Class found: " + t.FullName);`
+   - This line outputs the full name of the found type to the console.
+
+9. `catch (TypeLoadException e) { ... }`
+   - This block catches any `TypeLoadException` that occurs in the `try` block and outputs the message of the exception.
+
+10. `catch (Exception e) { ... }`
+    - This block catches any other exceptions that may occur and outputs a generic error message along with the exception message.
+
+Summary:
+This C# program demonstrates the use of type reflection to find a class by its name. It prompts the user to enter a type name, attempts to retrieve the corresponding type, and handles exceptions that may arise if the type is not found or if other errors occur. When executed, if the class is found, the program will output:
+
+If the class is not found, it will output:Class not found
+
+If any other error occurs, it will output:An error occurred: [Error Message]
+

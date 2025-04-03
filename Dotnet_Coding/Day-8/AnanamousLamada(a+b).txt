@@ -1,0 +1,53 @@
+C# Program Explanation
+
+"Lambda Expression with Delegate Example"
+
+This document explains a C# program that demonstrates the use of a delegate with a lambda expression to perform a simple addition operation.
+
+Code:
+
+using System;
+
+// Delegate declaration for methods that take two integers and return an integer
+public delegate int show(int x, int y);
+
+class Program // Class definition
+{
+    static void Main() // Entry point of the program
+    {
+        // Lambda expression to define the addition operation
+        show s1 = (a, b) => a + b;
+
+        // Invoke the delegate with two integers
+        int result = s1(23, 12);
+        Console.WriteLine(result); // Output the result of the addition
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `public delegate int show(int x, int y);`
+   - This line declares a delegate named `show` that can point to any method that takes two integers as parameters and returns an integer.
+
+3. `class Program`
+   - This line defines a class named `Program`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `show s1 = (a, b) => a + b;`
+   - This line creates an instance of the `show` delegate and assigns it a lambda expression that takes two parameters `a` and `b`, and returns their sum.
+
+6. `int result = s1(23, 12);`
+   - This line invokes the delegate `s1` with the arguments 23 and 12, and stores the result of the addition in the variable `result`.
+
+7. `Console.WriteLine(result);`
+   - This line outputs the value of `result`, which is the sum of 23 and 12.
+
+Summary:
+This C# program demonstrates the use of a delegate with a lambda expression to perform a simple addition operation. The program defines a delegate named `show`, assigns a lambda expression to it that adds two integers, and then invokes the delegate with specific values. When executed, the program will output:
+
+Represents the result of adding 23 and 12.
