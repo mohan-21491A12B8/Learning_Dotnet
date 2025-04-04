@@ -1,0 +1,63 @@
+C# Program Explanation
+
+"Printing a 5x5 Star Pattern"
+
+This document explains a C# program that demonstrates how to print a 5x5 grid of stars using nested loops.
+
+Code:
+
+using System;
+
+class ForEach
+{
+    static void Main()
+    {
+        for (int i = 0; i < 5; i++) // Outer loop for rows
+        {
+            for (int j = 0; j < 5; j++) // Inner loop for columns
+            {
+                Console.Write("*"); // Print a star
+            }
+            Console.WriteLine(); // Move to the next line after printing stars in a row
+        }
+        Console.ReadKey(true); // Wait for a key press before closing
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which provides fundamental classes and base classes for commonly used types.
+
+2. `class ForEach`
+   - This line defines a class named `ForEach`.
+
+3. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+4. `for (int i = 0; i < 5; i++)`
+   - This outer loop iterates five times, representing the five rows of the star pattern.
+
+5. `for (int j = 0; j < 5; j++)`
+   - This inner loop also iterates five times for each row, responsible for printing five stars in that row.
+
+6. `Console.Write("*");`
+   - This line prints a star without moving to a new line.
+
+7. `Console.WriteLine();`
+   - After the inner loop completes, this line moves the cursor to the next line, preparing for the next row of stars.
+
+8. `Console.ReadKey(true);`
+   - This line pauses the program until a key is pressed, allowing the user to see the output before the console window closes.
+
+Summary:
+This C# program demonstrates how to create a 5x5 grid of stars using nested loops. The program initializes two loops: the outer loop for rows and the inner loop for columns. Each iteration of the inner loop prints a star, and after completing a row, the program moves to the next line.
+
+When executed, the program will output:
+*****
+*****
+*****
+*****
+*****
+
+This output consists of five rows, each containing five stars, forming a square pattern.

@@ -1,0 +1,111 @@
+C# Program Explanation
+
+"Using Stack in C#"
+
+This document explains a C# program that demonstrates the creation and usage of a Stack to store integers and perform various operations on it.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+
+class Cls3
+{
+    static void Main()
+    {
+        Stack<int> stack = new Stack<int>(); // Create a new Stack of integers
+        stack.Push(1); // Add elements to the Stack
+        stack.Push(2);
+        stack.Push(3);
+        stack.Push(4);
+        stack.Push(5);
+        stack.Push(6);
+        stack.Push(7);
+        Display(stack); // Display the contents of the Stack
+
+        Console.WriteLine("Top Element: " + stack.Peek()); // Peek at the top element
+        int poppedElement = stack.Pop(); // Remove the top element
+        Console.WriteLine("Popped Element: " + poppedElement); // Display the popped element
+        Display(stack); // Display the contents of the Stack after popping
+
+        Console.WriteLine("Is Stack empty? " + (stack.Count == 0)); // Check if the Stack is empty
+        stack.Clear(); // Clear the Stack
+        Console.WriteLine("Is stack empty after clear? " + (stack.Count == 0)); // Check if the Stack is empty after clearing
+    }
+
+    static void Display(Stack<int> stack)
+    {
+        Console.WriteLine("Stack contents are: ");
+        foreach (int item in stack) // Iterate through each item in the Stack
+        {
+            Console.WriteLine(item); // Print the current item
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Generic;`
+   - This line includes the System.Collections.Generic namespace, which contains generic collections such as Stack.
+
+3. `class Cls3`
+   - This line defines a class named `Cls3`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `Stack<int> stack = new Stack<int>();`
+   - This line initializes a new Stack that will store integers.
+
+6. `stack.Push(1);` (and subsequent Push calls)
+   - These lines add integers 1 through 7 to the Stack.
+
+7. `Display(stack);`
+   - This line calls the `Display` method to print the contents of the Stack.
+
+8. `Console.WriteLine("Top Element: " + stack.Peek());`
+   - This line retrieves and prints the top element of the Stack without removing it.
+
+9. `int poppedElement = stack.Pop();`
+   - This line removes the top element from the Stack and stores it in `poppedElement`.
+
+10. `Console.WriteLine("Popped Element: " + poppedElement);`
+    - This line prints the value of the popped element.
+
+11. `Display(stack);`
+    - This line calls the `Display` method again to show the contents of the Stack after the pop operation.
+
+12. `Console.WriteLine("Is Stack empty? " + (stack.Count == 0));`
+    - This line checks if the Stack is empty and prints the result.
+
+13. `stack.Clear();`
+    - This line clears all elements from the Stack.
+
+14. `Console.WriteLine("Is stack empty after clear? " + (stack.Count == 0));`
+    - This line checks if the Stack is empty after clearing and prints the result.
+
+15. `static void Display(Stack<int> stack)`
+    - This line defines a method named `Display` that takes a Stack of integers as a parameter.
+
+16. `foreach (int item in stack)`
+    - This line starts a loop that iterates through each integer in the Stack.
+
+17. `Console.WriteLine(item);`
+    - This line prints the current integer from the Stack.
+
+Summary:
+This C# program demonstrates how to create a Stack, add elements to it, peek at the top element, pop an element, check if the Stack is empty, and clear the Stack. The program initializes a Stack with integers, displays its contents, and performs various operations, printing the results at each step.
+
+When executed, the program will output:
+
+Stack contents are: 7 6 5 4 3 2 1 
+Top Element: 7 
+Popped Element: 7 
+Stack contents are: 6 5 4 3 2 1 
+Is Stack empty? False 
+Is stack empty after clear? True
+
+This output shows the contents of the Stack at different stages and the results of the operations performed.

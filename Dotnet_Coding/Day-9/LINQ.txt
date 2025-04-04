@@ -1,0 +1,62 @@
+C# Program Explanation
+
+"Using LINQ with List in C#"
+
+This document explains a C# program that demonstrates how to filter a List of strings using LINQ (Language Integrated Query) to find elements that start with a specific character.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Sample
+{
+    public static void Main()
+    {
+        List<string> s1 = new List<string> { "red", "yellow", "green", "white" }; // Initialize a List of strings
+        var s2 = s1.Where(n => n.StartsWith("y")); // Use LINQ to filter strings that start with "y"
+        foreach (var x in s2) // Iterate through the filtered results
+        {
+            Console.WriteLine(x); // Print each filtered string
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Generic;`
+   - This line includes the System.Collections.Generic namespace, which contains generic collections such as List.
+
+3. `using System.Linq;`
+   - This line includes the System.Linq namespace, which provides classes and methods for querying collections.
+
+4. `class Sample`
+   - This line defines a class named `Sample`.
+
+5. `public static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+6. `List<string> s1 = new List<string> { "red", "yellow", "green", "white" };`
+   - This line initializes a new List of strings containing the elements "red", "yellow", "green", and "white".
+
+7. `var s2 = s1.Where(n => n.StartsWith("y"));`
+   - This line uses LINQ to filter the List `s1`, creating a new collection `s2` that contains only the strings that start with the letter "y".
+
+8. `foreach (var x in s2)`
+   - This line starts a loop that iterates through each string in the filtered collection `s2`.
+
+9. `Console.WriteLine(x);`
+   - This line prints each filtered string to the console.
+
+Summary:
+This C# program demonstrates how to use LINQ to filter a List of strings based on a condition. The program initializes a List with four color names and filters the List to find strings that start with the letter "y". It then prints the filtered results.
+
+When executed, the program will output:
+
+yellow
+
+This output shows the string "yellow", which is the only element in the List that starts with the letter "y".

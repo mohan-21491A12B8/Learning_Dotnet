@@ -1,0 +1,217 @@
+C# Program Explanation
+
+"Using SortedList in C#"
+
+This document explains a C# program that demonstrates the creation and usage of a SortedList to store key-value pairs, where the keys are sorted in ascending order.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+
+class Sample
+{
+    public static void Main()
+    {
+        SortedList<string, int> sortedList = new SortedList<string, int>(); // Create a new SortedList
+        sortedList.Add("Apple", 1); // Add key-value pairs to the SortedList
+        sortedList.Add("Banana", 2);
+        sortedList.Add("Cherry", 3);
+        sortedList.Add("Diamond", 4);
+
+        Display(sortedList); // Display the contents of the SortedList
+        Console.WriteLine("Value for Banana is " + sortedList["Banana"]); // Access the value for the key "Banana"
+        sortedList.Remove("Cherry"); // Remove the key-value pair with key "Cherry"
+        Display(sortedList); // Display the contents of the SortedList after removal
+        Console.WriteLine("Contains 'Apple'? " + sortedList.ContainsKey("Apple")); // Check if "Apple" is a key
+        Console.WriteLine("Contains 'Cherry'? " + sortedList.ContainsKey("Cherry")); // Check if "Cherry" is a key
+        Console.WriteLine("Iterating through sorted list:");
+
+        foreach (var kvp in sortedList) // Iterate through the SortedList
+        {
+            Console.WriteLine($"{kvp.Key}: {kvp.Value}"); // Print each key-value pair
+        }
+        Console.WriteLine();
+    }
+
+    static void Display(SortedList<string, int> sortedList)
+    {
+        foreach (var kvp in sortedList) // Iterate through the SortedList
+        {
+            Console.WriteLine($"{kvp.Key}: {kvp.Value}"); // Print each key-value pair
+        }
+        Console.WriteLine();
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Generic;`
+   - This line includes the System.Collections.Generic namespace, which contains generic collections such as SortedList.
+
+3. `class Sample`
+   - This line defines a class named `Sample`.
+
+4. `public static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `SortedList<string, int> sortedList = new SortedList<string, int>();`
+   - This line initializes a new SortedList that will store string keys and integer values.
+
+6. `sortedList.Add("Apple", 1);` (and subsequent Add calls)
+   - These lines add key-value pairs to the SortedList.
+
+7. `Display(sortedList);`
+   - This line calls the `Display` method to print the contents of the SortedList.
+
+8. `Console.WriteLine("Value for Banana is " + sortedList["Banana"]);`
+   - This line retrieves and prints the value associated with the key "Banana".
+
+9. `sortedList.Remove("Cherry");`
+   - This line removes the key-value pair with the key "Cherry" from the SortedList.
+
+10. `Display(sortedList);`
+    - This line calls the `Display` method again to show the contents of the SortedList after the removal.
+
+11. `Console.WriteLine("Contains 'Apple'? " + sortedList.ContainsKey("Apple"));`
+    - This line checks if "Apple" is a key in the SortedList and prints the result.
+
+12. `Console.WriteLine("Contains 'Cherry'? " + sortedList.ContainsKey("Cherry"));`
+    - This line checks if "Cherry" is a key in the SortedList and prints the result.
+
+13. `Console.WriteLine("Iterating through sorted list:");`
+    - This line prints a message indicating that the program will iterate through the SortedList.
+
+14. `foreach (var kvp in sortedList)`
+    - This line starts a loop that iterates through each key-value pair in the SortedList.
+
+15. `Console.WriteLine($"{kvp.Key}: {kvp.Value}");`
+    - This line prints the current key-value pair.
+
+16. `static void Display(SortedList<string, int> sortedList)`
+    - This line defines a method named `Display` that takes a SortedList as a parameter.
+
+17. `foreach (var kvp in sortedList)`
+    - This line starts a loop that iterates through each key-value pair in the SortedList within the `Display` method.
+
+18. `Console.WriteLine($"{kvp.Key}: {kvp.Value}");`
+    - This line prints the current key-value pair in the `Display` method.
+
+Summary This C# program demonstrates how to create a SortedList, add key-value pairs to it, access values by keys, remove entries, check for the existence of keys, and iterate through the SortedList. The program initializes a SortedList with string keys and integer values, displays its contents, and performs various operations, printing the results at each step.
+
+When executed, the program will output:
+C# Program Explanation
+
+"Using SortedList in C#"
+
+This document explains a C# program that demonstrates the creation and usage of a SortedList to store key-value pairs, where the keys are sorted in ascending order.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+
+class Sample
+{
+    public static void Main()
+    {
+        SortedList<string, int> sortedList = new SortedList<string, int>(); // Create a new SortedList
+        sortedList.Add("Apple", 1); // Add key-value pairs to the SortedList
+        sortedList.Add("Banana", 2);
+        sortedList.Add("Cherry", 3);
+        sortedList.Add("Diamond", 4);
+
+        Display(sortedList); // Display the contents of the SortedList
+        Console.WriteLine("Value for Banana is " + sortedList["Banana"]); // Access the value for the key "Banana"
+        sortedList.Remove("Cherry"); // Remove the key-value pair with key "Cherry"
+        Display(sortedList); // Display the contents of the SortedList after removal
+        Console.WriteLine("Contains 'Apple'? " + sortedList.ContainsKey("Apple")); // Check if "Apple" is a key
+        Console.WriteLine("Contains 'Cherry'? " + sortedList.ContainsKey("Cherry")); // Check if "Cherry" is a key
+        Console.WriteLine("Iterating through sorted list:");
+
+        foreach (var kvp in sortedList) // Iterate through the SortedList
+        {
+            Console.WriteLine($"{kvp.Key}: {kvp.Value}"); // Print each key-value pair
+        }
+        Console.WriteLine();
+    }
+
+    static void Display(SortedList<string, int> sortedList)
+    {
+        foreach (var kvp in sortedList) // Iterate through the SortedList
+        {
+            Console.WriteLine($"{kvp.Key}: {kvp.Value}"); // Print each key-value pair
+        }
+        Console.WriteLine();
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Generic;`
+   - This line includes the System.Collections.Generic namespace, which contains generic collections such as SortedList.
+
+3. `class Sample`
+   - This line defines a class named `Sample`.
+
+4. `public static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `SortedList<string, int> sortedList = new SortedList<string, int>();`
+   - This line initializes a new SortedList that will store string keys and integer values.
+
+6. `sortedList.Add("Apple", 1);` (and subsequent Add calls)
+   - These lines add key-value pairs to the SortedList.
+
+7. `Display(sortedList);`
+   - This line calls the `Display` method to print the contents of the SortedList.
+
+8. `Console.WriteLine("Value for Banana is " + sortedList["Banana"]);`
+   - This line retrieves and prints the value associated with the key "Banana".
+
+9. `sortedList.Remove("Cherry");`
+   - This line removes the key-value pair with the key "Cherry" from the SortedList.
+
+10. `Display(sortedList);`
+    - This line calls the `Display` method again to show the contents of the SortedList after the removal.
+
+11. `Console.WriteLine("Contains 'Apple'? " + sortedList.ContainsKey("Apple"));`
+    - This line checks if "Apple" is a key in the SortedList and prints the result.
+
+12. `Console.WriteLine("Contains 'Cherry'? " + sortedList.ContainsKey("Cherry"));`
+    - This line checks if "Cherry" is a key in the SortedList and prints the result.
+
+13. `Console.WriteLine("Iterating through sorted list:");`
+    - This line prints a message indicating that the program will iterate through the SortedList.
+
+14. `foreach (var kvp in sortedList)`
+    - This line starts a loop that iterates through each key-value pair in the SortedList.
+
+15. `Console.WriteLine($"{kvp.Key}: {kvp.Value}");`
+    - This line prints the current key-value pair.
+
+16. `static void Display(SortedList<string, int> sortedList)`
+    - This line defines a method named `Display` that takes a SortedList as a parameter.
+
+17. `foreach (var kvp in sortedList)`
+    - This line starts a loop that iterates through each key-value pair in the SortedList within the `Display` method.
+
+18. `Console.WriteLine($"{kvp.Key}: {kvp.Value}");`
+    - This line prints the current key-value pair in the `Display` method.
+
+Summary This C# program demonstrates how to create a SortedList, add key-value pairs to it, access values by keys, remove entries, check for the existence of keys, and iterate through the SortedList. The program initializes a SortedList with string keys and integer values, displays its contents, and performs various operations, printing the results at each step.
+
+When executed, the program will output:
+Apple: 1 Banana: 2 Cherry: 3 Diamond: 4
+
+Value for Banana is 2 Apple: 1 Banana: 2 Diamond: 4
+
+Contains 'Apple'? True Contains 'Cherry'? False Iterating through sorted list: Apple: 1 Banana: 2 Diamond: 4
+
+This output shows the contents of the SortedList at different stages and the results of the operations performed.

@@ -1,0 +1,111 @@
+C# Program Explanation
+
+"Using Queue in C#"
+
+This document explains a C# program that demonstrates the creation and usage of a Queue to store integers and perform various operations on it.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+
+class Cls4
+{
+    static void Main()
+    {
+        Queue<int> queue = new Queue<int>(); // Create a new Queue of integers
+        queue.Enqueue(1); // Add elements to the Queue
+        queue.Enqueue(2);
+        queue.Enqueue(3);
+        queue.Enqueue(4);
+        queue.Enqueue(5);
+        queue.Enqueue(6);
+        queue.Enqueue(7);
+        Display(queue); // Display the contents of the Queue
+
+        Console.WriteLine("Top Element: " + queue.Peek()); // Peek at the top element
+        int poppedElement = queue.Dequeue(); // Remove the top element
+        Console.WriteLine("Dequeued Element: " + poppedElement); // Display the dequeued element
+        Display(queue); // Display the contents of the Queue after dequeue
+
+        Console.WriteLine("Is queue empty? " + (queue.Count == 0)); // Check if the Queue is empty
+        queue.Clear(); // Clear the Queue
+        Console.WriteLine("Is queue empty after clear? " + (queue.Count == 0)); // Check if the Queue is empty after clearing
+    }
+
+    static void Display(Queue<int> queue)
+    {
+        Console.WriteLine("Queue contents are: ");
+        foreach (int item in queue) // Iterate through each item in the Queue
+        {
+            Console.WriteLine(item); // Print the current item
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Generic;`
+   - This line includes the System.Collections.Generic namespace, which contains generic collections such as Queue.
+
+3. `class Cls4`
+   - This line defines a class named `Cls4`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `Queue<int> queue = new Queue<int>();`
+   - This line initializes a new Queue that will store integers.
+
+6. `queue.Enqueue(1);` (and subsequent Enqueue calls)
+   - These lines add integers 1 through 7 to the Queue.
+
+7. `Display(queue);`
+   - This line calls the `Display` method to print the contents of the Queue.
+
+8. `Console.WriteLine("Top Element: " + queue.Peek());`
+   - This line retrieves and prints the top element of the Queue without removing it.
+
+9. `int poppedElement = queue.Dequeue();`
+   - This line removes the top element from the Queue and stores it in `poppedElement`.
+
+10. `Console.WriteLine("Dequeued Element: " + poppedElement);`
+    - This line prints the value of the dequeued element.
+
+11. `Display(queue);`
+    - This line calls the `Display` method again to show the contents of the Queue after the dequeue operation.
+
+12. `Console.WriteLine("Is queue empty? " + (queue.Count == 0));`
+    - This line checks if the Queue is empty and prints the result.
+
+13. `queue.Clear();`
+    - This line clears all elements from the Queue.
+
+14. `Console.WriteLine("Is queue empty after clear? " + (queue.Count == 0));`
+    - This line checks if the Queue is empty after clearing and prints the result.
+
+15. `static void Display(Queue<int> queue)`
+    - This line defines a method named `Display` that takes a Queue of integers as a parameter.
+
+16. `foreach (int item in queue)`
+    - This line starts a loop that iterates through each integer in the Queue.
+
+17. `Console.WriteLine(item);`
+    - This line prints the current integer from the Queue.
+
+Summary:
+This C# program demonstrates how to create a Queue, add elements to it, peek at the top element, dequeue an element, check if the Queue is empty, and clear the Queue. The program initializes a Queue with integers, displays its contents, and performs various operations, printing the results at each step.
+
+When executed, the program will output:
+Queue contents are:
+ 1 2 3 4 5 6 7 
+ Top Element: 1 
+ Dequeued Element: 1 
+ Queue contents are: 2 3 4 5 6 7 
+ Is queue empty? False 
+ Is queue empty after clear? True
+ 
+This output shows the contents of the Queue at different stages and the results of the operations performed.

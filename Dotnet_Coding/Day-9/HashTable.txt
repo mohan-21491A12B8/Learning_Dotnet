@@ -1,0 +1,123 @@
+C# Program Explanation
+
+"Using Hashtable in C#"
+
+This document explains a C# program that demonstrates the creation and usage of a Hashtable to store key-value pairs.
+
+Code:
+
+using System;
+using System.Collections;
+
+class ClsHashtable
+{
+    static void Main()
+    {
+        Hashtable hashtable = new Hashtable(); // Create a new Hashtable
+        hashtable.Add("Apple", 1); // Add key-value pairs to the Hashtable
+        hashtable.Add("Banana", 2);
+        hashtable.Add("Cherry", 3);
+        hashtable.Add("Diamond", 4);
+
+        Display(hashtable); // Display the contents of the Hashtable
+
+        Console.WriteLine("Value for Banana is: " + hashtable["Banana"]); // Access the value for the key "Banana"
+        hashtable.Remove("Cherry"); // Remove the key-value pair with key "Cherry"
+        Display(hashtable); // Display the contents of the Hashtable after removal
+
+        Console.WriteLine("Contains 'Apple'? " + hashtable.ContainsKey("Apple")); // Check if "Apple" is a key
+        Console.WriteLine("Contains 'Cherry'? " + hashtable.ContainsKey("Cherry")); // Check if "Cherry" is a key
+
+        Console.WriteLine("Iterating through hashtable:");
+        foreach (DictionaryEntry entry in hashtable) // Iterate through the Hashtable
+        {
+            Console.WriteLine($"{entry.Key}: {entry.Value}"); // Print each key-value pair
+        }
+        Console.WriteLine();
+    }
+
+    static void Display(Hashtable hashtable)
+    {
+        Console.WriteLine("Hashtable contents are: ");
+        foreach (DictionaryEntry entry in hashtable) // Iterate through the Hashtable
+        {
+            Console.WriteLine($"{entry.Key}: {entry.Value}"); // Print each key-value pair
+        }
+        Console.WriteLine();
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections;`
+   - This line includes the System.Collections namespace, which contains classes for non-generic collections, including Hashtable.
+
+3. `class ClsHashtable`
+   - This line defines a class named `ClsHashtable`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `Hashtable hashtable = new Hashtable();`
+   - This line initializes a new Hashtable.
+
+6. `hashtable.Add("Apple", 1);` (and subsequent Add calls)
+   - These lines add key-value pairs to the Hashtable.
+
+7. `Display(hashtable);`
+   - This line calls the `Display` method to print the contents of the Hashtable.
+
+8. `Console.WriteLine("Value for Banana is: " + hashtable["Banana"]);`
+   - This line retrieves and prints the value associated with the key "Banana".
+
+9. `hashtable.Remove("Cherry");`
+   - This line removes the key-value pair with the key "Cherry" from the Hashtable.
+
+10. `Display(hashtable);`
+    - This line calls the `Display` method again to show the contents of the Hashtable after the removal.
+
+11. `Console.WriteLine("Contains 'Apple'? " + hashtable.ContainsKey("Apple"));`
+    - This line checks if "Apple" is a key in the Hashtable and prints the result.
+
+ 12. `Console.WriteLine("Contains 'Cherry'? " + hashtable.ContainsKey("Cherry"));`
+    - This line checks if "Cherry" is a key in the Hashtable and prints the result.
+
+13. `Console.WriteLine("Iterating through hashtable:");`
+    - This line indicates the start of the iteration through the Hashtable.
+
+14. `foreach (DictionaryEntry entry in hashtable)`
+    - This line starts a loop that iterates through each key-value pair in the Hashtable.
+
+15. `Console.WriteLine($"{entry.Key}: {entry.Value}");`
+    - This line prints the current key-value pair from the Hashtable.
+
+16. `static void Display(Hashtable hashtable)`
+    - This line defines a method named `Display` that takes a Hashtable as a parameter.
+
+17. `foreach (DictionaryEntry entry in hashtable)`
+    - This line starts a loop that iterates through each key-value pair in the Hashtable for display.
+
+18. `Console.WriteLine($"{entry.Key}: {entry.Value}");`
+    - This line prints each key-value pair in the Hashtable during the display.
+
+19. `Console.WriteLine();`
+    - This line adds a blank line for better readability in the output.
+
+Summary:
+This C# program demonstrates how to create a Hashtable, add key-value pairs, retrieve values, remove entries, and check for the existence of keys. The program initializes a Hashtable with string keys and integer values, displays its contents, performs various operations, and prints the results at each step.
+
+When executed, the program will output:
+
+Hashtable contents are: Apple: 1 Banana: 2 Cherry: 3 Diamond: 4
+
+Value for Banana is: 2 
+Hashtable contents are: Apple: 1 Banana: 2 Diamond: 4
+
+Contains 'Apple'? True 
+Contains 'Cherry'? False 
+Iterating through hashtable: Apple: 1 Banana: 2 Diamond: 4
+
+This output shows the contents of the Hashtable at different stages and the results of the operations performed.

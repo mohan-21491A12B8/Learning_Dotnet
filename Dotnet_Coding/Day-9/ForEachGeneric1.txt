@@ -1,0 +1,58 @@
+C# Program Explanation
+
+"Using List in C#"
+
+This document explains a C# program that demonstrates the creation and usage of a List to store integers and how to iterate through it.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+
+class ListExample
+{
+    static void Main()
+    {
+        List<int> list = new List<int>(); // Create a new List of integers
+        list.Add(1); // Add the integer 1 to the list
+
+        foreach (int i in list) // Iterate through each integer in the list
+        {
+            Console.WriteLine(i); // Print the current integer
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Generic;`
+   - This line includes the System.Collections.Generic namespace, which contains generic collections such as List.
+
+3. `class ListExample`
+   - This line defines a class named `ListExample`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `List<int> list = new List<int>();`
+   - This line initializes a new List that will store integers.
+
+6. `list.Add(1);`
+   - This line adds the integer 1 to the List.
+
+7. `foreach (int i in list)`
+   - This line starts a loop that iterates through each integer in the List.
+
+8. `Console.WriteLine(i);`
+   - This line prints the current integer (`i`) to the console.
+
+Summary:
+This C# program demonstrates how to create a List of integers, add an integer to it, and iterate through its elements to display them. The program initializes a List, adds the integer 1, and prints each element in the List.
+
+When executed, the program will output:
+1
+
+This output shows the integer 1 printed on a new line.

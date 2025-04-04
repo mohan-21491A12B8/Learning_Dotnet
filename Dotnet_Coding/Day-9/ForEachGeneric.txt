@@ -1,0 +1,53 @@
+C# Program Explanation
+
+"Using List and Foreach in C#"
+
+This document explains a C# program that demonstrates the creation and usage of a List and how to iterate through it using a foreach loop.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+
+class Sample
+{
+    static void Main()
+    {
+        List<string> s1 = new List<string> { "red", "yellow", "orange" }; // Initialize a List of strings
+        foreach (string i1 in s1) // Iterate through each string in the List
+        {
+            Console.WriteLine(i1); // Print the current string
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Generic;`
+   - This line includes the System.Collections.Generic namespace, which contains generic collections such as List.
+
+3. `class Sample`
+   - This line defines a class named `Sample`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `List<string> s1 = new List<string> { "red", "yellow", "orange" };`
+   - This line initializes a new List of strings containing the elements "red", "yellow", and "orange".
+
+6. `foreach (string i1 in s1)`
+   - This line starts a loop that iterates through each string in the List `s1`.
+
+7. `Console.WriteLine(i1);`
+   - This line prints the current string (`i1`) to the console.
+
+Summary:
+This C# program demonstrates how to create a List of strings and iterate through its elements using a foreach loop. The program initializes a List with three string elements and prints each element to the console.
+
+When executed, the program will output:
+red yellow orange
+
+This output shows each element of the List printed on a new line.
