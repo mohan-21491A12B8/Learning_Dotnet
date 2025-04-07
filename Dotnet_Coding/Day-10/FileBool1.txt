@@ -1,0 +1,63 @@
+C# Program Explanation
+
+"Appending Text to a File Using StreamWriter in C#"
+
+This document explains a C# program that demonstrates how to append text to an existing file using the `StreamWriter` class.
+
+Code:
+
+using System;
+using System.IO;
+
+class Temp5
+{
+    static void Main()
+    {
+        string path = @"C:\\Users\\dell\\Desktop\\sais"; // Specify the file path
+
+        // Create a StreamWriter to append text to the file
+        using (StreamWriter w1 = new StreamWriter(path, true))
+        {
+            w1.WriteLine("I want to append the text"); // Write a line of text to the file
+        }
+
+        Console.WriteLine("Success"); // Indicate that the operation was successful
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.IO;`
+   - This line includes the System.IO namespace, which contains classes for handling input and output, including file operations.
+
+3. `class Temp5`
+   - This line defines a class named `Temp5`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `string path = @"C:\\Users\\dell\\Desktop\\sais";`
+   - This line specifies the path to the file where text will be appended. The `@` symbol allows for a verbatim string literal, which means backslashes do not need to be escaped.
+
+6. `using (StreamWriter w1 = new StreamWriter(path, true))`
+   - This line creates a new instance of `StreamWriter` to write to the specified file. The second parameter `true` indicates that the file should be opened in append mode, meaning new text will be added to the end of the file without overwriting existing content.
+
+7. `w1.WriteLine("I want to append the text");`
+   - This line writes a line of text to the file. Each call to `WriteLine` adds a new line in the file.
+
+8. `}` (end of the using block)
+   - The `using` statement ensures that the `StreamWriter` is properly disposed of after use, which also closes the file.
+
+9. `Console.WriteLine("Success");`
+   - This line prints a message to the console indicating that the text has been successfully appended to the file.
+
+Summary:
+This C# program demonstrates how to append text to an existing file using the `StreamWriter` class. The program specifies a file path, opens the file in append mode, writes a line of text, and then closes the file. The use of the `using` statement ensures that resources are released properly.
+
+When executed, if the specified file exists, the output will be:
+Success
+
+If the file does not exist, it will be created, and the text "I want to append the text" will be added to it. If the file already contains text, this new line will be added at the end of the existing content.

@@ -1,0 +1,85 @@
+C# Program Explanation
+
+"Using Methods and Loops in C#"
+
+This document explains a C# program that demonstrates the use of methods and loops to print messages to the console.
+
+Code:
+
+using System;
+
+class Temp2
+{
+    // Method M1 that prints "M1" six times
+    static void M1()
+    {
+        for (int i = 0; i <= 5; i++)
+        {
+            Console.WriteLine("M1"); // Print "M1" to the console
+        }
+    }
+
+    // Method M2 that prints "M2" six times
+    static void M2()
+    {
+        for (int i = 0; i <= 5; i++)
+        {
+            Console.WriteLine("M2"); // Print "M2" to the console
+        }
+    }
+
+    // Method M3 that prints "M3" six times
+    static void M3()
+    {
+        for (int i = 0; i <= 5; i++)
+        {
+            Console.WriteLine("M3"); // Print "M3" to the console
+        }
+    }
+
+    // Main method - entry point of the program
+    static void Main()
+    {
+        for (int i = 0; i <= 5; i++)
+        {
+            Console.WriteLine("Good Morning"); // Print "Good Morning" to the console
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `class Temp2`
+   - This line defines a class named `Temp2`.
+
+3. `static void M1()`
+   - This line defines a static method named `M1`. It does not return any value.
+
+4. `for (int i = 0; i <= 5; i++)`
+   - This line starts a for loop that iterates from 0 to 5 (inclusive), resulting in 6 iterations.
+
+5. `Console.WriteLine("M1");`
+   - This line prints "M1" to the console during each iteration of the loop in method `M1`.
+
+6. The same structure is repeated for methods `M2` and `M3`, which print "M2" and "M3" respectively.
+
+7. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+8. Inside the `Main` method, a for loop is used to print "Good Morning" to the console six times.
+
+Summary:
+This C# program demonstrates the use of methods and loops. It defines three methods (`M1`, `M2`, and `M3`) that print different messages to the console. The `Main` method serves as the entry point of the program and prints "Good Morning" six times.
+
+When executed, the output will be:
+Good Morning 
+Good Morning 
+Good Morning 
+Good Morning 
+Good Morning 
+Good Morning
+
+The methods `M1`, `M2`, and `M3` are defined but not called in the `Main` method, so their output will not be displayed unless they are invoked within `Main`.

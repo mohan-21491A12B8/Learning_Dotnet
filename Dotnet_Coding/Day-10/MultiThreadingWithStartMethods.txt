@@ -1,0 +1,75 @@
+C# Program Explanation
+
+"Using Threads in C#"
+
+This document explains a C# program that demonstrates the use of threads to perform a task with a delay.
+
+Code:
+
+using System;
+using System.Threading;
+
+class Test4
+{
+    // Method Add that prints "hi" after a delay
+    static void Add()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (i == 3)
+            {
+                Thread.Sleep(1000); // Pause for 1 second
+                Console.WriteLine("hi"); // Print "hi" when i is 3
+            }
+        }
+    }
+
+    // Main method - entry point of the program
+    static void Main()
+    {
+        Thread t = new Thread(Add); // Create a new thread that runs the Add method
+        t.Start(); // Start the thread
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Threading;`
+   - This line includes the System.Threading namespace, which provides classes and interfaces that enable multithreaded programming.
+
+3. `class Test4`
+   - This line defines a class named `Test4`.
+
+4. `static void Add()`
+   - This line defines a static method named `Add`. It does not return any value.
+
+5. `for (int i = 0; i < 5; i++)`
+   - This line starts a for loop that iterates from 0 to 4 (inclusive), resulting in 5 iterations.
+
+6. `if (i == 3)`
+   - This line checks if the loop variable `i` is equal to 3.
+
+7. `Thread.Sleep(1000);`
+   - This line pauses the thread for 1 second when `i` is 3.
+
+8. `Console.WriteLine("hi");`
+   - This line prints "hi" to the console after the pause.
+
+9. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+10. `Thread t = new Thread(Add);`
+    - This line creates a new thread `t` that will execute the `Add` method.
+
+11. `t.Start();`
+    - This line starts the execution of the thread.
+
+Summary:
+This C# program demonstrates the creation and execution of a thread that performs a simple task with a delay. The `Thread.Sleep` method is used to pause the thread, and the program prints "hi" when the loop variable reaches a specific value.
+
+When executed, the output will be:
+hi
+This output will appear after a 1-second delay when the loop in the `Add` method reaches the condition where `i` is 3.

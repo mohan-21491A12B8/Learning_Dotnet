@@ -1,0 +1,60 @@
+C# Program Explanation
+
+"Creating a File and Writing Text Using StreamWriter in C#"
+
+This document explains a C# program that demonstrates how to create a file and write text to it using the `StreamWriter` class.
+
+Code:
+
+using System;
+using System.IO;
+
+class Temp5
+{
+    public static void Main()
+    {
+        string path = "C:\\Users\\dell\\Desktop\\sai"; // Specify the path to the file to be created
+
+        // Create a StreamWriter to write to the specified file
+        using (StreamWriter w1 = new StreamWriter(path))
+        {
+            w1.WriteLine("Hello, World!"); // Write a line of text to the file
+        }
+
+        Console.WriteLine("File created and text copied successfully"); // Indicate that the operation was successful
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.IO;`
+   - This line includes the System.IO namespace, which contains classes for handling input and output, including file operations.
+
+3. `class Temp5`
+   - This line defines a class named `Temp5`.
+
+4. `public static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `string path = "C:\\Users\\dell\\Desktop\\sai";`
+   - This line specifies the path to the file that will be created. Ensure that this path is valid and that you have permission to write to this location.
+
+6. `using (StreamWriter w1 = new StreamWriter(path))`
+   - This line creates a new instance of `StreamWriter` to write to the specified file. The `using` statement ensures that the `StreamWriter` is properly disposed of after use, which also closes the file.
+
+7. `w1.WriteLine("Hello, World!");`
+   - This line writes the string "Hello, World!" to the file, followed by a newline character.
+
+8. `Console.WriteLine("File created and text copied successfully");`
+   - This line prints a message to the console indicating that the file has been successfully created and the text has been written to it.
+
+Summary:
+This C# program demonstrates how to create a file and write text to it using the `StreamWriter` class. The program specifies a file path, writes a line of text to the file, and indicates when the operation is complete.
+
+When executed, if the specified file is created successfully, the output will be:
+File created and text copied successfully
+
+If the file cannot be created due to permission issues or an invalid path, an exception will be thrown, and the program will terminate with an error message.

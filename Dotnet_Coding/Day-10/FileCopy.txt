@@ -1,0 +1,58 @@
+C# Program Explanation
+
+"Copying a File Using File.Copy in C#"
+
+This document explains a C# program that demonstrates how to copy a file from one location to another using the `File.Copy` method.
+
+Code:
+
+using System;
+using System.IO;
+
+class Temp5
+{
+    static void Main()
+    {
+        string source = "C:\\Users\\dell\\Desktop\\mohansai"; // Specify the source file path
+        string dest = "C:\\Users\\dell\\Desktop\\mohans"; // Specify the destination file path
+
+        // Copy the file from source to destination
+        File.Copy(source, dest);
+
+        Console.WriteLine("Success"); // Indicate that the operation was successful
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.IO;`
+   - This line includes the System.IO namespace, which contains classes for handling input and output, including file operations.
+
+3. `class Temp5`
+   - This line defines a class named `Temp5`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `string source = "C:\\Users\\dell\\Desktop\\mohansai";`
+   - This line specifies the path to the source file that you want to copy. Ensure that this path points to an existing file.
+
+6. `string dest = "C:\\Users\\dell\\Desktop\\mohans";`
+   - This line specifies the path to the destination where the file will be copied. This path can include a new file name.
+
+7. `File.Copy(source, dest);`
+   - This line copies the file from the source path to the destination path. If the destination file already exists, this will throw an `IOException`. To overwrite the existing file, you can use an overload of `File.Copy` that includes a third parameter set to `true`.
+
+8. `Console.WriteLine("Success");`
+   - This line prints a message to the console indicating that the file has been successfully copied.
+
+Summary:
+This C# program demonstrates how to copy a file from one location to another using the `File.Copy` method. The program specifies a source file path and a destination file path, then performs the copy operation and indicates success.
+
+When executed, if the source file exists and the copy operation is successful, the output will be:
+Success
+
+If the source file does not exist or if there is an issue with the destination path, an exception will be thrown, and the program will terminate with an error message.

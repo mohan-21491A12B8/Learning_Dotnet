@@ -1,0 +1,71 @@
+C# Program Explanation
+
+"Checking for a File's Existence and Deleting It in C#"
+
+This document explains a C# program that demonstrates how to check if a file exists and delete it if it does.
+
+Code:
+
+using System;
+using System.IO;
+
+class Temp5
+{
+    static void Main()
+    {
+        // string source = "C:\\Users\\dell\\Desktop\\mohansai"; // Source path (commented out)
+        string dest = "C:\\Users\\dell\\Desktop\\mohans.txt"; // Specify the destination file path
+
+        // Check if the file exists
+        if (File.Exists(dest))
+        {
+            File.Delete(dest); // Delete the file if it exists
+            Console.WriteLine("Done success"); // Indicate that the file has been deleted
+        }
+        else
+        {
+            Console.WriteLine("File not existed"); // Indicate that the file does not exist
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.IO;`
+   - This line includes the System.IO namespace, which contains classes for handling input and output, including file operations.
+
+3. `class Temp5`
+   - This line defines a class named `Temp5`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `string dest = "C:\\Users\\dell\\Desktop\\mohans.txt";`
+   - This line specifies the path to the file that will be checked for existence and potentially deleted.
+
+6. `if (File.Exists(dest))`
+   - This line checks if the file specified by `dest` exists.
+
+7. `File.Delete(dest);`
+   - If the file exists, this line deletes the file.
+
+8. `Console.WriteLine("Done success");`
+   - This line prints a message to the console indicating that the file has been successfully deleted.
+
+9. `else`
+   - This line begins the alternative block that executes if the file does not exist.
+
+10. `Console.WriteLine("File not existed");`
+    - This line prints a message to the console indicating that the file does not exist.
+
+Summary:
+This C# program demonstrates how to check for the existence of a file and delete it if it exists. The program specifies a file path, checks if the file exists, and performs the deletion if applicable, providing feedback to the user.
+
+When executed, if the specified file exists and is successfully deleted, the output will be:
+Done success
+
+If the file does not exist, the output will be:
+File not existed

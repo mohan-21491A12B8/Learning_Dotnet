@@ -1,0 +1,80 @@
+C# Program Explanation
+
+"Using ConcurrentStack in C#"
+
+This document explains a C# program that demonstrates the creation and usage of a `ConcurrentStack` to store integers in a thread-safe manner, allowing for concurrent additions and removals.
+
+Code:
+
+using System;
+using System.Collections.Concurrent;
+using System.Threading.Tasks;
+
+class Temp
+{
+    static void Main()
+    {
+        ConcurrentStack<int> c1 = new ConcurrentStack<int>(); // Create a new ConcurrentStack
+
+        // Parallel loop to push elements onto the stack
+        Parallel.For(0, 10, i =>
+        {
+            c1.Push(i); // Push the current index onto the stack
+            Console.WriteLine(i); // Print the current index
+        });
+
+        Console.WriteLine("Pop elements:");
+        // Pop elements from the stack
+        while (c1.TryPop(out int result))
+        {
+            Console.WriteLine(result); // Print the popped element
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Concurrent;`
+   - This line includes the System.Collections.Concurrent namespace, which contains classes for concurrent collections, including ConcurrentStack.
+
+3. `using System.Threading.Tasks;`
+   - This line includes the System.Threading.Tasks namespace, which provides classes for parallel programming.
+
+4. `class Temp`
+   - This line defines a class named `Temp`.
+
+5. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+6. `ConcurrentStack<int> c1 = new ConcurrentStack<int>();`
+   - This line initializes a new `ConcurrentStack` that will store integers.
+
+7. `Parallel.For(0, 10, i =>`
+   - This line starts a parallel loop that iterates from 0 to 9, allowing multiple threads to execute the loop body concurrently.
+
+8. `c1.Push(i);`
+   - This line pushes the current index `i` onto the `ConcurrentStack`.
+
+9. `Console.WriteLine(i);`
+   - This line prints the current index `i` to the console.
+
+10. `Console.WriteLine("Pop elements:");`
+    - This line prints a message indicating that the program will now pop elements from the stack.
+
+11. `while (c1.TryPop(out int result))`
+    - This line attempts to pop an element from the stack. If successful, it assigns the popped value to `result`.
+
+12. `Console.WriteLine(result);`
+    - This line prints the popped element to the console.
+
+Summary:
+This C# program demonstrates how to create a `ConcurrentStack`, push elements concurrently, and pop elements in a thread-safe manner. The program initializes a `ConcurrentStack` with integers, performs parallel additions, and displays the popped elements at the end.
+
+When executed, the program will output something similar to:
+0 1 2 3 4 5 6 7 8 9 
+Pop elements: 9 8 7 6 5 4 3 2 1 0
+
+The indices being pushed onto the stack by different threads and then the elements being popped in reverse order, demonstrating the LIFO (Last In, First Out) behavior of the `ConcurrentStack`.

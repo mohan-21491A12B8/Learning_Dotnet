@@ -1,0 +1,72 @@
+C# Program Explanation
+
+"Reading Lines from a File Using StreamReader in C#"
+
+This document explains a C# program that demonstrates how to read lines from a text file using the `StreamReader` class.
+
+Code:
+
+using System;
+using System.IO;
+
+class Temp5
+{
+    public static void Main()
+    {
+        string path = "C:\\Users\\dell\\Desktop\\sai"; // Specify the path to the text file
+
+        // Create a StreamReader to read from the specified file
+        using (StreamReader w1 = new StreamReader(path))
+        {
+            string line; // Variable to hold each line read from the file
+
+            // Read lines from the file until the end is reached
+            while ((line = w1.ReadLine()) != null)
+            {
+                Console.WriteLine(line); // Print the current line to the console
+            }
+        }
+
+        Console.WriteLine("File created and text copied successfully"); // Indicate that the operation was successful
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.IO;`
+   - This line includes the System.IO namespace, which contains classes for handling input and output, including file operations.
+
+3. `class Temp5`
+   - This line defines a class named `Temp5`.
+
+4. `public static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `string path = "C:\\Users\\dell\\Desktop\\sai";`
+   - This line specifies the path to the text file that will be read. Ensure that this path points to an existing file.
+
+6. `using (StreamReader w1 = new StreamReader(path))`
+   - This line creates a new instance of `StreamReader` to read from the specified file. The `using` statement ensures that the `StreamReader` is properly disposed of after use, which also closes the file.
+
+7. `string line;`
+   - This line declares a variable to hold each line read from the file.
+
+8. `while ((line = w1.ReadLine()) != null)`
+   - This line reads lines from the file one at a time until the end of the file is reached. The `ReadLine` method returns `null` when there are no more lines to read.
+
+9. `Console.WriteLine(line);`
+   - This line prints the current line to the console.
+
+10. `Console.WriteLine("File created and text copied successfully");`
+    - This line prints a message to the console indicating that the operation was successful.
+
+Summary:
+This C# program demonstrates how to read lines from a text file using the `StreamReader` class. The program specifies a file path, reads each line from the file, and prints it to the console. It also indicates when the operation is complete.
+
+When executed, if the specified file exists and is read successfully, the output will be the contents of the file followed by:
+File created and text copied successfully
+
+If the file does not exist or another error occurs, an exception will be thrown, and the program will terminate with an error message.

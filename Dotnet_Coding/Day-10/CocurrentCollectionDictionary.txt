@@ -1,0 +1,106 @@
+Run
+Copy code
+C# Program Explanation
+
+"Using ConcurrentDictionary in C#"
+
+This document explains a C# program that demonstrates the creation and usage of a `ConcurrentDictionary` to store key-value pairs in a thread-safe manner, allowing for concurrent additions and updates.
+
+Code:
+
+using System;
+using System.Collections.Concurrent;
+using System.Threading.Tasks;
+
+class Temp
+{
+    static void Main()
+    {
+        // Create a ConcurrentDictionary
+        ConcurrentDictionary<int, string> dictionary = new ConcurrentDictionary<int, string>();
+
+        // Parallel add/update entries
+        Parallel.For(0, 10, i =>
+        {
+            // Add a key-value pair
+            bool added = dictionary.TryAdd(i, $"Value {i}");
+
+            // If already exists, update the value
+            if (!added)
+            {
+                dictionary[i] = $"Updated Value {i}";
+            }
+
+            Console.WriteLine($"Thread {Task.CurrentId}: Key = {i}, Value = {dictionary[i]}");
+        });
+
+        Console.WriteLine("\nContents of ConcurrentDictionary:");
+        foreach (var pair in dictionary)
+        {
+            Console.WriteLine($"Key = {pair.Key}, Value = {pair.Value}");
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Concurrent;`
+   - This line includes the System.Collections.Concurrent namespace, which contains classes for concurrent collections, including ConcurrentDictionary.
+
+3. `using System.Threading.Tasks;`
+   - This line includes the System.Threading.Tasks namespace, which provides classes for parallel programming.
+
+4. `class Temp`
+   - This line defines a class named `Temp`.
+
+5. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+6. `ConcurrentDictionary<int, string> dictionary = new ConcurrentDictionary<int, string>();`
+   - This line initializes a new `ConcurrentDictionary` that will store integer keys and string values.
+
+7. `Parallel.For(0, 10, i =>`
+   - This line starts a parallel loop that iterates from 0 to 9, allowing multiple threads to execute the loop body concurrently.
+
+8. `bool added = dictionary.TryAdd(i, $"Value {i}");`
+   - This line attempts to add a key-value pair to the dictionary. If the key already exists, it returns false.
+
+9. `if (!added)`
+   - This line checks if the addition was unsuccessful (i.e., the key already exists).
+
+10. `dictionary[i] = $"Updated Value {i}";`
+    - This line updates the value for the existing key in the dictionary.
+
+11. `Console.WriteLine($"Thread {Task.CurrentId}: Key = {i}, Value = {dictionary[i]}");`
+    - This line prints the current thread ID, the key, and the corresponding value in the dictionary.
+
+12. `Console.WriteLine("\nContents of ConcurrentDictionary:");`
+    - This line prints a message indicating that the contents of the dictionary will be displayed.
+
+13. `foreach (var pair in dictionary)`
+    - This line starts a loop that iterates through each key-value pair in the `ConcurrentDictionary`.
+
+14. `Console.WriteLine($"Key = {pair.Key}, Value = {pair.Value}");`
+    - This line prints each key-value pair in the dictionary.
+
+Summary:
+This C# program demonstrates how to create a `ConcurrentDictionary`, add key-value pairs concurrently, and update existing entries in a thread-safe manner. The program initializes a `ConcurrentDictionary` with integer keys and string values, performs parallel additions and updates, and displays the contents of the dictionary at the end.
+
+When executed, the program will output something similar to:
+Thread 1: Key = 0, Value = Value 0
+Thread 1: Key = 1, Value = Value 1
+Thread 2: Key = 2, Value = Value 2
+Thread 2: Key = 3, Value = Value 3
+Thread 3: Key = 4, Value = Value 4
+Thread 3: Key = 5, Value = Value 5
+Thread 4: Key = 6, Value = Value 6
+Thread 4: Key = 7, Value = Value 7
+Thread 5: Key = 8, Value = Value 8
+Thread 5: Key = 9, Value = Value 9
+
+Contents of ConcurrentDictionary: Key = 0, Value = Value 0 Key = 1, Value = Value 1 Key = 2, Value = Value 2 Key = 3, Value = Value 3 Key = 4, Value = Value 4 Key = 5, Value = Value 5 Key = 6, Value = Value 6 Key = 7, Value = Value 7 Key = 8, Value = Value 8 Key = 9, Value = Value 9
+
+The results of the concurrent operations performed on the `ConcurrentDictionary`, including the key-value pairs added or updated by different threads. Each thread's ID is displayed alongside the key and its corresponding value, demonstrating the thread-safe nature of the `ConcurrentDictionary`. The final contents of the dictionary confirm that all keys from 0 to 9 have been successfully added with their respective values.

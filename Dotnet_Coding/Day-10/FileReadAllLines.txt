@@ -1,0 +1,69 @@
+C# Program Explanation
+
+"Reading Lines from a File Using File.ReadAllLines in C#"
+
+This document explains a C# program that demonstrates how to read all lines from a text file using the `File.ReadAllLines` method and handle exceptions that may occur during the process.
+
+Code:
+
+using System;
+using System.IO;
+
+public static void Main()
+{
+    try
+    {
+        string dest = "C:\\Users\\dell\\Desktop\\sai.txt"; // Specify the path to the text file
+        string[] lines = File.ReadAllLines(dest); // Read all lines from the file into an array
+
+        // Iterate through each line and print it to the console
+        foreach (string l1 in lines)
+        {
+            Console.WriteLine(l1); // Print the current line
+        }
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("Error: " + e.Message); // Print an error message if an exception occurs
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.IO;`
+   - This line includes the System.IO namespace, which contains classes for handling input and output, including file operations.
+
+3. `public static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program. Note that it should be inside a class definition.
+
+4. `try`
+   - This block is used to encapsulate code that may throw exceptions.
+
+5. `string dest = "C:\\Users\\dell\\Desktop\\sai.txt";`
+   - This line specifies the path to the text file that will be read. Ensure that this path points to an existing file.
+
+6. `string[] lines = File.ReadAllLines(dest);`
+   - This line reads all lines from the specified file and stores them in an array of strings.
+
+7. `foreach (string l1 in lines)`
+   - This line begins a loop that iterates through each line in the `lines` array.
+
+8. `Console.WriteLine(l1);`
+   - This line prints the current line to the console.
+
+9. `catch (Exception e)`
+   - This block catches any exceptions that occur in the `try` block.
+
+10. `Console.WriteLine("Error: " + e.Message);`
+    - This line prints an error message to the console if an exception occurs, providing information about the error.
+
+Summary:
+This C# program demonstrates how to read all lines from a text file using the `File.ReadAllLines` method. The program specifies a file path, reads the lines into an array, and prints each line to the console. It also includes error handling to manage potential exceptions, such as file not found or access denied.
+
+When executed, if the specified file exists and is read successfully, the output will be the contents of the file. If the file does not exist or another error occurs, the output will be:
+Error: [error message]
+
+Where `[error message]` provides details about the issue encountered.

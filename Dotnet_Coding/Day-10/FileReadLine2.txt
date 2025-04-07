@@ -1,0 +1,84 @@
+C# Program Explanation
+
+"Reading Lines from Two Files Simultaneously Using StreamReader in C#"
+
+This document explains a C# program that demonstrates how to read lines from two text files simultaneously using the `StreamReader` class.
+
+Code:
+
+using System;
+using System.IO;
+
+class Temp6
+{
+    static void Main()
+    {
+        string path1 = "C:\\Users\\dell\\Desktop\\mohansai"; // Specify the path to the first text file
+        string path2 = "C:\\Users\\dell\\Desktop\\mohans"; // Specify the path to the second text file
+
+        // Create StreamReaders to read from both specified files
+        using (StreamReader w1 = new StreamReader(path1))
+        using (StreamReader w2 = new StreamReader(path2))
+        {
+            string line1, line2; // Variables to hold each line read from the files
+
+            // Read lines from both files until the end of either file is reached
+            while ((line1 = w1.ReadLine()) != null && (line2 = w2.ReadLine()) != null)
+            {
+                Console.WriteLine("hi"); // Print a message for each pair of lines read
+                Console.WriteLine("welcome"); // Print another message
+            }
+        }
+
+        Console.WriteLine("Execution completed"); // Indicate that the operation was successful
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.IO;`
+   - This line includes the System.IO namespace, which contains classes for handling input and output, including file operations.
+
+3. `class Temp6`
+   - This line defines a class named `Temp6`.
+
+4. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+5. `string path1 = "C:\\Users\\dell\\Desktop\\mohansai";`
+   - This line specifies the path to the first text file that will be read. Ensure that this path points to an existing file.
+
+6. `string path2 = "C:\\Users\\dell\\Desktop\\mohans";`
+   - This line specifies the path to the second text file that will be read. Ensure that this path points to an existing file.
+
+7. `using (StreamReader w1 = new StreamReader(path1))`
+   - This line creates a new instance of `StreamReader` to read from the first specified file.
+
+8. `using (StreamReader w2 = new StreamReader(path2))`
+   - This line creates a new instance of `StreamReader` to read from the second specified file.
+
+9. `string line1, line2;`
+   - This line declares variables to hold each line read from the respective files.
+
+10. `while ((line1 = w1.ReadLine()) != null && (line2 = w2.ReadLine()) != null)`
+    - This line reads lines from both files simultaneously until the end of either file is reached. The loop continues as long as both `ReadLine` calls return non-null values.
+
+11. `Console.WriteLine("hi");`
+    - This line prints "hi" to the console for each pair of lines read from the files.
+
+12. `Console.WriteLine("welcome");`
+    - This line prints "welcome" to the console for each pair of lines read from the files.
+
+13. `Console.WriteLine("Execution completed");`
+    - This line prints a message to the console indicating that the operation has completed.
+
+Summary:
+This C# program demonstrates how to read lines from two text files simultaneously using the `StreamReader` class. The program specifies two file paths, reads lines from both files in pairs, and prints messages to the console. It indicates when the execution is completed.
+
+When executed, if both specified files exist and are read successfully, the output will be:
+hi welcome ... Execution completed
+
+If either file does not exist or another error occurs, an exception will be thrown, and the program will terminate with an error message.
