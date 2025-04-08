@@ -1,0 +1,75 @@
+C# Program Explanation
+
+"Using LINQ to Filter a List of Strings in C#"
+
+This document explains a C# program that demonstrates the use of LINQ (Language Integrated Query) to filter a list of strings based on a specific condition.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Lin1
+{
+    // Main method - entry point of the program
+    static void Main()
+    {
+        // Create a list of strings
+        List<string> n1 = new List<string> { "arm", "mohan", "sai", "qis" };
+
+        // Use LINQ to filter names that start with the letter 'a'
+        var namesStartWithA = from name in n1
+                              where name.StartsWith("a")
+                              select name;
+
+        // Print the filtered names
+        Console.WriteLine("Names starting with 'a':");
+        foreach (var item in namesStartWithA)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Generic;`
+   - This line includes the System.Collections.Generic namespace, which provides classes for defining generic collections.
+
+3. `using System.Linq;`
+   - This line includes the System.Linq namespace, which provides classes and interfaces that support queries that use Language Integrated Query (LINQ).
+
+4. `class Lin1`
+   - This line defines a class named `Lin1`.
+
+5. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+6. `List<string> n1 = new List<string> { ... };`
+   - This line creates a list of strings, initializing it with four names: "arm", "mohan", "sai", and "qis".
+
+7. `var namesStartWithA = from name in n1 ...`
+   - This line uses LINQ to filter the list `n1`, selecting names that start with the letter 'a'.
+
+8. `where name.StartsWith("a")`
+   - This condition checks if each name in the list starts with the letter 'a'.
+
+9. `select name;`
+   - This line specifies that the filtered names should be selected.
+
+10. `Console.WriteLine("Names starting with 'a':");`
+    - This line prints a header message to the console.
+
+11. `foreach (var item in namesStartWithA) { ... }`
+    - This loop iterates through the filtered results and prints each item.
+
+Summary:
+This C# program demonstrates the use of LINQ to filter a list of strings based on a specific condition. It creates a list of names, filters those that start with the letter 'a', and prints the matching names.
+
+When executed, the output will be:
+Names starting with 'a': arm
+This output shows the names from the list that start with the letter 'a'.

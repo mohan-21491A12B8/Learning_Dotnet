@@ -1,0 +1,90 @@
+C# Program Explanation
+
+"Using LINQ to Filter a List in C#"
+
+This document explains a C# program that demonstrates the use of LINQ (Language Integrated Query) to filter a list of objects based on a condition.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    // Main method - entry point of the program
+    static void Main()
+    {
+        // Create a list of Person objects
+        var s1 = new List<Person>
+        {
+            new Person { Name = "ram", Age = 34 },
+            new Person { Name = "ravi", Age = 32 },
+            new Person { Name = "raju", Age = 35 },
+            new Person { Name = "raghu", Age = 36 },
+        };
+
+        // Use LINQ to filter persons with Age less than 35
+        var result = from person in s1
+                     where person.Age < 35
+                     select new { person.Name, person.Age };
+
+        // Iterate through the filtered results and print them
+        foreach (var item in result)
+        {
+            Console.WriteLine(item);
+        }
+    }
+
+    // Class Person with properties Name and Age
+    class Person
+    {
+        public string Name { get; set; } // Property for person's name
+        public int Age { get; set; }      // Property for person's age
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Collections.Generic;`
+   - This line includes the System.Collections.Generic namespace, which provides classes for defining generic collections.
+
+3. `using System.Linq;`
+   - This line includes the System.Linq namespace, which provides classes and interfaces that support queries that use Language Integrated Query (LINQ).
+
+4. `class Program`
+   - This line defines a class named `Program`.
+
+5. `static void Main()`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+6. `var s1 = new List<Person> { ... };`
+   - This line creates a list of `Person` objects, initializing it with four instances of `Person` with names and ages.
+
+7. `var result = from person in s1 ...`
+   - This line uses LINQ to filter the list `s1`, selecting persons whose age is less than 35.
+
+8. `select new { person.Name, person.Age };`
+   - This line creates an anonymous type containing the `Name` and `Age` of the filtered persons.
+
+9. `foreach (var item in result) { ... }`
+   - This loop iterates through the filtered results and prints each item.
+
+10. `class Person`
+    - This line defines a class named `Person`.
+
+11. `public string Name { get; set; }`
+    - This line defines a property `Name` of type string for the `Person` class.
+
+12. `public int Age { get; set; }`
+    - This line defines a property `Age` of type int for the `Person` class.
+
+Summary:
+This C# program demonstrates the use of LINQ to filter a list of `Person` objects based on their age. It creates a list of persons, filters those with an age less than 35, and prints their names and ages.
+
+When executed, the output will be:
+{ Name = ram, Age = 34 } { Name = ravi, Age = 32 }
+This output shows the names and ages of the persons who meet the filtering criteria.
