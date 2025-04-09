@@ -1,0 +1,91 @@
+C# Program Explanation
+
+"Connecting to SQL Server Database in C#"
+
+This document explains a C# program that demonstrates how to establish a connection to a SQL Server database using the `SqlConnection` class.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Correct connection string format
+            SqlConnection con = new SqlConnection("Server=QIS-MOHANSAI\\SQLEXPRESS;Database=YourDatabaseName;Integrated Security=True;");
+            
+            try
+            {
+                con.Open(); // Correct method name (Open instead of open)
+                Console.WriteLine("Connection established successfully.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                {
+                    con.Close(); // Close the connection
+                    Console.WriteLine("Connection closed.");
+                }
+            }
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Data.SqlClient;`
+   - This line includes the SqlClient namespace, which provides classes for accessing SQL Server databases.
+
+3. `namespace ConsoleApp2`
+   - This line defines a namespace for the application.
+
+4. `internal class Program`
+   - This line defines a class named `Program`. The `internal` modifier means that this class is accessible only within the same assembly.
+
+5. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+6. `SqlConnection con = new SqlConnection("Server=QIS-MOHANSAI\\SQLEXPRESS;Database=YourDatabaseName;Integrated Security=True;");`
+   - This line initializes a new instance of the `SqlConnection` class with a connection string. Make sure to replace `YourDatabaseName` with the actual name of your database.
+
+7. `con.Open();`
+   - This line opens the database connection. Note that the method name is case-sensitive and should be `Open` (with an uppercase 'O').
+
+8. `try { ... } catch (Exception ex) { ... } finally { ... }`
+   - This block is used for error handling. It attempts to open the connection, catches any exceptions that occur, and ensures that the connection is closed in the `finally` block.
+
+9. `Console.WriteLine("Connection established successfully.");`
+   - This line prints a message to the console indicating that the connection was successfully established.
+
+10. `Console.WriteLine("Error: " + ex.Message);`
+    - This line prints the error message if an exception occurs while trying to open the connection.
+
+11. `if (con.State == System.Data.ConnectionState.Open) { con.Close(); }`
+    - This line checks if the connection is open and closes it if it is.
+
+12. `Console.WriteLine("Connection closed.");`
+    - This line prints a message indicating that the connection has been closed.
+
+Summary:
+This C# program demonstrates how to establish a connection to a SQL Server database using the `SqlConnection` class. It includes error handling to manage any issues that arise during the connection process and ensures that the connection is closed properly.
+
+When executed, the output will be:
+Connection established successfully. Connection closed.
+
+If there is an error, the output will be:
+Error: [Error message]

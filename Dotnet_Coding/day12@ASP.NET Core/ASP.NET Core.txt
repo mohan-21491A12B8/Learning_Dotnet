@@ -1,0 +1,6 @@
+Below is the procedure for executing the ASP.NET Core programs video link...
+https://drive.google.com/file/d/1NsPnm8lJg2jPS0jEUQyz9JkfFSYMFY3x/view?usp=sharing
+
+
+Below is the ASP.NET Core document link for Step by step process of execution 
+https://docs.google.com/document/d/1sviROlSdY7ggeHwcUIEB8OkhffbHKL56/edit?usp=drive_link&ouid=117328826475484063713&rtpof=true&sd=true

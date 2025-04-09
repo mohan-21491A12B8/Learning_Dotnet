@@ -1,0 +1,130 @@
+C# Program Explanation
+
+"Inserting Data into SQL Server Database Using C#"
+
+This document explains a C# program that demonstrates how to insert multiple records into a SQL Server database table using the `SqlConnection` and `SqlCommand` classes.
+
+Code:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            new Program().CreateTable(); // Call the CreateTable method
+        }
+
+        public void CreateTable()
+        {
+            SqlConnection conn = null; // Initialize SqlConnection
+            try
+            {
+                // Create a new SqlConnection with the connection string
+                conn = new SqlConnection("Data Source=QIS-MOHANSAI\\SQLEXPRESS;Initial Catalog=mohan;Integrated Security=True");
+                
+                // Create SqlCommand objects for inserting data into the table
+                SqlCommand s1 = new SqlCommand("insert into Mohan(id,name,branch) values (1,'Mohan Sai','IT')", conn);
+                SqlCommand s2 = new SqlCommand("insert into Mohan(id,name,branch) values (2,'Uday Kiran Reddy','IT')", conn);
+                SqlCommand s3 = new SqlCommand("insert into Mohan(id,name,branch) values (3,'Manideep Venkata Sai','IT')", conn);
+                SqlCommand s4 = new SqlCommand("insert into Mohan(id,name,branch) values (4,'Venkata Lakshmaiah','IT')", conn);
+                SqlCommand s5 = new SqlCommand("insert into Mohan(id,name,branch) values (5,'Venkatesh','IT')", conn);
+                SqlCommand s6 = new SqlCommand("insert into Mohan(id,name,branch) values (6,'Pavan Raghav Kumar','IT')", conn);
+                SqlCommand s7 = new SqlCommand("insert into Mohan(id,name,branch) values (7,'Chandra Mahesh','IT')", conn);
+                SqlCommand s8 = new SqlCommand("insert into Mohan(id,name,branch) values (8,'Pavan Manikanta','IT')", conn);
+                SqlCommand s9 = new SqlCommand("insert into Mohan(id,name,branch) values (9,'Mohith Bhargav','IT')", conn);
+                SqlCommand s10 = new SqlCommand("insert into Mohan(id,name,branch) values (10,'Tharun','IT')", conn);
+
+                conn.Open(); // Open the database connection
+                
+                // Execute the insert commands
+                s1.ExecuteNonQuery();
+                s2.ExecuteNonQuery();
+                s3.ExecuteNonQuery();
+                s4.ExecuteNonQuery();
+                s5.ExecuteNonQuery();
+                s6.ExecuteNonQuery();
+                s7.ExecuteNonQuery();
+                s8.ExecuteNonQuery();
+                s9.ExecuteNonQuery();
+                s10.ExecuteNonQuery();
+                
+                Console.WriteLine("Data inserted successfully."); // Success message
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message); // Print any error messages
+            }
+            finally
+            {
+                if (conn != null && conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close(); // Close the connection if it is open
+                }
+            }
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Data.SqlClient;`
+   - This line includes the SqlClient namespace, which provides classes for accessing SQL Server databases.
+
+3. `namespace ConsoleApp2`
+   - This line defines a namespace for the application.
+
+4. `internal class Program`
+   - This line defines a class named `Program`. The `internal` modifier means that this class is accessible only within the same assembly.
+
+5. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+6. `new Program().CreateTable();`
+   - This line creates an instance of the `Program` class and calls the `CreateTable` method.
+
+7. `public void CreateTable()`
+   - This line defines a public method named `CreateTable` that will insert data into the database.
+
+8. `SqlConnection conn = null;`
+   - This line initializes a `SqlConnection` object to null.
+
+9. `conn = new SqlConnection("Data Source=...");`
+   - This line creates a new instance of `SqlConnection` with the specified connection string, which includes the data source, initial catalog (database name), and security settings.
+
+10. `SqlCommand s1 = new SqlCommand("insert into Mohan(id,name,branch) values ...", conn);`
+    - This line creates a new `SqlCommand` object with a SQL statement to insert a record into the `Mohan` table. Similar commands are created for other records.
+
+11. `conn.Open();`
+    - This line opens the database connection.
+
+12. `s1.ExecuteNonQuery();`
+    - This line executes the SQL command to insert the record. `ExecuteNonQuery` is used for commands that do not return any data.
+
+13. `Console.WriteLine("Data inserted successfully.");`
+    - This line prints a success message to the console.
+
+14. `catch (Exception ex) { ... }`
+    - This block catches any exceptions that occur during the execution of the code and prints the error message.
+
+15. `finally { ... }`
+    - This block ensures that the connection is closed if it was opened, regardless of whether an exception occurred.
+
+Summary:
+This C# program demonstrates how to insert multiple records into a SQL Server database table using the `SqlConnection` and `SqlCommand` classes. It establishes a connection to the database, executes commands to insert data, and handles any potential errors.
+
+When executed, the output will be:
+Data inserted successfully.
+
+If there is an error, the output will be:
+Error: [Error message]

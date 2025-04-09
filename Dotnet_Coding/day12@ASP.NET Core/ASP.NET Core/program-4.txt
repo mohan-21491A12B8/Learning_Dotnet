@@ -1,0 +1,106 @@
+C# Program Explanation
+
+"Deleting a Table from SQL Server Database Using C#"
+
+This document explains a C# program that demonstrates how to delete a table from a SQL Server database using the `SqlConnection` and `SqlCommand` classes.
+
+Code:
+
+using System;
+using System.Data.SqlClient;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            new Program().DeleteTable(); // Call the DeleteTable method
+        }
+
+        public void DeleteTable()
+        {
+            SqlConnection conn = null; // Initialize SqlConnection
+            try
+            {
+                // Create a new SqlConnection with the connection string
+                conn = new SqlConnection("Data Source=QIS-MOHANSAI\\SQLEXPRESS;Initial Catalog=mohan;Integrated Security=True");
+                
+                // Create a SqlCommand to drop the table if it exists
+                SqlCommand s1 = new SqlCommand("drop table if exists Mohan", conn);
+                
+                conn.Open(); // Open the database connection
+                
+                s1.ExecuteNonQuery(); // Execute the command to drop the table
+                Console.WriteLine("Table deleted successfully."); // Success message
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message); // Print any error messages
+            }
+            finally
+            {
+                if (conn != null && conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close(); // Close the connection if it is open
+                }
+            }
+        }
+    }
+}
+
+Explanation:
+
+1. `using System;`
+   - This line includes the System namespace, which contains fundamental classes and base classes for commonly used types.
+
+2. `using System.Data.SqlClient;`
+   - This line includes the SqlClient namespace, which provides classes for accessing SQL Server databases.
+
+3. `namespace ConsoleApp2`
+   - This line defines a namespace for the application.
+
+4. `internal class Program`
+   - This line defines a class named `Program`. The `internal` modifier means that this class is accessible only within the same assembly.
+
+5. `static void Main(string[] args)`
+   - This line defines the `Main` method, which is the entry point of the program.
+
+6. `new Program().DeleteTable();`
+   - This line creates an instance of the `Program` class and calls the `DeleteTable` method.
+
+7. `public void DeleteTable()`
+   - This line defines a public method named `DeleteTable` that will delete a table from the database.
+
+8. `SqlConnection conn = null;`
+   - This line initializes a `SqlConnection` object to null.
+
+9. `conn = new SqlConnection("Data Source=...");`
+   - This line creates a new instance of `SqlConnection` with the specified connection string, which includes the data source, initial catalog (database name), and security settings.
+
+10. `SqlCommand s1 = new SqlCommand("drop table if exists Mohan", conn);`
+    - This line creates a new `SqlCommand` object with a SQL statement to drop the `Mohan` table if it exists.
+
+11. `conn.Open();`
+    - This line opens the database connection.
+
+12. `s1.ExecuteNonQuery();`
+    - This line executes the SQL command to drop the table. `ExecuteNonQuery` is used for commands that do not return any data.
+
+13. `Console.WriteLine("Table deleted successfully.");`
+    - This line prints a success message to the console.
+
+14. `catch (Exception ex) { ... }`
+    - This block catches any exceptions that occur during the execution of the code and prints the error message.
+
+15. `finally { ... }`
+    - This block ensures that the connection is closed if it was opened, regardless of whether an exception occurred.
+
+Summary:
+This C# program demonstrates how to delete a table from a SQL Server database using the `SqlConnection` and `SqlCommand` classes. It establishes a connection to the database, executes a command to drop the table, and handles any potential errors.
+
+When executed, the output will be:
+Table deleted sucessfully.
+
+If there is an error, the output will be:
+Error: [Error message]
