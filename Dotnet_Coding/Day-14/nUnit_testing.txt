@@ -1,0 +1,3 @@
+StudentGrades.zip file contains the students grades project with nUnitTesting
+
+To run this project,extract the StudentGrades.zip file then open in the Visual Studio Community.
