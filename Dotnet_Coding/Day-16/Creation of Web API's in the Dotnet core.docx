@@ -1,0 +1,27 @@
+Topic: Web-API’s(get,put,post,delete) using MVC core
+
+Creation of Web Api’s in the Dotnet core
+
+
+			Get		Web API
+			Set		Rest API ----{json format}
+			Put
+			Delete
+
+File project created sucessfully;
+Now next step:  MIGRATION
+Use this cmd> add-migration "initial migration"
+Use this cmd>  update-database
+
+--------------------------------------------------------------------------------------------------------------
+EmployeeAdminPortal
+
+Today I created a demo Web API's project on EmployeeAdminPortal.
+
+Here I'm uploading this project zip file
+
+To run this project,extract the Repository EmployeeAdminPortal.zip file then open in the Visual Studio Community.
+
+In this EmployeeAdminPortal.zip file,i have learned the basics and created the project using Web API’s and
+tested using the swagger and some online Guid generators in the project.
+
