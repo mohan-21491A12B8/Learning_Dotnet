@@ -1,0 +1,13 @@
+ASP.NET Core-Security - Authentication Options, Identity
+
+AspIdentityApp
+
+Today I created a demo project on ASP.NET Core-Security - Authentication Options, Identity.
+
+Here I'm uploading this project zip file
+
+To run this project,extract the AspIdentityApp.zip file from the Repository then open the file in the Visual Studio Community.
+
+In this AspIdentityApp.zip file,i have learned the basics and created the project using ASP.NET Core-Security - Authentication Options, Identity and
+sucessfully run,and tested register/login/logout in the project.
+
