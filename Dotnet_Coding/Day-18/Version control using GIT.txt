@@ -1,0 +1,40 @@
+Today topic is Version control using GIT :
+
+GIT is a free and open source version control system. It is a distributed version control system, which
+means that every developer working on a project has a full copy of all the project's history.
+
+GIT is a fast and efficient version control system. It is designed to handle large projects and can handl
+e thousands of files and millions of revisions.
+
+GIT is a command line tool, but there are also many graphical user interfaces available that can make it
+easier to use.
+
+GIT is a powerful tool that can be used for a variety of tasks, including version control, collaboration
+, and more. It is a fast and efficient version control system that is designed to handle large projects
+
+GIT is a powerful tool that can be used for a variety of tasks, including:
+Version control: GIT is primarily used for version control, which means that it allows developers to track changes
+to a project over time.
+
+Collaboration: GIT makes it easy for multiple developers to collaborate on a project by allowing them to
+share changes and track who made what changes.
+
+GIT commands
+Here are some common GIT commands:
+git clone
+This command is used to clone a repository.
+
+git checkout -b "branch name"
+This command is used to create a new branch and switch to it.
+
+git add .
+This command is used to stage changes in the working directory so that they can be committed to the repository
+
+git commit -m "message"
+This command is used to commit changes to the repository. It takes a commit message as an argument.
+
+git push -u origin "main"
+This command is used to push changes to a remote repository. It takes the name of the remote repository
+
+git log
+This command is used to display a log of all the commits made to the repository.
