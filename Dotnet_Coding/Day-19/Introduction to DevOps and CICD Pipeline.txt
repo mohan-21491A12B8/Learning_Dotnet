@@ -1,0 +1,98 @@
+Introduction to DevOps and CICD Pipeline
+
+Here’s a solid introduction to **DevOps** and the **CI/CD pipeline** to help you get started:
+
+---
+
+### 🚀 **Introduction to DevOps**
+
+**DevOps** is a combination of **Development (Dev)** and **Operations (Ops)** practices aimed at unifying software development and IT operations. The goal is to shorten the software development lifecycle and deliver high-quality software continuously.
+
+#### 🧩 **Core Principles of DevOps:**
+1. **Collaboration** – Breaks down silos between dev and ops teams.
+2. **Automation** – Automates repetitive tasks like testing, building, deployment.
+3. **Continuous Integration and Delivery** – Ensures frequent, reliable code releases.
+4. **Monitoring and Feedback** – Constant monitoring helps detect and fix issues faster.
+5. **Infrastructure as Code (IaC)** – Managing infrastructure using code and automation tools like Terraform or Ansible.
+
+#### 📈 **Benefits of DevOps:**
+- Faster time to market
+- Increased deployment frequency
+- Improved quality and reliability
+- Better collaboration
+- Quick recovery from failures
+
+---
+
+### 🔄 **What is CI/CD Pipeline?**
+
+CI/CD stands for:
+- **CI (Continuous Integration)**
+- **CD (Continuous Delivery / Continuous Deployment)**
+
+A **CI/CD pipeline** automates the process of integrating code changes, testing them, and deploying the application. It’s the backbone of modern DevOps practices.
+
+---
+
+### 🧪 **1. Continuous Integration (CI):**
+- Developers frequently push code to a shared repository.
+- Automated builds and tests run every time code is pushed.
+- Ensures integration issues are caught early.
+
+**Tools:** GitHub Actions, Jenkins, Travis CI, CircleCI
+
+---
+
+### 📦 **2. Continuous Delivery (CD):**
+- Code is automatically prepared for a **release to production**.
+- Deployment is **manual**, but all the steps up to deployment are automated.
+
+---
+
+### ⚙️ **3. Continuous Deployment:**
+- Similar to continuous delivery, but goes one step further: every change that passes tests is automatically deployed to production.
+
+---
+
+### 🛠️ **CI/CD Pipeline Stages:**
+
+1. **Source Stage** – Triggered by a change in code repo (e.g., Git push).
+2. **Build Stage** – Code is compiled, dependencies are installed.
+3. **Test Stage** – Automated unit, integration, and end-to-end tests are run.
+4. **Deploy Stage** – Application is deployed to a staging or production environment.
+
+---
+
+### 📌 **Popular CI/CD Tools:**
+- **Jenkins** – Highly customizable open-source automation tool.
+- **GitHub Actions** – Integrated with GitHub, great for small to medium projects.
+- **GitLab CI/CD** – Built into GitLab, supports full pipeline features.
+- **CircleCI** – Cloud-native CI/CD tool.
+- **Azure DevOps / AWS CodePipeline / Google Cloud Build** – Cloud platform-native solutions.
+
+🗂️ CI/CD Pipeline Diagram:
+            ┌────────────┐
+            │  Developer │
+            └────┬───────┘
+                 │
+          Push Code to Repo (e.g., GitHub)
+                 ↓
+          ┌─────────────┐
+          │ Source Code │  ← GitHub/ GitLab
+          └────┬────────┘
+               ↓
+       ┌─────────────┐
+       │  Build      │  ← Compiles code, installs deps
+       └────┬────────┘
+            ↓
+       ┌─────────────┐
+       │   Test      │  ← Unit, Integration, E2E tests
+       └────┬────────┘
+            ↓
+       ┌─────────────┐
+       │   Deploy    │  ← To Staging/Prod
+       └────┬────────┘
+            ↓
+      ┌──────────────┐
+      │  Monitor     │  ← Logs, metrics, alerts
+      └──────────────┘
